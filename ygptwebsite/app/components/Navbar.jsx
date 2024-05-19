@@ -3,12 +3,12 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <>
-      <header className="">
-        <div className="flex item-center ">
-          <h1 className="text-xl">Ygpt</h1>
+      <header className="fixed top-0 w-full px-[8rem] bg-white py-[2rem]">
+        <div className="flex w-full  justify-between item-center ">
+          <Link href = '/' className="text-xl">companyname*</Link>
           <Link
             href="#"
-            className="ml-auto w-fit px-14 py-2 border-black border"
+            className="px-14 py-2 border-black border"
           >
             <svg
               fill="currentColor"
