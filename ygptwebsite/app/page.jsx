@@ -9,33 +9,33 @@ const Home = () => {
       {/* <Navbar /> */}
       <h1 className="text-7xl mt-20 font-semibold">Catch Phrase *</h1>
       <h3 className="text-2xl ml-auto w-1/2 mt-20 text-gray-500">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-        fugiat praesentium odit aliquid explicabo? Nulla, veritatis perferendis!
-        Odit, quisquam explicabo.
+        ******************* INTRO PARAGRAPH ********************, 
+         praesentium odit aliquid explicabo? Nulla, veritatis perferendis!
+        Odit, quisquam explicabo. Odit, quisquam explicabo. Odit, 
       </h3>
 
       <section className="w-full">
-        <h2 className="text-5xl my-20">Our Services</h2>
+        <h2 className="text-5xl my-20">Primary Display Section*</h2>
         <div className="flex justify-strech gap-14">
           <Keypoint
             link = 'offerings/businessanalyst'
-            title="Analyst Assistant"
+            title="Key Point 1*"
             paragraph="Lorem ipsum, dolor sit amet consectetur adipisicing."
             exploretopic=""
           />
           <Keypoint
             link = '#'
-            title="Educational Assistant"
+            title="Key Point 2*"
             paragraph="Lorem ipsum dolor sit amet consectetur."
             exploretopic=""
           />
           <Keypoint
             link = '#'
-            title="Personal Assistant"
+            title="Key Point 3*"
             paragraph="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,praesentium."
             exploretopic=""
           />
- 
+
         </div>
       </section>
 
@@ -49,9 +49,9 @@ const Home = () => {
         />
 
         <div className="w-1/2">
-          <h2 className="my-20 text-7xl ml-auto w-fit">AI Inovated</h2>
+          <h2 className="my-20 text-7xl ml-auto w-fit">About Title*</h2>
           <p className="text-2xl text-gray-500 text-right">
-            Lorem ipsum dolor, ng elit. Ipsum sunt quis autem quaerat ex iste
+            **********ABOUT PARAGRAPH ********* quis autem quaerat ex iste
             delectus,<span className="bg-[#e9ff32]">officia provident </span>
             voluptate rem dolore vero illo dicta, velit possimus nihil animi!
             Iste sequi molestiae quibusdam cupiditate{" "}
@@ -67,7 +67,7 @@ const Home = () => {
           What Makes Companyname* Platforms So Powerful
         </h2>
 
-        <div className="flex justify-strech gap-14">
+        <div className="grid grid-cols-4 gap-14">
           <Keypoint
             link = '#'
             title="General & Specific Knowledge"
@@ -89,6 +89,30 @@ const Home = () => {
           <Keypoint
             link = '#'
             title="Day One Value"
+            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            exploretopic="Value"
+          />
+          <Keypoint
+            link = '#'
+            title="Industry Leading AI"
+            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            exploretopic="Value"
+          />
+          <Keypoint
+            link = '#'
+            title="Proprietary & Tailored Platforms"
+            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            exploretopic="Value"
+          />
+          <Keypoint
+            link = '#'
+            title="Constant Updates"
+            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            exploretopic="Value"
+          />
+          <Keypoint
+            link = '#'
+            title="Title*"
             paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
             exploretopic="Value"
           />
