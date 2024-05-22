@@ -7,8 +7,8 @@ const Navbar = () => {
         <div className="flex w-full  justify-between item-center ">
           <Link href = '/' className="text-xl">companyname*</Link>
           <Link
-            href="#"
-            className="px-14 py-2 border-black border"
+            href="/contact"
+            className="px-14 py-2 border-black border "
           >
             <svg
               fill="currentColor"
