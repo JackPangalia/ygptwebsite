@@ -7,35 +7,35 @@ const Home = () => {
   return (
     <div className="px-[8rem] pt-[8rem]">
       {/* <Navbar /> */}
-      <h1 className="text-7xl mt-20 font-semibold">Catch Phrase *</h1>
+      <h1 className="text-7xl mt-20 font-semibold">AI Tailored For You</h1>
       <h3 className="text-2xl ml-auto w-1/2 mt-20 text-gray-500">
-        ******************* INTRO PARAGRAPH ********************, 
-         praesentium odit aliquid explicabo? Nulla, veritatis perferendis!
-        Odit, quisquam explicabo. Odit, quisquam explicabo. Odit, 
+        Unlock your business's potential with our custom AI solutions. Tailored
+        to meet your unique needs, our expert team ensures seamless
+        implementation and enhanced productivity. Experience AI done right, with
+        a focus on quality and results.
       </h3>
 
       <section className="w-full">
-        <h2 className="text-5xl my-20">Primary Display Section*</h2>
+        <h2 className="text-5xl my-20">Why Implement AI?</h2>
         <div className="flex justify-strech gap-14">
           <Keypoint
-            link = 'offerings/businessanalyst'
-            title="Key Point 1*"
-            paragraph="Lorem ipsum, dolor sit amet consectetur adipisicing."
+            link="offerings/businessanalyst"
+            title="Increase Efficiency"
+            paragraph="Streamline your operations and boost productivity with AI-driven automation."
             exploretopic=""
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Key Point 2*"
             paragraph="Lorem ipsum dolor sit amet consectetur."
             exploretopic=""
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Key Point 3*"
             paragraph="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,praesentium."
             exploretopic=""
           />
-
         </div>
       </section>
 
@@ -69,49 +69,49 @@ const Home = () => {
 
         <div className="grid grid-cols-4 gap-14">
           <Keypoint
-            link = '#'
+            link="#"
             title="General & Specific Knowledge"
             paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vero sequi magni, dolores similique delectus."
             exploretopic="Knowledge base"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Fine Tuning"
             paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius"
             exploretopic="Fine Tuning"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Multi-Layered Security and Data"
             paragraph="et, consectetur adipisicing elit. Eius vero sequi magni, dolores similique delec lor sit amet,"
             exploretopic="Security"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Day One Value"
             paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
             exploretopic="Value"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Industry Leading AI"
             paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
             exploretopic="Value"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Proprietary & Tailored Platforms"
             paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
             exploretopic="Value"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Constant Updates"
             paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
             exploretopic="Value"
           />
           <Keypoint
-            link = '#'
+            link="#"
             title="Title*"
             paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
             exploretopic="Value"
@@ -119,7 +119,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Contactpanel />      
+      <Contactpanel />
     </div>
   );
 };
