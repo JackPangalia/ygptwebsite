@@ -26,38 +26,48 @@ const Home = () => {
           />
           <Keypoint
             link="#"
-            title="Key Point 2*"
-            paragraph="Lorem ipsum dolor sit amet consectetur."
+            title="Enhance Decision-Making"
+            paragraph="Leverage data-driven insights and real-time analytics for better strategic decisions."
             exploretopic=""
           />
           <Keypoint
             link="#"
-            title="Key Point 3*"
-            paragraph="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi,praesentium."
+            title="Improve Customer Experience"
+            paragraph="Deliver personalized experiences and 24/7 support with AI-powered solutions."
+            exploretopic=""
+          />
+          <Keypoint
+            link="#"
+            title="Foster Innovation"
+            paragraph="Gain a competitive edge by developing new products and services using AI insights."
             exploretopic=""
           />
         </div>
       </section>
 
-      <section className="w-full flex">
+      <section className="w-full flex mt-20">
         <Image
           className="w-1/2 my-20 mr-20 rounded object-cover"
           src="/aichatbotanimated.png"
           alt="aichatbot-img"
-          width="1920"
-          height="1080"
+          width="2500"
+          height="2500"
         />
 
-        <div className="w-1/2">
-          <h2 className="my-20 text-7xl ml-auto w-fit">About Title*</h2>
+        <div className="w-full">
+          <h2 className="my-10 text-7xl ml-auto w-fit">About Title*</h2>
           <p className="text-2xl text-gray-500 text-right">
-            **********ABOUT PARAGRAPH ********* quis autem quaerat ex iste
-            delectus,<span className="bg-[#e9ff32]">officia provident </span>
-            voluptate rem dolore vero illo dicta, velit possimus nihil animi!
-            Iste sequi molestiae quibusdam cupiditate{" "}
-            <span className="bg-[#e9ff32]">quod ex dignissimos</span> recusandae
-            blanditiis nesciunt similique, laudantium tenetur saepe neque,
-            corporis iusto optio illum itaque.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae sit a
+            dignissimos qui aspernatur animi repellat officia illum dolorum et.
+            Nihil autem aperiam vero harum fuga deleniti dolor consectetur
+            laborum inventore optio neque unde exercitationem, expedita, nam
+            corporis, omnis numquam enim officiis qui? Consequatur dolore
+            exercitationem quas veritatis eaque, non, tempora aperiam optio
+            velit reiciendis iure. Commodi velit dolor dolorem aspernatur rem a
+            quae enim cumque? Natus voluptatibus et dolorum quasi aliquid
+            maiores ab beatae quo. Eaque mollitia architecto dolorem illum
+            aliquam similique iste impedit? Magni deleniti voluptate nesciunt
+            eveniet!
           </p>
         </div>
       </section>
@@ -77,43 +87,43 @@ const Home = () => {
           <Keypoint
             link="#"
             title="Fine Tuning"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius"
+            paragraph="Our Model Tuning service optimises your chatbot for precise, responsive, and accurate interactions."
             exploretopic="Fine Tuning"
           />
           <Keypoint
             link="#"
             title="Multi-Layered Security and Data"
-            paragraph="et, consectetur adipisicing elit. Eius vero sequi magni, dolores similique delec lor sit amet,"
+            paragraph="Custom AI platforms ensure security with robust encryption, strict access controls, and continuous monitoring to protect sensitive data."
             exploretopic="Security"
           />
           <Keypoint
             link="#"
             title="Day One Value"
-            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            paragraph="Our platforms are made to be used right away, not months, but days."
             exploretopic="Value"
           />
           <Keypoint
             link="#"
             title="Industry Leading AI"
-            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            paragraph="Get access to the latest and greatest AI tech within your platform"
             exploretopic="Value"
           />
           <Keypoint
             link="#"
             title="Proprietary & Tailored Platforms"
-            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            paragraph="We build your solution from the ground up to handle your businesses needs"
             exploretopic="Value"
           />
           <Keypoint
             link="#"
             title="Constant Updates"
-            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            paragraph="We always looking for ways to better your custom AI experience "
             exploretopic="Value"
           />
           <Keypoint
             link="#"
-            title="Title*"
-            paragraph="consectetur adipisicing elit. Eius vero sequi magni, dolores sim"
+            title="Full Integration"
+            paragraph="Our solutions have the scalability to potentially cover you business head to toe "
             exploretopic="Value"
           />
         </div>
