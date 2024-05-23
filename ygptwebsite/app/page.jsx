@@ -5,16 +5,16 @@ import Contactpanel from "./components/contactpanel";
 
 const Home = () => {
   return (
-    <div className="px-[8rem] pt-[8rem]">
+    <div className="pt-[8rem] px-[8rem]">
       {/* <Navbar /> */}
-      <h1 className="text-7xl mt-20 font-semibold">AI Tailored For You</h1>
+      <h1 className="text-9xl mt-20 font-semibold">AI Tailored For Your Business</h1>
       <h3 className="text-2xl ml-auto w-1/2 mt-20 text-gray-500">
         Unlock your business's potential with our custom AI solutions. Tailored
         to meet your unique needs, our expert team ensures seamless
         implementation and enhanced productivity. Experience AI done right, with
         a focus on quality and results.
       </h3>
-
+      
       <section className="w-full">
         <h2 className="text-5xl my-20">Why Implement AI?</h2>
         <div className="flex justify-strech gap-14">
@@ -28,12 +28,6 @@ const Home = () => {
             link="#"
             title="Enhance Decision-Making"
             paragraph="Leverage data-driven insights and real-time analytics for better strategic decisions."
-            exploretopic=""
-          />
-          <Keypoint
-            link="#"
-            title="Improve Customer Experience"
-            paragraph="Deliver personalized experiences and 24/7 support with AI-powered solutions."
             exploretopic=""
           />
           <Keypoint
