@@ -15,13 +15,13 @@ const Navbar = () => {
         <nav>
           <ul className="flex text-zinc-500 gap-10 text-lg items-center">
             <li className="text-sm">
-              <Link href="#">Services</Link>
+              <Link href="#services">Services</Link>
             </li>
             <li className="text-sm">
-              <Link href="#">Benifits</Link>
+              <Link href="#benifits">Benifits</Link>
             </li>
             <li className="text-sm">
-              <Link href="#">AI</Link>
+              <Link href="/chatbot">AI</Link>
             </li>
             <li>
               <Link

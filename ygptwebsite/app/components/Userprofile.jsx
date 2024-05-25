@@ -1,6 +1,6 @@
 const Userprofile = () => {
   return (
-    <div className = 'flex flex-col gap-4 bg-zinc-800 shadow-xl text-white p-10'>
+    <div className = 'flex flex-col gap-4 bg-zinc-800 shadow-xl text-white p-10 '>
       <span className = ''>Name: Jack Pangalia</span>
       <span>Email: Jackpangali1@gmail.com</span>
       <span>Company: Companyname</span>

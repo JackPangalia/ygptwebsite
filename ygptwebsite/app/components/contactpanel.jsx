@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Contactpanel = () => {
   return (
-    <section className="flex items-end justify-between">
+    <section className="flex items-end justify-between px-[8rem]">
       <h4 className="text-5xl mt-20">Request a Demo</h4>
 
       <div>
