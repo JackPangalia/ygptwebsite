@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={`flex mt-44 gap-24 px-[8rem] pb-[6rem]`}>
+    <footer className={`flex mt-44 gap-24 lg:px-[3rem] max-w-[1500px] mx-auto pb-[6rem]`}>
       <div>
         <div className="flex gap-2 mb-3">
           <svg

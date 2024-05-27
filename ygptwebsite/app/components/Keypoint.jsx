@@ -6,7 +6,7 @@ const Keypoint = ({ title, paragraph, exploretopic, link }) => {
       <h4 className="text-2xl">{title}</h4>
       <p className="py-4">{paragraph}</p>
       <span href="#" className=" border-gray-500 border-b-[1px] text-gray-500 w-fit">
-        Explore {` ${exploretopic}`}
+        Explore {`${exploretopic}`}
       </span>
     </Link>
   );

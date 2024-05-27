@@ -10,7 +10,7 @@ const Userprofile = () => {
         expedita facilis nihil tempore aperiam dignissimos minus voluptatem
         magni architecto eveniet impedit dolorum numquam ratione, quasi quaerat
         optio soluta provident?
-        
+  
       </p>
     </div>
   );

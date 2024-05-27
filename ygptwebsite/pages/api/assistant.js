@@ -1,13 +1,15 @@
 import OpenAI from "openai";
+import { Server } from 'ws';
+
 const openai = new OpenAI({
-  apiKey: "sk-proj-k0XNGb6iIXK0EmteSqmIT3BlbkFJQk8i1GGyb8fyOW3hFzWu",
+  apiKey: "sk-proj-UMaIOOAaOrwqZE9ywxZVT3BlbkFJDrF4T4LLihprPFXnvP1U",
 });
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const prompt = req.body
+    const prompt = req.body;
 
-    console.log(prompt)
+    console.log(prompt);
     // assistant id varible
     const assistantId = "asst_WDSPX49YUUJxDG1677RoRQMo";
 
@@ -41,6 +43,6 @@ export default async function handler(req, res) {
       res.status(500).json({ payload: "error" });
     }
 
-    // res.status(200).json({ message: "hello from the backend"})
+    // res.status(200).json({ payload: "hello there" });
   }
 }

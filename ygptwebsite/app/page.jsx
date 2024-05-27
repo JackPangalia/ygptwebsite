@@ -8,69 +8,77 @@ const Home = () => {
   return (
     <>
       <div className="pt-[8rem]">
-        {/* <Navbar /> */}
-        <h1 className="xl:text-9xl lg:text-8xl md:text-7xl text-6xl mt-20 font-semibold lg:px-[8rem] md:px-[6rem] sm:px-[4rem] px-[2rem]">
-          AI Tailored For Your Business
-        </h1>
-        <h3 className="text-2xl ml-auto w-1/2 mt-20 text-gray-500 pr-[8rem]">
-          Unlock your business's potential with our custom AI solutions.
-          Tailored to meet your unique needs, our expert team ensures seamless
-          implementation and enhanced productivity. Experience AI done right,
-          with a focus on quality and results.
-        </h3>
-        <section className="bg-black py-32 mt-40 text-white px-[8rem]">
-          <h2 className="text-5xl" id="services">
-            Our Services
-          </h2>
-          <div className="flex gap-12 mt-16">
-            <div className="bg-red-300 w-[20rem] h-[22rem] justify-between flex flex-col text-black p-8">
-              <h4 className="text-white text-3xl">Chat Bot Development</h4>
-              <p className="text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-                tempora quis ut sit expedita iure.
-              </p>
-              <Link href = '/chatbot' className="text-xl bg-black w-fit text-white px-4 py-2 ">
-                Learn More
-              </Link>
-            </div>
+        <section className = 'sm:mt-20 mt-14 max-w-[1500px] px-[3rem] mx-auto'>
+          <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-semibold">
+            AI Tailored For Your Business.
+          </h1>
+          <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20 mt-14 text-gray-500 ml-auto xl:w-[50%] lg:w-[66%] ">
+            Unlock your business's potential with our custom AI solutions.
+            Tailored to meet your unique needs, our expert team ensures seamless
+            implementation and enhanced productivity. Experience AI done right,
+            with a focus on quality and results.
+          </h3>
+        </section>
+        
+        <section className="bg-black sm:py-32 py-20 sm:mt-40 mt-24 text-white">
+          <div className="px-[3rem] max-w-[1500px] mx-auto">
+            <h2 className="text-5xl" id="services">
+              Our Services
+            </h2>
+            <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16">
+              <div className="bg-red-300 lg:min-h-[22rem] min-h-[17rem] justify-between flex flex-col text-black p-8">
+                <h4 className="text-white xl:text-3xl text-2xl">Chat Bot Development</h4>
+                <p className="text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nulla, tempora quis ut sit expedita iure.
+                </p>
+                <Link
+                  href="/chatbot"
+                  className="text-xl bg-black w-fit text-white px-4 py-2 "
+                >
+                  Learn More
+                </Link>
+              </div>
 
-            <div className="bg-blue-300 w-[20rem] h-[22rem] justify-between flex flex-col text-black p-8">
-              <h4 className="text-white text-3xl">
-                Autonomous Agent Development
-              </h4>
-              <p className="text-lg">
-                Lorem ipsum dolor sitta iure. Lorem ipsum dolor sittaLorem ipsum
-                dolor sitta s
-              </p>
-              <button className="text-xl bg-black w-fit text-white px-4 py-2 ">
-                Learn More
-              </button>
-            </div>
+              <div className="bg-blue-300 lg:min-h-[22rem] min-h-[17rem] justify-between flex flex-col text-black p-8">
+                <h4 className="text-white xl:text-3xl text-2xl">
+                  Autonomous Agent Development
+                </h4>
+                <p className="text-lg">
+                  Lorem ipsum dolor sitta iure. Lorem ipsum dolor sittaLorem
+                  ipsum dolor sitta s
+                </p>
+                <button className="text-xl bg-black w-fit text-white px-4 py-2 ">
+                  Learn More
+                </button>
+              </div>
 
-            <div className="bg-green-300 w-[20rem] h-[22rem] justify-between flex flex-col text-black p-8">
-              <h4 className="text-white text-3xl">Enterprise Consoluting</h4>
-              <p className="text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-                tempora quis ut siita iure.
-              </p>
-              <button className="text-xl bg-black w-fit text-white px-4 py-2 ">
-                Learn More
-              </button>
-            </div>
+              <div className="bg-green-300 lg:min-h-[22rem] min-h-[17rem] justify-between flex flex-col text-black p-8">
+                <h4 className="text-white xl:text-3xl text-2xl">Enterprise Consoluting</h4>
+                <p className="text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nulla, tempora quis ut siita iure.
+                </p>
+                <button className="text-xl bg-black w-fit text-white px-4 py-2 ">
+                  Learn More
+                </button>
+              </div>
 
-            <div className="bg-purple-300 w-[20rem] h-[22rem] justify-between flex flex-col text-black p-8">
-              <h4 className="text-white text-3xl">Data Analysis</h4>
-              <p className="text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
-                tempora quis ut siita iure.
-              </p>
-              <button className="text-xl bg-black w-fit text-white px-4 py-2 ">
-                Learn More
-              </button>
+              <div className="bg-purple-300 lg:min-h-[22rem] min-h-[17rem] justify-between flex flex-col text-black p-8">
+                <h4 className="text-white xl:text-3xl text-2xl">Data Analysis</h4>
+                <p className="text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Nulla, tempora quis ut siita iure.
+                </p>
+                <button className="text-xl bg-black w-fit text-white px-4 py-2 ">
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         </section>
-        <section className="w-full px-[8rem]" id="benifits">
+
+        <section className="w-full px-[3rem] max-w-[1500px] mx-auto" id="benifits">
           <h2 className="text-5xl my-20">Why Implement AI?</h2>
           <div className="flex justify-strech gap-14">
             <Keypoint
@@ -91,37 +99,11 @@ const Home = () => {
               paragraph="Gain a competitive edge by developing new products and services using AI insights."
               exploretopic=""
             />
+            
           </div>
         </section>
 
-        {/* <section className="w-full flex mt-20 px-[8rem]">
-        <Image
-          className="w-1/2 my-20 mr-20 rounded object-cover"
-          src="/aichatbotanimated.png"
-          alt="aichatbot-img"
-          width="2500"
-          height="2500"
-        />
-
-        <div className="w-full">
-          <h2 className="my-10 text-7xl ml-auto w-fit">About Title*</h2>
-          <p className="text-2xl text-gray-500 text-right">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae sit a
-            dignissimos qui aspernatur animi repellat officia illum dolorum et.
-            Nihil autem aperiam vero harum fuga deleniti dolor consectetur
-            laborum inventore optio neque unde exercitationem, expedita, nam
-            corporis, omnis numquam enim officiis qui? Consequatur dolore
-            exercitationem quas veritatis eaque, non, tempora aperiam optio
-            velit reiciendis iure. Commodi velit dolor dolorem aspernatur rem a
-            quae enim cumque? Natus voluptatibus et dolorum quasi aliquid
-            maiores ab beatae quo. Eaque mollitia architecto dolorem illum
-            aliquam similique iste impedit? Magni deleniti voluptate nesciunt
-            eveniet!
-          </p>
-        </div>
-      </section> */}
-
-        <section className="w-full border-b-[1px] border-black pb-24 px-[8rem]">
+        <section className="w-full border-b-[1px] border-black pb-24 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto">
           <h2 className="my-20 text-5xl w-1/2">
             What Makes Companyname* Platforms So Powerful
           </h2>

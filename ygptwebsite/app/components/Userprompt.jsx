@@ -4,7 +4,7 @@ const Userprompt = ({text}) => {
       className="bg-zinc-100 p-8"
       style={{ paddingInline: `calc(50vw - var(--container-width) / 2)` }}
     >
-      {text}
+      {`You: ${text}`}
     </p>
   );
 };
