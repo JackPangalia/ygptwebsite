@@ -2,7 +2,7 @@ import OpenAI from "openai";
 import { Server } from 'ws';
 
 const openai = new OpenAI({
-  apiKey: "sk-proj-UMaIOOAaOrwqZE9ywxZVT3BlbkFJDrF4T4LLihprPFXnvP1U",
+  apiKey: "",
 });
 
 export default async function handler(req, res) {
