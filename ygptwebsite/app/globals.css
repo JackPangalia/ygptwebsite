@@ -17,25 +17,30 @@ html {
 
 /* HTML: <div class="loader"></div> */
 .loader {
-  height: 1.5rem;
-  width: 5.5rem;
-  aspect-ratio: 3;
-  --c:no-repeat linear-gradient(#27272a 0 0);
-  background:
-    var(--c) calc(0*100%/5) 50%,
-    var(--c) calc(1*100%/5) 50%,
-    var(--c) calc(2*100%/5) 50%,
-    var(--c) calc(3*100%/5) 50%,
-    var(--c) calc(4*100%/5) 50%,
-    var(--c) calc(5*100%/5) 50%;
-  background-size:calc(100%/6 + 1px) 50%;
-  animation: l19 1s infinite cubic-bezier(0.5,170,0.5,-170);
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
 }
-@keyframes l19 {
-    14.28% {background-position: calc(0*100%/5) 51%, calc(1*100%/5) 50%, calc(2*100%/5) 50%, calc(3*100%/5) 50%, calc(4*100%/5) 50%, calc(5*100%/5) 50%}
-    28.57% {background-position: calc(0*100%/5) 50%, calc(1*100%/5) 51%, calc(2*100%/5) 50%, calc(3*100%/5) 50%, calc(4*100%/5) 50%, calc(5*100%/5) 50%}
-    42.85% {background-position: calc(0*100%/5) 50%, calc(1*100%/5) 50%, calc(2*100%/5) 51%, calc(3*100%/5) 50%, calc(4*100%/5) 50%, calc(5*100%/5) 50%}
-    57.14% {background-position: calc(0*100%/5) 50%, calc(1*100%/5) 50%, calc(2*100%/5) 50%, calc(3*100%/5) 51%, calc(4*100%/5) 50%, calc(5*100%/5) 50%}
-    71.42% {background-position: calc(0*100%/5) 50%, calc(1*100%/5) 50%, calc(2*100%/5) 50%, calc(3*100%/5) 50%, calc(4*100%/5) 51%, calc(5*100%/5) 50%}
-    85.71% {background-position: calc(0*100%/5) 50%, calc(1*100%/5) 50%, calc(2*100%/5) 50%, calc(3*100%/5) 50%, calc(4*100%/5) 50%, calc(5*100%/5) 51%}
+.loader::before,
+.loader::after {    
+  content:"";
+  grid-area: 1/1;
+  --c:no-repeat radial-gradient(farthest-side,#25b09b 92%,#0000);
+  background: 
+    var(--c) 50%  0, 
+    var(--c) 50%  100%, 
+    var(--c) 100% 50%, 
+    var(--c) 0    50%;
+  background-size: 12px 12px;
+  animation: l12 1s infinite;
+}
+.loader::before {
+  margin: 4px;
+  filter: hue-rotate(45deg);
+  background-size: 8px 8px;
+  animation-timing-function: linear
+}
+
+@keyframes l12 { 
+  100%{transform: rotate(.5turn)}
 }

@@ -5,10 +5,11 @@ import ChatResponseLoading from "../components/ChatResponseLoading";
 import { useState, useEffect, useRef } from "react";
 
 const Chatbot = () => {
-  // VARIBLES
+  // VARIABLES
   const [prompt, setPrompt] = useState("");
   const [chatLogs, setChatLogs] = useState([]);
   const [chatResponseLoading, setChatResponseLoading] = useState(false);
+  const [threadId, setThreadId] = useState(null);
   const chatContainerRef = useRef(null);
 
   const getChatResponse = async () => {
@@ -19,11 +20,12 @@ const Chatbot = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(prompt),
+        body: JSON.stringify({ prompt, threadId }),
       });
 
       const data = await chatResponse.json();
       const assistantMessage = data.payload;
+      setThreadId(data.threadId); // Save the threadId from the response
       setChatLogs((prevLogs) => [...prevLogs, assistantMessage]);
     } catch (error) {
       console.log(error);
@@ -58,22 +60,22 @@ const Chatbot = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
       <div
-        className="flex flex-col gap-6 h-[74vh] overflow-y-auto"
+        className="flex flex-col gap-6 h-[74vh] overflow-y-auto text-lg "
         ref={chatContainerRef}
       >
         {chatLogs.map((chatItem, index) => {
           if (isEven(index) === true) {
-            return <Userprompt text={chatItem} />;
+            return <Userprompt key={index} text={chatItem} />;
           }
           if (isEven(index) === false) {
-            return <Assistantresponse text={chatItem} />;
+            return <Assistantresponse key={index} text={chatItem} />;
           }
         })}
         {chatResponseLoading && <ChatResponseLoading />}
 
         {chatLogs.length < 1 && (
           <div className="space-x-5 m-auto">
-            <h4 className = 'mx-auto w-fit mb-5'>Designed To Help You Explore.</h4>
+            <h4 className='mx-auto w-fit mb-5'>Designed To Help You Explore.</h4>
             <button className=" p-3 border-gray-500 border-[1px] border-dashed w-[10rem]">
               <svg
                 baseProfile="tiny"
@@ -146,12 +148,12 @@ const Chatbot = () => {
           </div>
         )}
       </div>
-      <div className="flex justify-center w-[767px] bg-zinc-100 mx-auto py-3 px-5 rounded-xl items-center mb-10">
+      <div className="flex justify-center w-[767px] bg-zinc-100 mx-auto py-3 px-6 rounded-xl items-center mb-10">
         <input
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
           onKeyDown={handleKeyPress}
-          className="w-full outline-none bg-transparent"
+          className="w-full outline-none bg-transparent text-lg"
           placeholder="How can we help"
         />
         <button

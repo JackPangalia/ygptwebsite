@@ -1,5 +1,4 @@
 import OpenAI from "openai";
-import { Server } from 'ws';
 
 const openai = new OpenAI({
   apiKey: "",
@@ -7,19 +6,24 @@ const openai = new OpenAI({
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const prompt = req.body;
+    const { prompt, threadId } = req.body;
 
     console.log(prompt);
-    // assistant id varible
+    // assistant id variable
     const assistantId = "asst_WDSPX49YUUJxDG1677RoRQMo";
 
     // retrieve the assistant
     const assistant = await openai.beta.assistants.retrieve(assistantId);
 
-    // create a new thread for the assistant
-    const thread = await openai.beta.threads.create();
+    // use existing threadId or create a new thread
+    let thread;
+    if (threadId) {
+      thread = { id: threadId };
+    } else {
+      thread = await openai.beta.threads.create();
+    }
 
-    // create a message for the assistatn
+    // create a message for the assistant
     const message = await openai.beta.threads.messages.create(thread.id, {
       role: "user",
       content: prompt,
@@ -30,19 +34,16 @@ export default async function handler(req, res) {
       assistant_id: assistant.id,
     });
 
-    // list the most recent run and return send it as a resposne
+    // list the most recent run and return send it as a response
     if (run.status === "completed") {
       const messages = await openai.beta.threads.messages.list(run.thread_id);
       const responses = messages.data.map(
         (message) => message.content[0].text.value
       );
       const aires = responses[0];
-      console.log(aires)
-      res.status(200).json({ payload: aires });
+      res.status(200).json({ payload: aires, threadId: thread.id });
     } else {
       res.status(500).json({ payload: "error" });
     }
-
-    // res.status(200).json({ payload: "hello there" });
   }
 }
