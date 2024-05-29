@@ -8,7 +8,7 @@ const Navbar = () => {
       >
         <div>
           <Link href="/" className="text-xl">
-            Auxin
+            Centonis
           </Link>
         </div>
 

@@ -25,7 +25,7 @@ const Footer = () => {
           </svg>
         </div>
         <div className="flex flex-col">
-          <span className="">© 2024 companyname* technologies Inc</span>
+          <span className="">© 2024 Centonis technologies Inc</span>
           <span>
             <svg
               viewBox="0 0 500 1000"

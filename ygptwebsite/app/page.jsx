@@ -8,11 +8,11 @@ const Home = () => {
   return (
     <>
       <div className="pt-[8rem]">
-        <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
+        <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto ">
           <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
             AI Tailored For Your Business
           </h1>
-          <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20 mt-14 text-gray-500 ml-auto xl:w-[50%] lg:w-[66%] ">
+          <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[65%] lg:w-[66%] ">
             Unlock your business&apos;s potential with our custom AI solutions.
             Tailored to meet your unique needs, our expert team ensures seamless
             implementation and enhanced productivity. Experience AI done right,
@@ -162,7 +162,7 @@ const Home = () => {
 
         <section className="bg-black py-20 sm:py-52  text-white">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
-            <h2 className="mb-4 xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text w-fit font-[500]">
+            <h2 className="w-[80%] mb-4 xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text font-[500]">
               Learn More About Us With AI
             </h2>
             <p className="mb-10 sm:w-1/2 sm:text-md  text-gray-500">
@@ -181,7 +181,7 @@ const Home = () => {
 
         <section className="w-full border-b-[1px] border-black sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto" id="benifits">
           <h2 className="sm:text-5xl text-4xl sm:w-1/2 mb-16">
-            What Makes Auxin Platforms So Powerful
+            What Makes Centonis Platforms So Powerful
           </h2>
 
           <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14">

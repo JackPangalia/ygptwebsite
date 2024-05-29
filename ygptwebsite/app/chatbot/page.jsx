@@ -60,7 +60,7 @@ const Chatbot = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
       <div
-        className="flex flex-col gap-6 sm:h-[74vh] h-[75vh] overflow-y-auto text-lg"
+        className="flex flex-col gap-6 sm:h-[74vh] h-[75vh] overflow-y-auto md:text-xl text-lg"
         ref={chatContainerRef}
       >
         {chatLogs.map((chatItem, index) => {
@@ -155,7 +155,7 @@ const Chatbot = () => {
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
           onKeyDown={handleKeyPress}
-          className="w-full outline-none bg-transparent text-lg"
+          className="w-full outline-none bg-transparent md:text-xl text-lg"
           placeholder="How can we help"
         />
         <button
