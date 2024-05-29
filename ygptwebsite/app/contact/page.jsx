@@ -12,20 +12,6 @@ const Contact = () => {
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
 
-  // function to check if the user entered a valid email
-  function isValidEmail(email) {
-    // Regular expression to validate email addresses
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
-
-  // function to check if the phone number is valid
-  function isValidPhoneNumber(phoneNumber) {
-    // Regular expression to validate phone numbers
-    const phoneRegex = /^\+?[1-9]\d{1,14}$/;
-    return phoneRegex.test(phoneNumber);
-  }
-
   // Function to add the data into the database
   const addInfo = async () => {
     try {
@@ -46,7 +32,7 @@ const Contact = () => {
 
   // addInfo()
   return (
-    <div className="p-[8rem] flex">
+    <div className="sm:py-[8rem] py-[9.5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem]">
       <div className="w-1/2 my-auto">
         <h1 className="text-7xl mb-4">Get Started</h1>
         <p>Interested in solving your problems with us</p>

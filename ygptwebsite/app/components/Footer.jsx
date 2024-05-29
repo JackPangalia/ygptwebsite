@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={`flex mt-44 gap-24 lg:px-[3rem] max-w-[1500px] mx-auto pb-[6rem]`}>
+    <footer className={`flex sm:flex-row flex-col sm:mt-44 mt-20 sm:gap-24 gap-10 sm:px-[3rem] px-[2rem] max-w-[1500px] mx-auto pb-[6rem]`}>
       <div>
         <div className="flex gap-2 mb-3">
           <svg
@@ -38,6 +38,7 @@ const Footer = () => {
             </svg>
             Vancouver, BC
           </span>
+          <span>@ jackpangalia@gmail.com</span>
         </div>
       </div>
 
@@ -45,43 +46,16 @@ const Footer = () => {
         <span className="text-gray-500 text-sm">DOCUMENTS</span>
         <ul className="mt-3 space-y-2">
           <li>
-            <Link href="#">document item 1*</Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="#">document item 2*</Link>
+            <Link href="/contact">AI</Link>
           </li>
           <li>
-            <Link href="#">document item 3*</Link>
+            <Link href="/contact">Services</Link>
           </li>
           <li>
-            <Link href="#">document item 4*</Link>
-          </li>
-          <li>
-            <Link href="#">document item 5*</Link>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <span className="text-gray-500 text-sm">CAPABILITIES</span>
-        <ul className="mt-3 space-y-2">
-          <li>
-            <Link href="#">capabilities item 1*</Link>
-          </li>
-          <li>
-            <Link href="#">capabilities item 2*</Link>
-          </li>
-          <li>
-            <Link href="#">capabilities item 3*</Link>
-          </li>
-          <li>
-            <Link href="#">capabilities item 4*</Link>
-          </li>
-          <li>
-            <Link href="#">capabilities item 5*</Link>
-          </li>
-          <li>
-            <Link href="#">capabilities item 5*</Link>
+            <Link href="/contact">Benifits</Link>
           </li>
         </ul>
       </div>

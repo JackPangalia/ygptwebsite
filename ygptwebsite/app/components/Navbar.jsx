@@ -8,19 +8,19 @@ const Navbar = () => {
       >
         <div>
           <Link href="/" className="text-xl">
-            Company Name
+            Auxin
           </Link>
         </div>
 
         <nav>
           <ul className="flex text-zinc-500 text-lg items-center ">
-            <li className="text-sm hover:text-black trasition-all duration-150">
+            <li className="text-sm hover:text-black trasition-all duration-150 sm:block hidden">
               <Link href="#services">Services</Link>
             </li>
-            <li className="text-sm hover:text-black trasition-all duration-150 ml-4">
+            <li className="text-sm hover:text-black trasition-all duration-150 ml-4 sm:block hidden">
               <Link href="#benifits">Benifits</Link>
             </li>
-            <li className = 'mr-4 ml-10'>
+            <li className = 'mr-4 sm:ml-10 sm:mt-0 mt-4'>
               <Link
                 href="/contact"
                 className="border-black border-[1px] text-black px-6 py-2 text-sm border-dashed hover:bg-black hover:text-white transition-all duration-300"
@@ -28,7 +28,7 @@ const Navbar = () => {
                 Work With Us
               </Link>
             </li>
-            <li>
+            <li className = 'sm:mt-0 mt-4'>
               <Link
                 href="/chatbot"
                 className="border-black border-[1px] text-black px-6 py-2 text-sm border-dashed hover:bg-black hover:text-white transition-all duration-300"
