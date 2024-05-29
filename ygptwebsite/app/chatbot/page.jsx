@@ -71,11 +71,13 @@ const Chatbot = () => {
             return <Assistantresponse key={index} text={chatItem} />;
           }
         })}
-        {chatResponseLoading && <ChatResponseLoading /> }
+        {chatResponseLoading && <ChatResponseLoading />}
 
         {chatLogs.length < 1 && (
           <div className="m-auto">
-            <h4 className='mx-auto w-fit mb-5'>Designed To Help You Explore.</h4>
+            <h4 className="mx-auto w-fit mb-5">
+              Designed To Help You Explore.
+            </h4>
             <button className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] hidden lg:inline mx-2">
               <svg
                 baseProfile="tiny"
@@ -142,7 +144,7 @@ const Chatbot = () => {
                 <path d="M2 5.5V3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V19h18V7.3l-8 7.2-10-9zM0 10h5v2H0v-2zm0 5h8v2H0v-2z" />
               </svg>
               <p className="text-start text-gray-500 mt-2 text-sm">
-                Let's Get In Contact!
+                Let&apos;s Get In Contact!
               </p>
             </button>
           </div>

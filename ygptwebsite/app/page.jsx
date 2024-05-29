@@ -13,7 +13,7 @@ const Home = () => {
             AI Tailored For Your Business.
           </h1>
           <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20 mt-14 text-gray-500 ml-auto xl:w-[50%] lg:w-[66%] ">
-            Unlock your business's potential with our custom AI solutions.
+            Unlock your business&apos;s potential with our custom AI solutions.
             Tailored to meet your unique needs, our expert team ensures seamless
             implementation and enhanced productivity. Experience AI done right,
             with a focus on quality and results.
@@ -218,7 +218,7 @@ const Home = () => {
             />
             <Keypoint
               title="Constant Updates"
-              paragraph="We always looking for ways to better your custom AI experience "
+              paragraph="We always looking for ways to better your custom AI experience"
               exploretopic="Value"
             />
             <Keypoint
