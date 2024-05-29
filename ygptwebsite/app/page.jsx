@@ -9,8 +9,8 @@ const Home = () => {
     <>
       <div className="pt-[8rem]">
         <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
-          <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-semibold">
-            AI Tailored For Your Business.
+          <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
+            AI Tailored For Your Business
           </h1>
           <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20 mt-14 text-gray-500 ml-auto xl:w-[50%] lg:w-[66%] ">
             Unlock your business&apos;s potential with our custom AI solutions.
@@ -44,7 +44,7 @@ const Home = () => {
                 </p>
                 <Link
                   href="/chatbot"
-                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white"
+                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
                 </Link>
@@ -67,7 +67,7 @@ const Home = () => {
                 </p>
                 <Link
                   href="/chatbot"
-                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white"
+                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
                 </Link>
@@ -90,7 +90,7 @@ const Home = () => {
                 </p>
                 <Link
                   href="/chatbot"
-                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white"
+                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
                 </Link>
@@ -112,7 +112,7 @@ const Home = () => {
                 </p>
                 <Link
                   href="/chatbot"
-                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white"
+                  className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
                 </Link>
@@ -123,7 +123,6 @@ const Home = () => {
 
         <section
           className="w-full max-w-[1500px] mx-auto py-20 sm:py-28"
-          id="benifits"
         >
           <h2 className="sm:text-5xl text-4xl mb-4 px-[2rem]">
             Why Implement AI?
@@ -163,7 +162,7 @@ const Home = () => {
 
         <section className="bg-black py-20 sm:py-52  text-white">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
-            <h2 className="mb-4 xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text w-fit font-semibold">
+            <h2 className="mb-4 xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text w-fit font-[500]">
               Learn More About Us With AI
             </h2>
             <p className="mb-10 sm:w-1/2 sm:text-md  text-gray-500">
@@ -180,7 +179,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full border-b-[1px] border-black sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto">
+        <section className="w-full border-b-[1px] border-black sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto" id="benifits">
           <h2 className="sm:text-5xl text-4xl sm:w-1/2 mb-16">
             What Makes Auxin Platforms So Powerful
           </h2>
