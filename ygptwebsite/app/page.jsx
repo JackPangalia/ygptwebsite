@@ -164,7 +164,7 @@ const Home = () => {
         <section className="bg-black py-20 sm:py-52  text-white">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
             <h2 className="mb-4 xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text w-fit font-semibold">
-              Learn More About With With AI
+              Learn More About Us With AI
             </h2>
             <p className="mb-10 sm:w-1/2 sm:text-md  text-gray-500">
               Lorem ipsum dolor, sit amet consecteturm perspiciatis vero illo
