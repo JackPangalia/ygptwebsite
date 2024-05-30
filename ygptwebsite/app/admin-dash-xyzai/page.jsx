@@ -23,7 +23,7 @@ const Dash = () => {
       <span className="block mt-10 text-red-400 mb-4 text-lg font-[400]">
         Inquiries
       </span>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-4 gap-5">
         {inquiries.map((inquiry, index) => {
           return (
             <Userprofile

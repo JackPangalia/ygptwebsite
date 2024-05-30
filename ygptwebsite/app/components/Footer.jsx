@@ -49,13 +49,13 @@ const Footer = () => {
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/contact">AI</Link>
+            <Link href="/chatbot">AI</Link>
           </li>
           <li>
-            <Link href="/contact">Services</Link>
+            <Link href="#services">Services</Link>
           </li>
           <li>
-            <Link href="/contact">Benifits</Link>
+            <Link href="#benifits">Benifits</Link>
           </li>
         </ul>
       </div>
