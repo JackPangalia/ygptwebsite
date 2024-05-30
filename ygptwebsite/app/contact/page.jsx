@@ -11,7 +11,9 @@ const Contact = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
-  const [isValidInformation, setValidInformation] = useState(false);
+  const [isValidInformation, setValidInformation] = useState(true);
+  const [missingInfo, setMissingInfo] = useState('');
+  const [isSent, setSent] = useState(false);
 
   function isValidEmail(email) {
     // Define the regex pattern for a valid email address
@@ -28,6 +30,23 @@ const Contact = () => {
     // Test the phone number against the pattern
     return phonePattern.test(phoneNumber);
   }
+
+  // function to return if there is missing info and what info is missing
+  // const isContactMissingInfo = () => {
+  //   if (!isValidEmail(email)) {
+  //     setMissingInfo('Email is not valid or missing')
+  //   } if (!isValidPhoneNumber) {
+  //     setMissingInfo('Phone number is not valid or missing')
+  //   } if (firstName.length > 0) {
+  //     setMissingInfo('First name is missing')
+  //   } if (lastName.length > 0) {
+  //     setMissingInfo('Last name is missing')
+  //   } if (company.length > 0) {
+  //     setMissingInfo('Company is missing')
+  //   } if (message.length > 0) {
+  //     setMissingInfo('Message is missing')
+  //   } 
+  // };
 
   // Function to add the data into the database
   const addInfo = async () => {
@@ -50,10 +69,13 @@ const Contact = () => {
         });
 
         setValidInformation(true);
+        setSent(true);
       } else {
         setValidInformation(false);
       }
     } catch (error) {
+      alert('There was an error sending the message')
+      setSent(false);
       console.log(error);
     }
   };
@@ -63,18 +85,18 @@ const Contact = () => {
     <div>
       <div
         className={`bg-black flex-col gap-2 h-screen justify-center items-center ${
-          isValidInformation ? "flex" : "hidden"
+          isSent ? "flex" : "hidden"
         }`}
       >
         <h2 className="text-white text-2xl">Your Message Has Been Sent</h2>
         <p className="text-gray-500">We will get back to you shortly</p>
         <div className="firework"></div>
         <div className="firework"></div>
-        <div className="firework"></div>
+
       </div>
       <div
         className={`sm:py-[8rem] py-[9.5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem] ${
-          isValidInformation ? "hidden" : "flex"
+          isSent ? "hidden" : "flex"
         }`}
       >
         {/* <div className = 'flex '>hello</div> */}
@@ -83,8 +105,13 @@ const Contact = () => {
           <p>Interested in solving your problems with us</p>
         </div>
         <div className="flex flex-col mt-20 w-full gap-6">
-          {/* <span className = 'text-red-400'>error</span> */}
-
+          <span
+            className={`text-red-500 ${
+              isValidInformation ? "hidden" : "block"
+            }`}
+          >
+            missing information
+          </span>
           <div className="flex flex-col">
             <div className="flex items-center gap-3">
               <label>First Name</label>

@@ -21,7 +21,7 @@ const Dash = () => {
       <span className="text-2xl">Centonis Secure Admin Dashboard</span>
 
       <span className="block mt-10 text-red-400 mb-4 text-lg font-[400]">
-        New Inquiries
+        Inquiries
       </span>
       <div className="grid grid-cols-2 gap-5">
         {inquiries.map((inquiry, index) => {
@@ -37,11 +37,6 @@ const Dash = () => {
           );
         })}
       </div>
-
-      <span className="block mt-10 text-green-400 text-lg mb-4 font-[400]">
-        Proccessed Inquiries
-      </span>
-      <div className="grid grid-cols-4 gap-5"></div>
     </div>
   );
 };

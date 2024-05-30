@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Keypoint from "./components/Keypoint";
 import Contactpanel from "./components/contactpanel";
@@ -43,7 +42,9 @@ const Home = () => {
                   communication.
                 </p>
                 <Link
-                  href="/chatbot"
+                  href= {{
+                    pathname: '/chatbotdevelopment',
+                  }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
@@ -66,7 +67,9 @@ const Home = () => {
                   efficiently.
                 </p>
                 <Link
-                  href="/chatbot"
+                  href={{
+                    pathname: "/autonomousagents",
+                  }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
@@ -89,7 +92,9 @@ const Home = () => {
                   technologies.
                 </p>
                 <Link
-                  href="/chatbot"
+                  href= {{
+                    pathname: "/enterpriseconsulting",
+                  }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More
@@ -111,7 +116,9 @@ const Home = () => {
                   Systems to analyze and visualize data, providing insights and
                 </p>
                 <Link
-                  href="/chatbot"
+                  href = {{
+                    pathname: "/dataanalysis",
+                  }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
                   Learn More

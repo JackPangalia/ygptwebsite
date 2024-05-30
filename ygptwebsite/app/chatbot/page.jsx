@@ -11,8 +11,7 @@ const Chatbot = () => {
   const [chatResponseLoading, setChatResponseLoading] = useState(false);
   const [threadId, setThreadId] = useState(null);
   const chatContainerRef = useRef(null);
-
-  const getChatResponse = async () => {
+  const getChatResponse = async (prompt) => {
     setChatResponseLoading(true);
     try {
       const chatResponse = await fetch("/api/assistant", {
@@ -34,10 +33,18 @@ const Chatbot = () => {
     }
   };
 
-  const handleSendMessage = () => {
+  const preDefinedPrompt = (prompt) => {
     setChatLogs((prevLogs) => [...prevLogs, prompt]);
-    getChatResponse();
+    getChatResponse(prompt);
     setPrompt("");
+  };
+
+  const handleSendMessage = () => {
+    if (prompt.length > 0 && chatResponseLoading === false) {
+      setChatLogs((prevLogs) => [...prevLogs, prompt]);
+      getChatResponse(prompt);
+      setPrompt("");
+    }
   };
 
   const handleKeyPress = (event) => {
@@ -78,7 +85,10 @@ const Chatbot = () => {
             <h4 className="mx-auto w-fit mb-5">
               Designed To Help You Explore.
             </h4>
-            <button className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] hidden lg:inline mx-2">
+            <button
+              className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] hidden lg:inline mx-2 hover:bg-zinc-100 transition-all duration-150"
+              onClick={() => preDefinedPrompt("What Services Do You Offer?")}
+            >
               <svg
                 baseProfile="tiny"
                 viewBox="0 0 24 24"
@@ -91,12 +101,12 @@ const Chatbot = () => {
                 <path d="M18 10.5 A2 2 0 0 1 16 12.5 A2 2 0 0 1 14 10.5 A2 2 0 0 1 18 10.5 z" />
                 <path d="M16 13.356c-1.562 0-2.5.715-2.5 1.429 0 .357.938.715 2.5.715 1.466 0 2.5-.357 2.5-.715 0-.714-.98-1.429-2.5-1.429z" />
               </svg>
-              <p className="text-start text-gray-500 mt-2 text-sm">
+              <p className="text-start text-gray-500 mt-2 text-sm ">
                 What Services Do You Offer?
               </p>
             </button>
 
-            <button className=" p-3 border-gray-500 border-[1px] border-dashed w-[10rem]  hidden lg:inline mx-2">
+            <button className=" p-3 border-gray-500 border-[1px] border-dashed w-[10rem]  hidden lg:inline mx-2 hover:bg-zinc-100 transition-all duration-150" onClick={() => preDefinedPrompt("Tell Me About This AI?")}>
               <svg
                 fill="currentColor"
                 viewBox="0 0 16 16"
@@ -112,7 +122,7 @@ const Chatbot = () => {
               </p>
             </button>
 
-            <button className=" p-3 border-gray-500 border-[1px] border-dashed w-[10rem] mx-2">
+            <button className=" p-3 border-gray-500 border-[1px] border-dashed w-[10rem] mx-2 hover:bg-zinc-100 transition-all duration-150" onClick={() => preDefinedPrompt("Tell Me About Your Company?")}>
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -132,7 +142,7 @@ const Chatbot = () => {
               </p>
             </button>
 
-            <button className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] mx-2">
+            <button className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] mx-2 hover:bg-zinc-100 transition-all duration-150" onClick={() => preDefinedPrompt("How Can You Help My Business?")}>
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -144,7 +154,7 @@ const Chatbot = () => {
                 <path d="M2 5.5V3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V19h18V7.3l-8 7.2-10-9zM0 10h5v2H0v-2zm0 5h8v2H0v-2z" />
               </svg>
               <p className="text-start text-gray-500 mt-2 text-sm">
-                Let&apos;s Get In Contact!
+                How Can You Help My Business
               </p>
             </button>
           </div>
