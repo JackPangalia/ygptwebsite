@@ -6,20 +6,22 @@ import Footer from "./components/Footer";
 const Home = () => {
   return (
     <>
-      <div className="pt-[8rem]">
-        <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto ">
-          <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
-            AI Tailored For Your Business
-          </h1>
-          <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[65%] lg:w-[66%] ">
-            Unlock your business&apos;s potential with our custom AI solutions.
-            Tailored to meet your unique needs, our expert team ensures seamless
-            implementation and enhanced productivity. Experience AI done right,
-            with a focus on quality and results.
-          </h3>
+      <div className="">
+        <section className = 'bg-gray-200 pt-[9rem]'>
+          <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
+            <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
+              AI Tailored For Your Business
+            </h1>
+            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[65%] lg:w-[66%] ">
+              Unlock your business&apos;s potential with our custom AI
+              solutions. Tailored to meet your unique needs, our expert team
+              ensures seamless implementation and enhanced productivity.
+              Experience AI done right, with a focus on quality and results.
+            </h3>
+          </div>
         </section>
 
-        <section className="bg-black md:py-32 py-20 md:mt-40 mt-24 text-white">
+        <section className="bg-black md:py-32 py-20  text-white">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
             <h2 className="sm:text-5xl text-4xl" id="services">
               Our Services
@@ -42,8 +44,8 @@ const Home = () => {
                   communication.
                 </p>
                 <Link
-                  href= {{
-                    pathname: '/chatbotdevelopment',
+                  href={{
+                    pathname: "/chatbotdevelopment",
                   }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
                 >
@@ -92,7 +94,7 @@ const Home = () => {
                   technologies.
                 </p>
                 <Link
-                  href= {{
+                  href={{
                     pathname: "/enterpriseconsulting",
                   }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
@@ -116,7 +118,7 @@ const Home = () => {
                   Systems to analyze and visualize data, providing insights and
                 </p>
                 <Link
-                  href = {{
+                  href={{
                     pathname: "/dataanalysis",
                   }}
                   className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-150"
@@ -128,9 +130,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section
-          className="w-full max-w-[1500px] mx-auto py-20 sm:py-28"
-        >
+        <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-28">
           <h2 className="sm:text-5xl text-4xl mb-4 px-[2rem]">
             Why Implement AI?
           </h2>
@@ -186,7 +186,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full border-b-[1px] border-black sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto" id="benifits">
+        <section
+          className="w-full border-b-[1px] border-black sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto"
+          id="benifits"
+        >
           <h2 className="sm:text-5xl text-4xl sm:w-1/2 mb-16">
             What Makes Centonis Platforms So Powerful
           </h2>

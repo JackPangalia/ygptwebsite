@@ -31,23 +31,6 @@ const Contact = () => {
     return phonePattern.test(phoneNumber);
   }
 
-  // function to return if there is missing info and what info is missing
-  // const isContactMissingInfo = () => {
-  //   if (!isValidEmail(email)) {
-  //     setMissingInfo('Email is not valid or missing')
-  //   } if (!isValidPhoneNumber) {
-  //     setMissingInfo('Phone number is not valid or missing')
-  //   } if (firstName.length > 0) {
-  //     setMissingInfo('First name is missing')
-  //   } if (lastName.length > 0) {
-  //     setMissingInfo('Last name is missing')
-  //   } if (company.length > 0) {
-  //     setMissingInfo('Company is missing')
-  //   } if (message.length > 0) {
-  //     setMissingInfo('Message is missing')
-  //   } 
-  // };
-
   // Function to add the data into the database
   const addInfo = async () => {
     try {

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full px-[2rem] md:px-[4rem] lg:px-[8rem] bg-white py-[2rem] flex sm:flex-row flex-col justify-between`}
+        className={`fixed top-0 w-full px-[2rem] md:px-[4rem] bg-white lg:px-[8rem] py-[2rem] flex sm:flex-row flex-col justify-between`}
       >
         <div>
           <Link href="/" className="text-xl">

@@ -11,6 +11,7 @@ const Chatbot = () => {
   const [chatResponseLoading, setChatResponseLoading] = useState(false);
   const [threadId, setThreadId] = useState(null);
   const chatContainerRef = useRef(null);
+  const [messages, setMessages] = useState([]);
   const getChatResponse = async (prompt) => {
     setChatResponseLoading(true);
     try {
