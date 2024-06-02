@@ -40,7 +40,7 @@ const Home = () => {
                 </svg>
                 <h4 className=" text-2xl mb-4 ">Chat Bot Development</h4>
                 <p className="sm:text-lg text-sm mb-8 ">
-                  Intelligent and personalized chat-bots to automate tasked to
+                  Intelligent and personalized chat bots to automate tasked to
                   boost productivity
                 </p>
                 <Link
@@ -151,7 +151,7 @@ const Home = () => {
             >
               <h4 className="text-2xl">Automation</h4>
               <p className="py-4">
-                Boost your company's output with efficient and reliable
+                Boost your company&apos;s output with efficient and reliable
                 automation solutions.
               </p>
             </div>
