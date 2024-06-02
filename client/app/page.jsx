@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <div className="">
-        <section className = 'bg-white pt-[9rem]'>
+        <section className="bg-white pt-[9rem] relative">
           <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
             <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
               AI Tailored For Your Business
@@ -40,8 +40,8 @@ const Home = () => {
                 </svg>
                 <h4 className=" text-2xl mb-4 ">Chat Bot Development</h4>
                 <p className="sm:text-lg text-sm mb-8 ">
-                  Intelligent bots to automate tasks and streamline client
-                  communication.
+                  Intelligent and personalized chat-bots to automate tasked to
+                  boost productivity
                 </p>
                 <Link
                   href={{
@@ -65,8 +65,8 @@ const Home = () => {
                 </svg>
                 <h4 className="text-2xl mb-4 ">Autonomous Agents</h4>
                 <p className="sm:text-lg text-sm mb-8 ">
-                  Agents that integrate with your system to perform tasks
-                  efficiently.
+                  Programs that integrate with your system, streamlining your
+                  business
                 </p>
                 <Link
                   href={{
@@ -115,7 +115,8 @@ const Home = () => {
                 </svg>
                 <h4 className="text-2xl  mb-4">Data Analysis</h4>
                 <p className="sm:text-lg text-sm  mb-8">
-                  Systems to analyze and visualize data, providing insights and
+                  Systems to analyze and visualize data, providing new useful
+                  insights
                 </p>
                 <Link
                   href={{
@@ -141,7 +142,17 @@ const Home = () => {
               <h4 className="text-2xl">Increase Efficiency</h4>
               <p className="py-4">
                 Streamline your operations and boost productivity with AI-driven
-                automation.
+                advancements.
+              </p>
+            </div>
+
+            <div
+              className={`min-w-[22rem] flex flex-col justify-between py-10 sm:pl-0 pl-10`}
+            >
+              <h4 className="text-2xl">Automation</h4>
+              <p className="py-4">
+                Boost your company's output with efficient and reliable
+                automation solutions.
               </p>
             </div>
 
@@ -160,8 +171,7 @@ const Home = () => {
             >
               <h4 className="text-2xl">Foster Innovation</h4>
               <p className="py-4">
-                Gain a competitive edge by developing new products and services
-                using AI insights.
+                Gain a competitive edge by always staying on the forefront of AI
               </p>
             </div>
           </div>
@@ -173,9 +183,10 @@ const Home = () => {
               Learn More About Us With AI
             </h2>
             <p className="mb-10 sm:w-1/2 sm:text-md  text-gray-500">
-              Lorem ipsum dolor, sit amet consecteturm perspiciatis vero illo
-              placeat consequatur voluptatem quaerat assumenda tenetur dolores.
-              Molestiae, asperiores voluptatum.
+              Explore the potential of AI and find the best solutions for your
+              business through Centonis&apos;s innovative website chatbot. Discover
+              how our technology can transform your operations and enhance
+              customer experiences.
             </p>
             <Link
               href="/chatbot"
@@ -197,32 +208,32 @@ const Home = () => {
           <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14">
             <Keypoint
               title="General & Specific Knowledge"
-              paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vero sequi magni, dolores similique delectus."
+              paragraph="We combine OpenAI&apos;s extensive network of data with your own company data in order to create a perfect response for whatever your use case is."
               exploretopic="Knowledge base"
             />
             <Keypoint
               title="Fine Tuning"
-              paragraph="Our Model Tuning service optimises your chatbot for precise, responsive, and accurate interactions."
+              paragraph="Our Model Tuning service optimises your AI for precise, responsive, and accurate responses"
               exploretopic="Fine Tuning"
             />
             <Keypoint
               title="Multi-Layered Security and Data"
-              paragraph="Custom AI platforms ensure security with robust encryption, strict access controls, and continuous monitoring to protect sensitive data."
+              paragraph="Custom AI platforms ensure security with strict access controls, and continuous monitoring to protect sensitive data."
               exploretopic="Security"
             />
             <Keypoint
               title="Day One Value"
-              paragraph="Our platforms are made to be used right away, not months, but days."
+              paragraph="Our platforms are made to hit the ground running straight from the go."
               exploretopic="Value"
             />
             <Keypoint
               title="Industry Leading AI"
-              paragraph="Get access to the latest and greatest AI tech within your platform"
+              paragraph="Get access to the latest and greatest AI models and technology within your platform"
               exploretopic="Value"
             />
             <Keypoint
               title="Proprietary & Tailored Platforms"
-              paragraph="We build your solution from the ground up to handle your businesses needs"
+              paragraph="We build your solution from the ground up to adjust and handle your businesses needs"
               exploretopic="Value"
             />
             <Keypoint
@@ -232,7 +243,7 @@ const Home = () => {
             />
             <Keypoint
               title="Full Integration"
-              paragraph="Our solutions have the scalability to potentially cover you business head to toe "
+              paragraph="Our solutions have the scalability to deeply incoperate into your business"
               exploretopic="Value"
             />
           </div>

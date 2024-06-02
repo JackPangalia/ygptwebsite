@@ -7,36 +7,43 @@ const Chatbotdevlopment = () => {
   return (
     <div className="pt-[8rem]">
       <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
-        <div className = 'w-full flex lg:flex-row flex-col gap-10'>
-          <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">Autononmous Agent Development</h1>
+        <div className="w-full flex lg:flex-row flex-col gap-10">
+          <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">
+            Autononmous Agent Development
+          </h1>
           <p className=" lg:w-1/2 w-full text-lg">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
-            dolore explicabo facere temporibus voluptate hic eos repellat.
-            Nesciunt nulla aperiam repellat fuga eveniet unde quisquam, nam
-            nobis neque quos quo aspernatur accusantium, voluptas, minus fugit.
+            We develop agents that seamlessly integrate with your existing
+            system and perform tasks on your behalf once approved. These agents
+            will enhance your workflow efficiency, significantly reducing the
+            overall time required to complete tasks and increasing productivity.
           </p>
-
         </div>
 
-        <Image src = '/nightskyline.jpg' alt = 'chat bot img' height = {2000} width = {2000} className = 'w-full mt-20 max-h-[800px] object-cover'/>
-
+        <Image
+          src="/nightskyline.jpg"
+          alt="chat bot img"
+          height={1700}
+          width={1700}
+          className="w-full mt-20 max-h-[800px] object-cover"
+        />
 
         <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 lg:mt-24 mt-14">
           <Keypoint
-            title="Latest AI Models"
-            paragraph="Our Model Tuning servipsum dolor sit amet, ce optimises your chatbot for precise, responsi"
+            title="Enhanced Efficiency and Productivity"
+            paragraph="Our autonomous agents execute tasks swiftly and accurately without human intervention, significantly reducing the time and effort required for routine and repetitive tasks. This leads to a substantial increase in overall productivity."
           />
           <Keypoint
-            title="Personalized"
-            paragraph="Our Model Tuning servipsum dolor sit amet, ce optimises your chatbot for precise, responsi"
+            title="Cost Optimization"
+            paragraph="By automating processes, our autonomous agents help lower labour costs and minimise errors, which can otherwise lead to expensive corrections or inefficiencies. Operating continuously without breaks, they enhance cost-effectiveness."
           />
           <Keypoint
-            title="Expansive Knowledge"
-            paragraph="Our Model Tuning servipsum dolor sit amet, ce optimises your chatbot for precise, responsi"
+            title="Consistency and Reliability"
+            paragraph="Autonomous agents ensure tasks are performed with consistent precision, adhering to predefined protocols and standards. This reduces variability and enhances the quality and reliability of outcomes."
           />
           <Keypoint
-            title="Fast"
-            paragraph="Our Model Tuning servipsum dolor sit amet, ce optimises your chatbot for precise, responsi"
+            title="Scalability and Flexibility: 
+            "
+            paragraph="Our autonomous agents can effortlessly scale to manage increased workloads without the need for proportional increases in human resources. They are also adaptable, capable of being reprogrammed to perform a variety of tasks, offering the flexibility to meet evolving business needs."
           />
         </div>
       </section>

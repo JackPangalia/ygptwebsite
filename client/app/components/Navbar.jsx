@@ -1,13 +1,17 @@
+'use client'
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Navbar = () => {
+  const pathname = usePathname()
+
   return (
     <>
       <header
         className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] bg-white lg:px-[8rem] py-[2rem] flex sm:flex-row flex-col justify-between`}
       >
         <div>
-          <Link href="/" className="text-xl">
+          <Link href="/" className="text-xl font-[500]">
             Centonis
           </Link>
         </div>
@@ -15,10 +19,10 @@ const Navbar = () => {
         <nav>
           <ul className="flex text-zinc-500 text-lg items-center ">
             <li className="text-sm hover:text-black trasition-all duration-150 sm:block hidden">
-              <Link href="#services">Services</Link>
+              <Link href={`${pathname === '/' ? '#services' : '/#services'}`}>Services</Link>
             </li>
             <li className="text-sm hover:text-black trasition-all duration-150 ml-4 sm:block hidden">
-              <Link href="#benifits">Benifits</Link>
+              <Link href={`${pathname === '/' ? '#benifits' : '/#benifits'}`}>benefits</Link>
             </li>
             <li className = 'mr-4 sm:ml-10 sm:mt-0 mt-4'>
               <Link

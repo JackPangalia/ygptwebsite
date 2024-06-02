@@ -16,42 +16,6 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [currentResponseIndex, setCurrentResponseIndex] = useState(null);
 
-  // const getChatResponse = async (prompt) => {
-  //   setChatResponseLoading(true);
-  //   try {
-  //     const chatResponse = await fetch("/api/assistant", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({ prompt, threadId }),
-  //     });
-
-  //     const data = await chatResponse.json();
-  //     const assistantMessage = data.payload;
-  //     setThreadId(data.threadId); // Save the threadId from the response
-  //     setChatLogs((prevLogs) => [...prevLogs, assistantMessage]);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setChatResponseLoading(false);
-  //   }
-  // };
-
-  // const preDefinedPrompt = (prompt) => {
-  //   setChatLogs((prevLogs) => [...prevLogs, prompt]);
-  //   getChatResponse(prompt);
-  //   setPrompt("");
-  // };
-
-  // const handleSendMessage = () => {
-  //   if (prompt.length > 0 && chatResponseLoading === false) {
-  //     setChatLogs((prevLogs) => [...prevLogs, prompt]);
-  //     getChatResponse(prompt);
-  //     setPrompt("");
-  //   }
-  // };
-
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       sendPrompt()
@@ -207,7 +171,7 @@ const Chatbot = () => {
           </div>
         )}
       </div>
-      <div className="flex justify-center w-[767px] max-w-[92%] bg-zinc-100 sm:mx-auto py-3 px-6 rounded-xl items-center lg:mb-10 md:mb-6 sm:mb-4  mx-4 ">
+      <div className="flex justify-center w-[767px] max-w-[92%] bg-zinc-100 sm:mx-auto py-3 px-6 rounded-xl items-center mb-10 ">
         <input
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
