@@ -184,7 +184,7 @@ const Home = () => {
             </h2>
             <p className="mb-10 sm:w-1/2 sm:text-md  text-gray-500">
               Explore the potential of AI and find the best solutions for your
-              business through Centonis&apos;s innovative website chatbot. Discover
+              business through the innovative Centonis website chatbot. Discover
               how our technology can transform your operations and enhance
               customer experiences.
             </p>
