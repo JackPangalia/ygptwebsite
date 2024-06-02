@@ -4,7 +4,7 @@ import Assistantresponse from "../components/Assistantresponse";
 import ChatResponseLoading from "../components/ChatResponseLoading";
 import { useState, useEffect, useRef } from "react";
 import io from 'socket.io-client'
-const socket = io.connect(("http://localhost:3001"))
+const socket = io.connect(("https://kgptserver-7f2c4c1b9377.herokuapp.com/"))
 
 const Chatbot = () => {
   // VARIABLES
