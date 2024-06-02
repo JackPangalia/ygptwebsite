@@ -32,7 +32,7 @@ const Chatbotdevlopment = () => {
         <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 lg:mt-24 mt-14">
           <Keypoint
             title="Competitive Advantage"
-            paragraph="Implementing advanced AI with our consultants gives Your Business a competitive edge. Stay ahead with innovative solutions, delivering superior value. Harness AI&apos;s full potential for innovation, efficiency, and enhanced experiences."
+            paragraph="Implementing advanced AI with our consultants gives Your Business a competitive edge. Stay ahead with innovative solutions, delivering superior value. Harness the full potential of AI to premote innovation, efficiency, and enhanced experiences."
           />
           <Keypoint
             title="Cost Savings and ROI Improvement"

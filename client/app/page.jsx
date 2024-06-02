@@ -208,7 +208,7 @@ const Home = () => {
           <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14">
             <Keypoint
               title="General & Specific Knowledge"
-              paragraph="We combine OpenAI&apos;s extensive network of data with your own company data in order to create a perfect response for whatever your use case is."
+              paragraph="We combine an extensive network of AI with your own company data in order to create a perfect response for whatever your use case is."
               exploretopic="Knowledge base"
             />
             <Keypoint

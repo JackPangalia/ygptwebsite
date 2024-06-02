@@ -5,6 +5,7 @@ import ChatResponseLoading from "../components/ChatResponseLoading";
 import { useState, useEffect, useRef } from "react";
 import io from 'socket.io-client'
 const socket = io.connect(("https://kgptserver-7f2c4c1b9377.herokuapp.com/"))
+// const socket = io.connect(("http://localhost:3001"))
 
 const Chatbot = () => {
   // VARIABLES
@@ -15,6 +16,7 @@ const Chatbot = () => {
   const chatContainerRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [currentResponseIndex, setCurrentResponseIndex] = useState(null);
+  const citationPattern = /【\d+:\d+†source】/g;
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -49,7 +51,8 @@ const Chatbot = () => {
       setChatLogs((prevLogs) => {
         const updatedLogs = prevLogs.map((log, index) => {
           if (index === currentResponseIndex) {
-            return { ...log, bot: log.bot + data.textDelta.value };
+            const cleanedText = data.textDelta.value.replace(citationPattern, '');
+            return { ...log, bot: log.bot + cleanedText };
           }
           return log;
         });
