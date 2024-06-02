@@ -13,7 +13,7 @@ const Chatbotdevlopment = () => {
           </h1>
           <p className=" lg:w-1/2 w-full text-lg">
             Leverage our expertise to devise and implement an effective strategy
-            for integrating this groundbreaking technology. We'll closely align
+            for integrating this groundbreaking technology. We&apos;ll closely align
             with your business goals, ensuring streamlined implementation and
             maximizing benefits. Partner with us for improved efficiency,
             productivity, and overall business performance, from planning to
