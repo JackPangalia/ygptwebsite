@@ -11,58 +11,62 @@ const Chatbot = () => {
   const [prompt, setPrompt] = useState("");
   const [chatLogs, setChatLogs] = useState([]);
   const [chatResponseLoading, setChatResponseLoading] = useState(false);
-  const [threadId, setThreadId] = useState(null);
+  const [chatResponseComplete, setChatResponseComplete] = useState(false)
   const chatContainerRef = useRef(null);
   const [messages, setMessages] = useState([]);
+  const [currentResponseIndex, setCurrentResponseIndex] = useState(null);
 
-  const getChatResponse = async (prompt) => {
-    setChatResponseLoading(true);
-    try {
-      const chatResponse = await fetch("/api/assistant", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt, threadId }),
-      });
+  // const getChatResponse = async (prompt) => {
+  //   setChatResponseLoading(true);
+  //   try {
+  //     const chatResponse = await fetch("/api/assistant", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ prompt, threadId }),
+  //     });
 
-      const data = await chatResponse.json();
-      const assistantMessage = data.payload;
-      setThreadId(data.threadId); // Save the threadId from the response
-      setChatLogs((prevLogs) => [...prevLogs, assistantMessage]);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setChatResponseLoading(false);
-    }
-  };
+  //     const data = await chatResponse.json();
+  //     const assistantMessage = data.payload;
+  //     setThreadId(data.threadId); // Save the threadId from the response
+  //     setChatLogs((prevLogs) => [...prevLogs, assistantMessage]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   } finally {
+  //     setChatResponseLoading(false);
+  //   }
+  // };
 
-  const preDefinedPrompt = (prompt) => {
-    setChatLogs((prevLogs) => [...prevLogs, prompt]);
-    getChatResponse(prompt);
-    setPrompt("");
-  };
+  // const preDefinedPrompt = (prompt) => {
+  //   setChatLogs((prevLogs) => [...prevLogs, prompt]);
+  //   getChatResponse(prompt);
+  //   setPrompt("");
+  // };
 
-  const handleSendMessage = () => {
-    if (prompt.length > 0 && chatResponseLoading === false) {
-      setChatLogs((prevLogs) => [...prevLogs, prompt]);
-      getChatResponse(prompt);
-      setPrompt("");
-    }
-  };
+  // const handleSendMessage = () => {
+  //   if (prompt.length > 0 && chatResponseLoading === false) {
+  //     setChatLogs((prevLogs) => [...prevLogs, prompt]);
+  //     getChatResponse(prompt);
+  //     setPrompt("");
+  //   }
+  // };
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      handleSendMessage();
+      sendPrompt()
     }
   };
 
-  const isEven = (number) => {
-    return number % 2 === 0;
-  };
-
   const sendPrompt = () => {
-    socket.emit('send_prompt', { prompt: 'hello from the frontend'})
+    socket.emit('send_prompt', { prompt: prompt})
+    setChatLogs((prevLogs) => {
+      const newLogs = [...prevLogs, { user: prompt, bot: '' }];
+      setCurrentResponseIndex(newLogs.length - 1); // Track the index of the new prompt
+      return newLogs;
+    });
+    setPrompt("")
+    setChatResponseLoading(true)
   }
 
   useEffect(() => {
@@ -70,28 +74,31 @@ const Chatbot = () => {
       console.log(data)
     })
 
-    socket.on('textCreated', (data) => {
-      console.log(data)
+    socket.on('responseComplete', () => {
+    })
+
+    socket.on('textCreated', () => {
+      setChatResponseLoading(false)
     })
 
     socket.on('textDelta', (data) => {
-      console.log(data.textDelta.value)
-    })
+      setChatLogs((prevLogs) => {
+        const updatedLogs = prevLogs.map((log, index) => {
+          if (index === currentResponseIndex) {
+            return { ...log, bot: log.bot + data.textDelta.value };
+          }
+          return log;
+        });
+        return updatedLogs;
+      });
+    });
 
-    socket.on('toolCallCreated', (data) => {
-      console.log(data)
-    })
-
-    socket.on('codeInterpreterInput', (data) => {
-      console.log(data)
-    })
-
-    socket.on('codeInterpreterLogs', (data) => {
-      console.log(data)
-    })
-
-    // socket.on('')
-  }, [socket])
+    return () => {
+      socket.off('send_message');
+      socket.off('textCreated');
+      socket.off('textDelta');
+    };
+  }, [currentResponseIndex])
 
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -102,20 +109,23 @@ const Chatbot = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
-      <button onClick = {sendPrompt}>send to fe</button>
+      {messages.map((message, index) => {
+        <li key = {index}>{message}</li>
+      })}
+      
       <div
         className="flex flex-col gap-6 sm:h-[74vh] h-[75vh] overflow-y-auto md:text-xl text-lg"
         ref={chatContainerRef}
       >
+
         {chatLogs.map((chatItem, index) => {
-          if (isEven(index) === true) {
-            return <Userprompt key={index} text={chatItem} />;
-          }
-          if (isEven(index) === false) {
-            return <Assistantresponse key={index} text={chatItem} />;
-          }
+          return <>
+            <Userprompt key={`${index}user`} text={chatItem.user} />
+            <Assistantresponse key={`${index}bot`} text={chatItem.bot} />
+            {/* {chatResponseLoading && <ChatResponseLoading key = {`${index}loading`}/>} */}
+          </>
         })}
-        {chatResponseLoading && <ChatResponseLoading />}
+
 
         {chatLogs.length < 1 && (
           <div className="m-auto">
@@ -197,7 +207,7 @@ const Chatbot = () => {
           </div>
         )}
       </div>
-      <div className="flex justify-center w-[767px] max-w-[92%] bg-zinc-100 sm:mx-auto py-3 px-6 rounded-xl items-center mb-10 mx-4">
+      <div className="flex justify-center w-[767px] max-w-[92%] bg-zinc-100 sm:mx-auto py-3 px-6 rounded-xl items-center lg:mb-10 md:mb-6 sm:mb-4  mx-4 ">
         <input
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}
@@ -207,7 +217,7 @@ const Chatbot = () => {
         />
         <button
           className="hover:text-gray-500 text-zinc-800 transition-all duration-150"
-          onClick={handleSendMessage}
+          onClick={sendPrompt}
         >
           <svg
             fill="none"
