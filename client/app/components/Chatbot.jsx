@@ -2,49 +2,55 @@
 import Userprompt from "../components/Userprompt";
 import Assistantresponse from "../components/Assistantresponse";
 import ChatResponseLoading from "../components/ChatResponseLoading";
+import ChatbotIntroCards from "./ChatbotIntroCards";
 import { useState, useEffect, useRef } from "react";
 import io from 'socket.io-client'
-const socket = io.connect(("https://kgptserver-7f2c4c1b9377.herokuapp.com/"))
-// const socket = io.connect(("http://localhost:3001"))
+// const socket = io.connect(("https://kgptserver-7f2c4c1b9377.herokuapp.com/"))
+const socket = io.connect(("http://localhost:3001"))
 
 const Chatbot = () => {
   // VARIABLES
   const [prompt, setPrompt] = useState("");
   const [chatLogs, setChatLogs] = useState([]);
   const [chatResponseLoading, setChatResponseLoading] = useState(false);
-  const [chatResponseComplete, setChatResponseComplete] = useState(false)
+  const [chatResponseComplete, setChatResponseComplete] = useState(true)
   const chatContainerRef = useRef(null);
   const [messages, setMessages] = useState([]);
   const [currentResponseIndex, setCurrentResponseIndex] = useState(null);
   const citationPattern = /【\d+:\d+†source】/g;
 
+  console.log('chat response loading: ', chatResponseComplete)
+
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && chatResponseComplete) {
       sendPrompt()
     }
   };
 
   const sendPrompt = () => {
-    socket.emit('send_prompt', { prompt: prompt})
-    setChatLogs((prevLogs) => {
-      const newLogs = [...prevLogs, { user: prompt, bot: '' }];
-      setCurrentResponseIndex(newLogs.length - 1); // Track the index of the new prompt
-      return newLogs;
-    });
-    setPrompt("")
-    setChatResponseLoading(true)
+    if (chatResponseComplete === true) {
+      setChatResponseComplete(false)
+      socket.emit('send_prompt', { prompt: prompt})
+      setChatLogs((prevLogs) => {
+        const newLogs = [...prevLogs, { user: prompt, bot: '' }];
+        setCurrentResponseIndex(newLogs.length - 1); // Track the index of the new prompt
+        return newLogs;
+      });
+      setPrompt("")
+    } else {
+      console.log('condition note met ')
+    }
   }
 
   useEffect(() => {
-    socket.on('send_message', (data) => {
-      console.log(data)
-    })
-
     socket.on('responseComplete', () => {
+      console.log('resposne completed')
+      setChatResponseComplete(true)
     })
 
     socket.on('textCreated', () => {
-      setChatResponseLoading(false)
+      console.log('text created')
+      setChatResponseComplete(false)
     })
 
     socket.on('textDelta', (data) => {
@@ -76,9 +82,6 @@ const Chatbot = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
-      {messages.map((message, index) => {
-        <li key = {index}>{message}</li>
-      })}
       
       <div
         className="flex flex-col gap-6 sm:h-[74vh] h-[75vh] overflow-y-auto md:text-xl text-lg"
@@ -96,10 +99,11 @@ const Chatbot = () => {
 
         {chatLogs.length < 1 && (
           <div className="m-auto">
-            <h4 className="mx-auto w-fit mb-5">
-              Designed To Help You Explore.
+            <h4 className="mx-auto w-fit text-3xl">
+              AI Designed To Help You Explore.
             </h4>
-            <button
+            <p className = 'text-[12px] mb-5 text-center'>Disclaimer: Information may be potentially incorrect at times.</p>
+            {/* <button
               className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] hidden lg:inline mx-2 hover:bg-zinc-100 transition-all duration-150"
               onClick={() => preDefinedPrompt("What Services Do You Offer?")}
             >
@@ -170,11 +174,11 @@ const Chatbot = () => {
               <p className="text-start text-gray-500 mt-2 text-sm">
                 How Can You Help My Business
               </p>
-            </button>
+            </button> */}
           </div>
         )}
       </div>
-      <div className="flex justify-center w-[767px] max-w-[92%] bg-zinc-100 sm:mx-auto py-3 px-6 rounded-xl items-center mb-10 ">
+      <div className="flex justify-center w-[767px] max-w-[93%] bg-zinc-100 sm:mx-auto py-4 px-7 items-center mb-10 mx-4">
         <input
           value={prompt}
           onChange={(event) => setPrompt(event.target.value)}

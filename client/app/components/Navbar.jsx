@@ -1,6 +1,7 @@
 'use client'
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -10,11 +11,11 @@ const Navbar = () => {
       <header
         className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] bg-white lg:px-[8rem] py-[2rem] flex sm:flex-row flex-col justify-between`}
       >
-        <div>
-          <Link href="/" className="text-xl font-[500]">
+        <Link href = '/' className = 'flex items-center gap-1'>
+          <h1 className="text-xl ">
             Centonis
-          </Link>
-        </div>
+          </h1>
+        </Link>
 
         <nav>
           <ul className="flex text-zinc-500 text-lg items-center ">
@@ -34,7 +35,7 @@ const Navbar = () => {
             </li>
             <li className = 'sm:mt-0 mt-4'>
               <Link
-                href="/chatbot"
+                href="/ai"
                 className="border-black border-[1px] text-black px-6 py-2 text-sm border-dashed hover:bg-black hover:text-white transition-all duration-300"
               >
                 AI

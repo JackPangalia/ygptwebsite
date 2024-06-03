@@ -3,6 +3,13 @@ import Image from "next/image";
 import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 
+export const metadata = {
+  title:
+    "Data Analysis Services | Centonis: Unlock Insights with Advanced AI Solutions",
+  description:
+    "Discover Centonis's data analysis services. We leverage advanced AI technology to transform your data into actionable insights, driving informed decision-making and business growth. Partner with us to harness the power of your data.",
+};
+
 const Chatbotdevlopment = () => {
   return (
     <div className="pt-[8rem]">

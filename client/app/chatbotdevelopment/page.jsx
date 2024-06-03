@@ -3,6 +3,13 @@ import Image from "next/image";
 import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 
+export const metadata = {
+  title:
+    "Chatbot Development Services | Centonis: Custom AI Chatbots for Your Business",
+  description:
+    "Discover Centonis's chatbot development services. We create custom AI chatbots tailored to your business needs, enhancing customer engagement and operational efficiency. Learn how our proprietary technology can transform your customer interactions.",
+};
+
 const Chatbotdevlopment = () => {
   return (
     <div className="pt-[8rem]">

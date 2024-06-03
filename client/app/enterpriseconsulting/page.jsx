@@ -3,6 +3,13 @@ import Image from "next/image";
 import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 
+export const metadata = {
+  title:
+    "Enterprise Consulting Services | Centonis: Elevate Your Business with AI Solution",
+  description:
+    "Explore Centonis's enterprise consulting services. We provide expert guidance and custom AI solutions to optimize your business processes and drive growth. Partner with us for innovative strategies and tailored solutions that deliver results.",
+};
+
 const Chatbotdevlopment = () => {
   return (
     <div className="pt-[8rem]">
@@ -13,9 +20,9 @@ const Chatbotdevlopment = () => {
           </h1>
           <p className=" lg:w-1/2 w-full text-lg">
             Leverage our expertise to devise and implement an effective strategy
-            for integrating this groundbreaking technology. We&apos;ll closely align
-            with your business goals, ensuring streamlined implementation and
-            maximizing benefits. Partner with us for improved efficiency,
+            for integrating this groundbreaking technology. We&apos;ll closely
+            align with your business goals, ensuring streamlined implementation
+            and maximizing benefits. Partner with us for improved efficiency,
             productivity, and overall business performance, from planning to
             ongoing support.
           </p>

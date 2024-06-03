@@ -189,7 +189,7 @@ const Home = () => {
               customer experiences.
             </p>
             <Link
-              href="/chatbot"
+              href="/ai"
               className=" border-white border-[1px] text-white lg:px-10 lg:py-3 px-6 py-2 text-sm border-dashed hover:bg-white hover:text-black transition-all duration-300"
             >
               Try it out

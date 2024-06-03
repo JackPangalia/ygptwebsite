@@ -8,13 +8,13 @@ We build bots that help you become more efficient in the way you do your daily w
 Autonomous Agents
 We can build you agents that can integrate with your system and execute tasks on your behalf when approved. Speeding up the overall time it takes you to get work done
 Data Analysis, Visualization and Retrieval
-We set up systems and applications to help analyze all types of data and display it in a way that is easily digestible and can help you derive insights and predictions based on that data to better inform you in your decision making. Along with applications that can retrieve real time and historical data with just a simple question.
+We set up systems and applications to help analyse all types of data and display it in a way that is easily digestible and can help you derive insights and predictions based on that data to better inform you in your decision making. Along with applications that can retrieve real time and historical data with just a simple question.
 
 Why Implement AI?
 
 Efficiency
 Speeds up and automates many of the tasks you and your employees do in your business daily. Ultimately leading to time being saved and more tasks getting done.
-Data Utilization
+Data Utilisation
 Take AI's advanced and intelligent data management. Get an accurate and useful interpretation of your real time and historical data.
 Competitive Edge 
 Be on the forefront of technology, taking advantage of the latest and greatest technology will allow you stand out and be more competitive than the rest
@@ -41,11 +41,9 @@ What size businesses do you typically work with?
 
 We like working with small to mid sized businesses. 
 
-Can you provide examples of businesses similar to mine that have benefited from your services?
-
 What kind of problems can your AI solutions solve?
 
-We solve a plethora of problems. The 3 main problems we can solve are slow productivity, poor client communication, and having to navigate through databases for long periods of time. Our solutions make doing your job much easier, allowing our AI’s to assist you in your work will lead to more work being done day in and day out . Along with helping you in your day to day it can also assist you in your client communication process, therefore freeing up your time further. Finally, with fast data retrival, analytics and insights to make working with your data seamless. Ultimately, our solutions can automate many of the mundane tasks in your business while giving your complete governance over the platform's actions. 
+We solve a plethora of problems. The 3 main problems we can solve are slow productivity, poor client communication, and having to navigate through databases for long periods of time. Our solutions make doing your job much easier, allowing our AI’s to assist you in your work will lead to more work being done day in and day out . Along with helping you in your day to day it can also assist you in your client communication process, therefore freeing up your time further. Finally, with fast data retrieval, analytics and insights to make working with your data seamless. Ultimately, our solutions can automate many of the mundane tasks in your business while giving your complete governance over the platform's actions. 
 
 What is the first step in determining if your AI services are a good fit for my company?
 
@@ -77,10 +75,42 @@ We don’t need any prior information besides your name, email and phone number 
 
 What is your development and delivery process?
 
-Once the initial set up fee has been received we begin the development process. From your end we will need copies of the relevant data for our bots and agents to reference. Once completed we deliver our solution in a desktop application that is easily accessible from your computer.
+Once the initial set up fee has been received we begin the development process. From your end we will need copies of the relevant data for our bots and agents to reference. Once completed we deliver our solution in a desktop application that is easily accessible from your computer
+
+What Makes Centonis’s Platforms So Powerful?
 
 
+Fine Tuning
 
+Our Model Tuning service optimises your chatbot for precise, responsive, and accurate interactions. By leveraging advanced algorithms and data-driven insights, we fine-tune the underlying model to enhance its understanding of user inputs, ensuring it responds with the most relevant and contextually appropriate answers. This process not only improves the chatbot’s ability to handle complex queries but also reduces response times, making the interactions more seamless and engaging for users. Additionally, our service continuously monitors and adjusts the model based on real-world usage patterns, ensuring that your chatbot remains effective and up-to-date with evolving user needs and language trends.
+
+Multi-Layered Security and Data
+
+Custom AI platforms ensure security with robust encryption, strict access controls, and continuous monitoring to protect sensitive data.
+
+Day One Value
+
+Our platforms are made to be used right away, not months, but days.
+
+Get access to the latest and greatest AI tech within your platform
+
+We incorporate the latest models like gpt-4o, gpt-3.5 turbo and every model openAI offers in order to give you the best and most advanced AI experience.
+
+Proprietary & Tailored Platforms
+
+We build your solution from the ground up to handle your businesses needs
+
+Constant Updates
+
+We always looking for ways to better your custom AI experience
+
+Full Integration
+
+Our solutions have the scalability to potentially cover you business head to toe
+
+Tell me about the background of the company
+
+Centonis was founded in Vancouver BC by 3 highschool students in 2024, who were eager to apply their development and business knowledge to the AI space. I Want to help businesses integrate and benefit from this new and groundbreaking technology. 
 
 
 
