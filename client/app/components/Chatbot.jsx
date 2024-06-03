@@ -82,6 +82,7 @@ const Chatbot = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
+      <p className = {`text-[11px]  text-center text-gray-500 bg-zinc-100 p-1 sm:mt-0 mt-3 ${chatLogs.length < 1 ? 'block' : 'hidden'}`}>Disclaimer: AI is not correct all the time</p>
       
       <div
         className="flex flex-col gap-6 sm:h-[74vh] h-[75vh] overflow-y-auto md:text-xl text-lg"
@@ -99,10 +100,11 @@ const Chatbot = () => {
 
         {chatLogs.length < 1 && (
           <div className="m-auto">
-            <h4 className="mx-auto w-fit text-3xl">
-              AI Designed To Help You Explore.
+            <h4 className="mx-auto w-fit text-6xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text">
+              AI
             </h4>
-            <p className = 'text-[12px] mb-5 text-center'>Disclaimer: Information may be potentially incorrect at times.</p>
+            <p className = 'mx-auto w-fit text-gray-500'>Designed to help you explore Centonis</p>
+            {/* <p className = 'text-[11px] mb-5 text-center'>Disclaimer: Information may be potentially incorrect at times.</p> */}
             {/* <button
               className="p-3 border-gray-500 border-[1px] border-dashed w-[10rem] hidden lg:inline mx-2 hover:bg-zinc-100 transition-all duration-150"
               onClick={() => preDefinedPrompt("What Services Do You Offer?")}
@@ -184,7 +186,7 @@ const Chatbot = () => {
           onChange={(event) => setPrompt(event.target.value)}
           onKeyDown={handleKeyPress}
           className="w-full outline-none bg-transparent md:text-xl text-lg"
-          placeholder="How can we help"
+          placeholder="Find out anything about us"
         />
         <button
           className="hover:text-gray-500 text-zinc-800 transition-all duration-150"
