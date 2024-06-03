@@ -16,7 +16,7 @@ const Chatbotdevlopment = () => {
       <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
         <div className="w-full flex lg:flex-row flex-col gap-10">
           <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">
-            Chat Bot Development
+            Chatbot Development
           </h1>
           <p className=" lg:w-1/2 w-full text-lg">
             We specialize in building intelligent bots that significantly

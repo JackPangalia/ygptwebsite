@@ -23,7 +23,7 @@ const Navbar = () => {
               <Link href={`${pathname === '/' ? '#services' : '/#services'}`}>Services</Link>
             </li>
             <li className="text-sm hover:text-black trasition-all duration-150 ml-4 sm:block hidden">
-              <Link href={`${pathname === '/' ? '#benifits' : '/#benifits'}`}>benefits</Link>
+              <Link href={`${pathname === '/' ? '#benifits' : '/#benifits'}`}>Benefits</Link>
             </li>
             <li className = 'mr-4 sm:ml-10 sm:mt-0 mt-4'>
               <Link

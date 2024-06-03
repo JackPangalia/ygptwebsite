@@ -1,0 +1,12 @@
+
+Email: Jackpangalia@gmail.com / mattacushing@gmail.com / diegowilliamingram@gmail.com
+Phone: 613-501-4697 
+Location: Vancouver, BC, Canada 
+Technology: GPT-4o, GPT-3.5 turbo, OpenAI AI models
+Tech Stack: Next.js 13, Electron.js, React.js, Fast API, Python, Javascript / Typescript, Firebase. Openai API 
+Owners: Jack Pangalia, Matthew Cushing, Diego Williamingram.
+Founded data: Mon Jun 3, 2024.
+Company Type: AI
+Company speciality: Preparatory AI Solutions Development 
+Services: Chatbot development, Autonomous agent development, Enterprise consulting, data analysis.
+
