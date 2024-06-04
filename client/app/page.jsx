@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <div className="">
-        <section className="bg-white pt-[9rem] relative">
+        <section className="bg-white pt-[9rem]">
           <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
             <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
               AI Tailored For Your Business
@@ -131,11 +131,11 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-28">
+        <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-28 lg:px-[3rem] px-[1.5rem]">
           <h2 className="sm:text-5xl text-4xl mb-4 px-[2rem]">
             Why Implement AI?
           </h2>
-          <div className="flex sm:overflow-hidden overflow-x-scroll sm:px-[2rem] sm:gap-14 gap-0">
+          <div className="flex md:grid sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 md:overflow-none overflow-x-scroll sm:px-[2rem] sm:gap-14 ">
             <div
               className={`min-w-[22rem] flex flex-col justify-between py-10 sm:pl-0 pl-10`}
             >
@@ -171,7 +171,8 @@ const Home = () => {
             >
               <h4 className="text-2xl">Foster Innovation</h4>
               <p className="py-4">
-                Gain a competitive edge by always staying on the forefront of AI.
+                Gain a competitive edge by always staying on the forefront of
+                AI.
               </p>
             </div>
           </div>
@@ -182,7 +183,7 @@ const Home = () => {
             <h2 className="w-[80%] mb-4 xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text font-[500]">
               Learn More About Us With AI
             </h2>
-            <p className="mb-10 sm:w-1/2 sm:text-md  text-gray-500">
+            <p className="mb-10 sm:w-1/2 sm:text-xl md:text-lg  text-gray-500">
               Explore the potential of AI and find the best solutions for your
               business through the innovative Centonis website chatbot. Discover
               how our technology can transform your operations and enhance
@@ -198,7 +199,7 @@ const Home = () => {
         </section>
 
         <section
-          className="w-full border-b-[1px] border-black sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto"
+          className="w-full  sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto"
           id="benifits"
         >
           <h2 className="sm:text-5xl text-4xl sm:w-1/2 mb-16">
@@ -233,7 +234,7 @@ const Home = () => {
             />
             <Keypoint
               title="Proprietary & Tailored Platforms"
-              paragraph="We build your solution from the ground up to adjust and handle your business&apos;s needs."
+              paragraph="We build your solution from the ground up to adjust and handle your business's needs."
               exploretopic="Value"
             />
             <Keypoint
@@ -246,6 +247,23 @@ const Home = () => {
               paragraph="Our solutions have the capabilty to be rooted deeply within into your business."
               exploretopic="Value"
             />
+          </div>
+        </section>
+
+        <section className="bg-zinc-100 py-32 sm:py-40 sm:mb-20 mb-10">
+          <div className="px-[2rem] max-w-[1500px] mx-auto">
+            <h2 className="w-[80%]">
+              <span className="xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500] ">
+                We are more then a business we are a{" "}
+              </span>
+              <span className="bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
+                partnership
+              </span>
+            </h2>
+
+            <p className="sm:w-[60%] sm:text-xl md:text-lg  text-gray-500 mt-8">
+              At Centonis, we deliver AI software solutions while building strong, personal connections with our clients. By understanding your unique needs, we provide tailored solutions that drive success and sustainable growth. Together, we turn potential into performance.
+            </p>
           </div>
         </section>
 
