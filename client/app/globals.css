@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* 
 html {
   padding-block: 2.4rem;
@@ -24,6 +25,12 @@ html {
 .content {
   position: relative;
   z-index: 1;
+}
+
+.custom-bg {
+  background-image: url('/public/whitelanderbg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 :root {

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Keypoint from "./components/Keypoint";
 import Contactpanel from "./components/contactpanel";
 import Footer from "./components/Footer";
+import Image from "next/image";
 
 const Home = () => {
   return (
     <>
       <div className="">
-        <section className="bg-white pt-[9rem]">
+        <section className="pt-[9rem] bg-cover bg-[url('/whiteblobs.jpg')]">
           <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
             <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
               AI Tailored For Your Business
