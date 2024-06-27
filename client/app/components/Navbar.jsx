@@ -13,7 +13,7 @@ const Navbar = () => {
       >
         <Link href = '/' className = 'flex items-center gap-1'>
           <Image src = '/centonislogov2.png' width = {200} height = {200} alt = 'company logo' className = 'h-6 w-6'/> 
-          <h1 className="text-xl ">
+          <h1 className="text-2xl font-[300]">
             Centonis
           </h1>
         </Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
                 href="/ai"
                 className="border-black border-[1px] text-black px-6 py-2 text-sm border-dashed hover:bg-black hover:text-white transition-all duration-300"
               >
-                AI
+                Chat
               </Link>
             </li>
           </ul>
