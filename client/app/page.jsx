@@ -10,10 +10,10 @@ const Home = () => {
       <div className="">
         <section className="pt-[9rem] bg-cover bg-[url('/whiteblobs.jpg')]">
           <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
-            <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[400]">
+            <h1 className=" lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[400]">
               AI Tailored For Your Business
             </h1>
-            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[65%] lg:w-[66%] ">
+            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[100%] lg:w-[66%] ">
               Unlock your business&apos;s potential with our custom AI
               solutions. Tailored to meet your unique needs, our expert team
               ensures seamless implementation and enhanced productivity.
@@ -142,7 +142,8 @@ const Home = () => {
             >
               <h4 className="text-2xl">Increase Efficiency</h4>
               <p className="py-4">
-              Streamline your operations and boost productivity with AI-driven automation.
+                Streamline your operations and boost productivity with AI-driven
+                automation.
               </p>
             </div>
 
@@ -262,7 +263,11 @@ const Home = () => {
             </h2>
 
             <p className="sm:w-[60%] sm:text-xl md:text-lg  text-gray-500 mt-8">
-              At Centonis, we deliver AI software solutions while building strong, personal connections with our clients. By understanding your unique needs, we provide tailored solutions that drive success and sustainable growth. Together, we turn potential into performance.
+              At Centonis, we deliver AI software solutions while building
+              strong, personal connections with our clients. By understanding
+              your unique needs, we provide tailored solutions that drive
+              success and sustainable growth. Together, we turn potential into
+              performance.
             </p>
           </div>
         </section>
