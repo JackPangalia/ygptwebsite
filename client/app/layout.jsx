@@ -11,7 +11,7 @@ const roboto_mono = Work_Sans({
 
 export const metadata = {
   icons: {
-    icon:'/logo.png',
+    icon:'/centonislogov2.png',
 },
   title: "Centonis - Custom AI Software Solutions for Business Enhancement",
   description: "Discover Centonis, your partner in AI innovation. We specialize in developing custom proprietary software solutions tailored to enhance your business efficiency and growth. Transform your operations with cutting-edge AI technology. Contact us today for bespoke solutions.",

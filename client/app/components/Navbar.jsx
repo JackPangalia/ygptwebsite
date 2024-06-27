@@ -12,7 +12,7 @@ const Navbar = () => {
         className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] bg-white lg:px-[8rem] py-[2rem] flex sm:flex-row flex-col justify-between`}
       >
         <Link href = '/' className = 'flex items-center gap-1'>
-          <Image src = '/logo.png' width = {300} height = {300} alt = 'company logo' className = 'h-9 w-9'/> 
+          <Image src = '/centonislogov2.png' width = {200} height = {200} alt = 'company logo' className = 'h-6 w-6'/> 
           <h1 className="text-xl ">
             Centonis
           </h1>

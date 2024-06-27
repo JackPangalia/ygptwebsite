@@ -10,7 +10,7 @@ const Home = () => {
       <div className="">
         <section className="pt-[9rem] bg-cover bg-[url('/whiteblobs.jpg')]">
           <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
-            <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[500]">
+            <h1 className="xl:text-9xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[400]">
               AI Tailored For Your Business
             </h1>
             <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[65%] lg:w-[66%] ">
@@ -142,8 +142,7 @@ const Home = () => {
             >
               <h4 className="text-2xl">Increase Efficiency</h4>
               <p className="py-4">
-                Streamline your operations and boost productivity with AI-driven
-                advancements.
+              Streamline your operations and boost productivity with AI-driven automation.
               </p>
             </div>
 
