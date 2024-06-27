@@ -9,11 +9,11 @@ const Home = () => {
     <>
       <div className="">
         <section className="pt-[9rem] bg-cover bg-[url('/whiteblobs.jpg')]">
-          <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-40 pb-24">
+          <div className="sm:mt-24 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-48 pb-24">
             <h1 className=" lg:text-8xl md:text-7xl sm:text-6xl text-5xl font-[400]">
               AI Tailored For Your Business
             </h1>
-            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto xl:w-[100%] lg:w-[66%] ">
+            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto lg:w-[100%]">
               Unlock your business&apos;s potential with our custom AI
               solutions. Tailored to meet your unique needs, our expert team
               ensures seamless implementation and enhanced productivity.

@@ -82,7 +82,7 @@ const Chatbot = () => {
 
   return (
     <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
-      <p className = {`text-[11px]  text-center text-gray-500 bg-zinc-100 p-1 sm:mt-0 mt-3 ${chatLogs.length < 1 ? 'block' : 'hidden'}`}>Disclaimer: AI is not correct all the time</p>
+      <p className = {`text-[11px]  text-center text-gray-500 bg-zinc-100 p-1 sm:mt-0 mt-3 ${chatLogs.length < 1 ? 'block' : 'hidden'}`}>Disclaimer: AI may not guarantee full accuracy. Please verify.</p>
       
       <div
         className="flex flex-col gap-6 sm:h-[74vh] h-[75vh] overflow-y-auto md:text-xl text-lg"
