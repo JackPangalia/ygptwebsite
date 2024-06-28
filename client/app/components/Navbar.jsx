@@ -13,7 +13,7 @@ const Navbar = () => {
       >
         <Link href = '/' className = 'flex items-center gap-1'>
           <Image src = '/centonislogov2.png' width = {200} height = {200} alt = 'company logo' className = 'h-6 w-6'/> 
-          <h1 className="text-2xl font-[300]">
+          <h1 className="text-2xl font-[400]">
             Centonis
           </h1>
         </Link>
