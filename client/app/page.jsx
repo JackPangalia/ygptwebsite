@@ -10,7 +10,7 @@ const Home = () => {
         <section className="pt-[9rem] bg-cover bg-[url('/whiteblobs.jpg')]">
           <div className="md:mt-40 sm:mt-24 mt-14 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24">
             <h1 className=" lg:text-8xl md:text-7xl sm:text-6xl text-5xl ">
-              AI Which Boost Your Business
+              AI to elevate your business
             </h1>
             <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto lg:w-[100%]">
               Unlock your business&apos;s potential with our custom AI
