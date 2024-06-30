@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <div className="">
-        <section className="pt-[9rem] bg-cover  bg-white">
+        <section className="sm:pt-[9rem] pt-[5rem] bg-cover  bg-white">
           <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24">
             <h1 className=" lg:text-8xl md:text-7xl text-6xl text-zinc-900 ">
               AI.

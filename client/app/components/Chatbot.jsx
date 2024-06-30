@@ -81,7 +81,7 @@ const Chatbot = () => {
   }, [chatLogs]);
 
   return (
-    <div className="min-h-screen flex flex-col justify-between pt-[8rem]">
+    <div className="min-h-screen flex flex-col justify-between sm:pt-[8rem] pt-[4rem]">
       <p className = {`text-[11px]  text-center text-gray-500 bg-zinc-100 p-1 sm:mt-0 mt-3 ${chatLogs.length < 1 ? 'block' : 'hidden'}`}>Disclaimer: AI may not guarantee full accuracy. Please verify.</p>
       
       <div

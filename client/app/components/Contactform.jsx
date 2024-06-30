@@ -79,7 +79,7 @@ const ContactForm = () => {
 
       </div>
       <div
-        className={`sm:py-[8rem] py-[9.5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem] ${
+        className={`sm:py-[8rem] py-[5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem] ${
           isSent ? "hidden" : "flex"
         }`}
       >
