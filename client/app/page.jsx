@@ -7,12 +7,12 @@ const Home = () => {
   return (
     <>
       <div className="">
-        <section className="pt-[9rem] bg-cover  bg-[url('/organgegradient.jpg')]">
+        <section className="pt-[9rem] bg-cover  bg-[url('/whitebg.jpg')]">
           <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24">
             <h1 className=" lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-zinc-900">
               AI to elevate your business
             </h1>
-            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-zinc-900 ml-auto lg:w-[100%]">
+            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto lg:w-[100%]">
               Unlock your business&apos;s potential with our custom AI
               solutions. Tailored to meet your unique needs, our expert team
               ensures seamless implementation and enhanced productivity.
