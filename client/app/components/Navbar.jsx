@@ -11,11 +11,12 @@ const Navbar = () => {
       <header
         className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] bg-white lg:px-[8rem] py-[2rem] flex sm:flex-row flex-col justify-between`}
       >
-        <Link href = '/' className = 'flex items-center gap-1'>
-          <Image src = '/centonislogov2.png' width = {200} height = {200} alt = 'company logo' className = 'h-6 w-6'/> 
-          <h1 className="text-2xl font-[400]">
-            Centonis
+        <Link href = '/' className = ' items-center gap-1'>
+          <h1 className="text-xl font-[400] inline">
+            Centonis AI
           </h1>
+          <Image src = '/centonislogov2.png' width = {200} height = {200} alt = 'company logo' className = 'h-5 w-5 inline ml-2 mb-1'/> 
+          <span className = 'sm:block hidden text-[11px]'>Led by you, powered by us</span>
         </Link>
 
         <nav>
