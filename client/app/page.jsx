@@ -31,7 +31,7 @@ const Home = () => {
               Our Services
             </h2>
             <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16">
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -55,7 +55,7 @@ const Home = () => {
                   Learn More
                 </Link>
               </div>
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
                 <svg
                   fill="currentColor"
                   viewBox="0 0 16 16"
@@ -81,7 +81,7 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -106,7 +106,7 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"

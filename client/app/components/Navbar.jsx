@@ -32,7 +32,7 @@ const Navbar = () => {
             Centonis AI
           </h1>
           <Image src = '/centonislogov2.png' width = {200} height = {200} alt = 'company logo' className = 'h-5 w-5 inline ml-2 mb-1'/> 
-          <span className = 'block text-[11px]'>Led by you, powered by us</span>
+          <span className = 'sm:block hidden text-[11px]'>Led by you, powered by us</span>
         </Link>
 
         <nav className = 'flex'>
