@@ -7,12 +7,16 @@ const Home = () => {
   return (
     <>
       <div className="">
-        <section className="pt-[9rem] bg-cover  bg-[url('/whitebg.jpg')]">
+        <section className="pt-[9rem] bg-cover  bg-white">
           <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24">
-            <h1 className=" lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-zinc-900">
-              AI to elevate your business
+            <h1 className=" lg:text-8xl md:text-7xl text-6xl text-zinc-900 ">
+              AI.
             </h1>
-            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-gray-500 ml-auto lg:w-[100%]">
+
+            <h1 className = 'lg:text-5xl text-2xl text-zinc-600 inline'>The Solution to </h1>
+            <h1 className = 'lg:text-5xl text-2xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text inline font-semibold'>Elevate </h1>
+            <h1 className = 'lg:text-5xl text-2xl text-zinc-600 inline'>Your Business</h1>
+            <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-zinc-600 ml-auto lg:w-[100%]">
               Unlock your business&apos;s potential with our custom AI
               solutions. Tailored to meet your unique needs, our expert team
               ensures seamless implementation and enhanced productivity.
