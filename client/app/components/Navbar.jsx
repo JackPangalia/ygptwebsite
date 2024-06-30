@@ -2,14 +2,30 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
   const pathname = usePathname()
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <header
-        className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] bg-white lg:px-[8rem] py-[2rem] flex sm:flex-row flex-col justify-between`}
+        className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] lg:px-[8rem] py-[1.6rem] flex sm:flex-row flex-col justify-between transition-colors duration-300 ${isScrolled ? 'bg-white' : 'bg-transparent'}`}
       >
         <Link href = '/' className = ' items-center gap-1'>
           <h1 className="text-xl font-[400] inline">
@@ -19,7 +35,7 @@ const Navbar = () => {
           <span className = 'sm:block hidden text-[11px]'>Led by you, powered by us</span>
         </Link>
 
-        <nav>
+        <nav className = 'flex'>
           <ul className="flex text-zinc-500 text-lg items-center ">
             <li className="text-sm hover:text-black trasition-all duration-150 sm:block hidden">
               <Link href={`${pathname === '/' ? '#services' : '/#services'}`}>Services</Link>
