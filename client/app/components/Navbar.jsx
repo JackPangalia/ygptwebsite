@@ -28,7 +28,12 @@ const Navbar = () => {
       <header
         className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] lg:px-[8rem] py-[1.6rem] flex  justify-between transition-colors duration-300 bg-white`}
       >
-        <Link href="/" className={`items-center gap-1 ${isMobileMenuOpen ? 'hidden' : 'block'}`}>
+        <Link
+          href="/"
+          className={`items-center gap-1 ${
+            isMobileMenuOpen ? "hidden" : "block"
+          }`}
+        >
           <h1 className="text-xl font-[400]  sm:inline hidden">Centonis AI</h1>
           <Image
             src="/centonislogov2.png"
@@ -88,7 +93,7 @@ const Navbar = () => {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M3.75 9h16.5m-16.5 6.75h16.5"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                 />
               </svg>
             ) : (
@@ -112,18 +117,18 @@ const Navbar = () => {
       </header>
 
       <div
-        className={`bg-white w-screen h-screen left-0 fixed top-[4.5rem] transition-all duration-150 transform ${
+        className={`bg-white w-screen h-screen left-0 fixed top-[4.5rem] transition-all duration-400 transform ${
           isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <ul className="ml-10 space-y-2 mt-4">
+        <ul className="ml-10 space-y-3 mt-4 text-2xl">
           <li>
-            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className = 'hover:font-[500] transition-all duration-150'>
               Work with us
             </Link>
           </li>
           <li>
-            <Link href="/ai" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="/ai" onClick={() => setIsMobileMenuOpen(false)} className = 'hover:font-[500] transition-all duration-150'>
               Chat
             </Link>
           </li>
@@ -131,6 +136,7 @@ const Navbar = () => {
             <Link
               href={`${pathname === "/" ? "#benifits" : "/#benifits"}`}
               onClick={() => setIsMobileMenuOpen(false)}
+              className = 'hover:font-[500] transition-all duration-150'
             >
               Benefits
             </Link>
@@ -139,6 +145,7 @@ const Navbar = () => {
             <Link
               href={`${pathname === "/" ? "#services" : "/#services"}`}
               onClick={() => setIsMobileMenuOpen(false)}
+              className = 'hover:font-[500] transition-all duration-150'
             >
               Services
             </Link>
