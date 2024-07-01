@@ -2,19 +2,15 @@ import Link from "next/link";
 import Keypoint from "./components/Keypoint";
 import Contactpanel from "./components/contactpanel";
 import Footer from "./components/Footer";
-
+import Image from "next/image";
 const Home = () => {
   return (
     <>
       <div className="">
         <section className="sm:pt-[9rem] pt-[5rem] bg-cover  bg-white">
           <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24">
-            <h1 className="lg:text-8xl md:text-7xl text-6xl text-zinc-900 inline">
-              AI
-            </h1>
-            <h1 className="lg:text-8xl md:text-7xl text-6xl text-zinc-900 inline">
-              {" "}
-              to elevate your business
+            <h1 className="lg:text-9xl md:text-7xl text-6xl text-zinc-900 inline">
+              AI to elevate your business
             </h1>
 
             {/* <h1 className="lg:text-5xl text-2xl text-zinc-600 inline">
@@ -26,6 +22,13 @@ const Home = () => {
             <h1 className="lg:text-5xl text-2xl text-zinc-600 inline">
               Your Business
             </h1> */}
+            <Image
+              src="/skybg.jpg"
+              alt="chat bot img"
+              height={1700}
+              width={1700}
+              className="w-full mt-12 max-h-[700px] object-cover"
+            />
             <h3 className="md:text-2xl sm:text-xl text-lg sm:mt-20  mt-10 text-zinc-600 ml-auto lg:w-[100%]">
               Unlock your business&apos;s potential with our custom AI
               solutions. Tailored to meet your unique needs, our expert team
@@ -41,7 +44,7 @@ const Home = () => {
               Our Services
             </h2>
             <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16">
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 ">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -65,7 +68,7 @@ const Home = () => {
                   Learn More
                 </Link>
               </div>
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 ">
                 <svg
                   viewBox="0 0 1024 1024"
                   fill="currentColor"
@@ -90,7 +93,7 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 ">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
@@ -115,13 +118,13 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 ">
                 <svg
                   viewBox="0 0 64 64"
                   fill="currentColor"
                   height="1.7em"
                   width="1.7em"
-                  className = 'mb-5 text-purple-400'
+                  className="mb-5 text-purple-400"
                 >
                   <path
                     fill="none"
