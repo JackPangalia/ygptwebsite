@@ -9,8 +9,12 @@ const Home = () => {
       <div className="">
         <section className="sm:pt-[9rem] pt-[5rem] bg-cover  bg-white">
           <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24">
-            <h1 className=" lg:text-8xl md:text-7xl text-6xl text-zinc-900 ">
-            AI to elevate your business
+            <h1 className="lg:text-8xl md:text-7xl text-6xl text-zinc-900 inline">
+              AI
+            </h1>
+            <h1 className="lg:text-8xl md:text-7xl text-6xl text-zinc-900 inline">
+              {" "}
+              to elevate your business
             </h1>
 
             {/* <h1 className="lg:text-5xl text-2xl text-zinc-600 inline">
@@ -37,12 +41,12 @@ const Home = () => {
               Our Services
             </h2>
             <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16">
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  height="1.8em"
-                  width="1.8em"
+                  height="1.7em"
+                  width="1.7em"
                   className="mb-5"
                 >
                   <path d="M3.299 17.596c.432 1.332 1.745 2.182 3.146 2.182H6.5A2.78 2.78 0 009.223 22c.457 0 .884-.115 1.262-.313a.992.992 0 00.515-.882V3.027a.997.997 0 00-.785-.983 2.324 2.324 0 00-1.479.201c-.744.356-1.18 1.151-1.18 1.978v.055a2.778 2.778 0 00-2.744 4.433A3.327 3.327 0 002 12c0 1.178.611 2.211 1.533 2.812-.43.771-.571 1.746-.234 2.784zm15.889-8.885a2.778 2.778 0 00-2.744-4.433v-.055c0-.826-.437-1.622-1.181-1.978a2.32 2.32 0 00-1.478-.201.998.998 0 00-.785.983v17.777c0 .365.192.712.516.882.378.199.804.314 1.261.314a2.78 2.78 0 002.723-2.223h.056c1.4 0 2.714-.85 3.146-2.182.337-1.038.196-2.013-.234-2.784A3.35 3.35 0 0022 12a3.327 3.327 0 00-2.812-3.289z" />
@@ -61,13 +65,13 @@ const Home = () => {
                   Learn More
                 </Link>
               </div>
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
                 <svg
                   viewBox="0 0 1024 1024"
                   fill="currentColor"
-                  height="1.8em"
-                  width="1.8em"
-                  className = 'mb-5 text-red-400'
+                  height="1.7em"
+                  width="1.7em"
+                  className="mb-5 text-red-400"
                 >
                   <path d="M872 808H152c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-720-94h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0-498h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0 332h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0-166h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm166 166h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0-332h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm332 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0 332h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm222-72h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm388-404h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm388 426h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm388-404h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8z" />
                 </svg>
@@ -86,12 +90,12 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  height="1.8em"
-                  width="1.8em"
+                  height="1.7em"
+                  width="1.7em"
                   className="mb-5 text-blue-400"
                 >
                   <path d="M7.05 3.5a3.519 3.519 0 000 4.97l8.49 8.48c.58.59.58 1.55 0 2.12-.59.59-1.54.59-2.13 0l-4.24-4.24 1.06-1.06-3.53-3.54-.36.36-1.41-1.42a1.02 1.02 0 00-1.43 0l-1.4 1.42c-.39.41-.39 1.02 0 1.41l1.4 1.41-.34.36L6.7 17.3l1.06-1.06L12 20.5a3.531 3.531 0 004.95 0c1.37-1.38 1.37-3.6 0-4.96L8.46 7.05c-.58-.59-.58-1.55 0-2.12.59-.59 1.54-.59 2.13 0l4.24 4.24-1.06 1.06 3.53 3.54.36-.36 1.41 1.42c.39.39 1.03.39 1.43 0l1.4-1.42c.39-.41.39-1.02 0-1.41l-1.4-1.41.34-.36L17.3 6.7l-1.06 1.06L12 3.5a3.531 3.531 0 00-4.95 0m-4.24 7.79l1.41-1.41 1.42 1.41-1.42 1.42m14.14 0l1.42-1.42 1.41 1.42-1.41 1.41z" />
@@ -111,16 +115,30 @@ const Home = () => {
                 </Link>
               </div>
 
-              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-lg">
+              <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 rounded-md">
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 64 64"
                   fill="currentColor"
-                  height="1.8em"
-                  width="1.8em"
-                  className="text-purple-400 mb-5"
+                  height="1.7em"
+                  width="1.7em"
+                  className = 'mb-5 text-purple-400'
                 >
-                  <path d="M6 13H2a1 1 0 00-1 1v8a1 1 0 001 1h4a1 1 0 001-1v-8a1 1 0 00-1-1zm-1 8H3v-6h2zM22 9h-4a1 1 0 00-1 1v12a1 1 0 001 1h4a1 1 0 001-1V10a1 1 0 00-1-1zm-1 12h-2V11h2zM14 1h-4a1 1 0 00-1 1v20a1 1 0 001 1h4a1 1 0 001-1V2a1 1 0 00-1-1zm-1 20h-2V3h2z" />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    d="M54.999 36.001C55 50.913 42.912 63 28 62.999 13.087 63 1 50.912 1.001 36 1 21.088 13.088 9 28 9.001V36l26.999.001z"
+                  />
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    strokeMiterlimit={10}
+                    strokeWidth={2}
+                    d="M63 28C63.001 13.087 50.914.998 36.001 1v27H63z"
+                  />
                 </svg>
+
                 <h4 className="text-2xl  mb-4">Data Analysis</h4>
                 <p className="sm:text-lg text-sm  mb-8">
                   Systems to analyze and visualize data, providing new useful
@@ -262,7 +280,7 @@ const Home = () => {
           <div className="px-[2rem] max-w-[1500px] mx-auto">
             <h2 className="w-[80%]">
               <span className="xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl">
-                We are more then a business we are a{" "}
+                We are more than a business we are a{" "}
               </span>
               <span className="bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl">
                 partnership
