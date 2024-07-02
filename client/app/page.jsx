@@ -210,7 +210,7 @@ const Home = () => {
 
         <section className="bg-black py-20 sm:py-52  text-white">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
-            <h2 className="w-[80%]  xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl inline mb-3">
+            <h2 className="w-[80%] xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl  mb-3">
               Learn More About Us With AI
             </h2>
 
