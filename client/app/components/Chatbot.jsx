@@ -100,7 +100,7 @@ const Chatbot = () => {
 
         {chatLogs.length < 1 && (
           <div className="m-auto">
-            <h4 className="mx-auto w-fit text-6xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text">
+            <h4 className="mx-auto w-fit text-6xl ">
               AI
             </h4>
             <p className = 'mx-auto w-fit text-gray-500'>Designed to help you explore Centonis</p>

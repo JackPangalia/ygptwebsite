@@ -4,6 +4,7 @@ import Contactpanel from "./components/contactpanel";
 import Footer from "./components/Footer";
 import Image from "next/image";
 const Home = () => {
+  // bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text
   return (
     <>
       <div className="">
@@ -209,9 +210,10 @@ const Home = () => {
 
         <section className="bg-black py-20 sm:py-52  text-white">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
-            <h2 className="w-[80%] mb-4 xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text ">
+            <h2 className="w-[80%]  xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl inline mb-3">
               Learn More About Us With AI
             </h2>
+
             <p className="mb-10 sm:w-1/2 sm:text-xl md:text-lg  text-gray-500">
               Explore the potential of AI and find the best solutions for your
               business through the innovative Centonis website chatbot. Discover
@@ -282,10 +284,10 @@ const Home = () => {
         <section className="bg-zinc-100 py-32 sm:py-40 sm:mb-20 mb-10">
           <div className="px-[2rem] max-w-[1500px] mx-auto">
             <h2 className="w-[80%]">
-              <span className="xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl">
+              <span className="xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl text-zinc-600">
                 We are more than a business we are a{" "}
               </span>
-              <span className="bg-gradient-to-r from-red-300 via-blue-300 to-green-300 text-transparent bg-clip-text xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl">
+              <span className=" xl:text-8xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl">
                 partnership
               </span>
             </h2>
