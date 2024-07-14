@@ -343,7 +343,7 @@ const Home = () => {
       <section className="bg-zinc-100 text-black md:m-10 m-4 rounded-xl">
         <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[47vh] md:h-[60vh]">
           <h2 className=" md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
-          We are more than a business; we're a partnership.
+          We are more than a business; we&#39;re a partnership.
           </h2>
         </div>
         <p className="mb-16 md:w-3/4 lg:w-1/2  md:text-lg  text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm">
