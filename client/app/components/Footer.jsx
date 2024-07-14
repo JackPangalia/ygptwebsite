@@ -38,7 +38,7 @@ const Footer = () => {
             </svg>
             Vancouver, BC
           </span>
-          <span>@ jackpangalia@gmail.com</span>
+          <span>@ centonisai@gmail.com</span>
         </div>
       </div>
 

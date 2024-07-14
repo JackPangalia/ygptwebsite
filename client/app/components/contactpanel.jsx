@@ -7,7 +7,7 @@ const Contactpanel = () => {
 
       <div className = 'lg:mt-0 mt-10'>
         <span className="mr-10 text-sm sm:inline hidden">Bring Your Ideas To Light</span>
-        <Link href="/contact" className="px-6 py-2 border-black border h-fit border-dashed hover:bg-black hover:text-white transition-all duration-300">
+        <Link href="/contact" className="px-6 py-2 border-black border h-fit  hover:bg-black hover:text-white transition-all duration-300">
           Work With Us
         </Link>
       </div>

@@ -62,7 +62,7 @@ const Navbar = () => {
             <li className="mr-4 sm:ml-10 sm:mt-0 mt-4">
               <Link
                 href="/contact"
-                className="border-black border-[1px] text-black px-6 py-2 text-sm border-dashed hover:bg-black hover:text-white transition-all duration-300"
+                className="border-black border-[1px] text-black px-6 py-2 text-sm  hover:bg-black hover:text-white transition-all duration-300"
               >
                 Work With Us
               </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
             <li className="sm:mt-0 mt-4">
               <Link
                 href="/ai"
-                className="border-black border-[1px] text-black px-6 py-2 text-sm border-dashed hover:bg-black hover:text-white transition-all duration-300"
+                className="border-black border-[1px] text-black px-6 py-2 text-sm  hover:bg-black hover:text-white transition-all duration-300"
               >
                 Chat
               </Link>

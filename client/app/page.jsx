@@ -11,11 +11,7 @@ const Home = () => {
   return (
     <>
       <section className="sm:pt-[9rem] pt-[5rem] bg-cover bg-white">
-        <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24 h-[63vh] flex justify-center items-center flex-col">
-          {/* <h1 className="">
-      AI to elevate your business
-     </h1> */}
-
+        <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24 h-[60vh] flex justify-center items-center flex-col">
           <TypeAnimation
             sequence={[
               // Same substring at the start will only be typed out once, initially
@@ -31,18 +27,18 @@ const Home = () => {
             wrapper="span"
             speed={50}
             // style={{ fontSize: "2em", display: "inline-block" }}
-            className="lg:text-8xl md:text-7xl text-6xl text-black"
+            className="lg:text-8xl md:text-7xl text-6xl text-black "
             repeat={Infinity}
             cursor={false}
           />
 
           {/* <Image
-      src="/skybg.jpg"
-      alt="chat bot img"
-      height={1700}
-      width={1700}
-      className=" mt-32 max-h-[1000px] object-cover w-full "
-     /> */}
+            src="/skybg.jpg"
+            alt="chat bot img"
+            height={1700}
+            width={1700}
+            className=" mt-32 max-h-[1000px] object-cover w-full "
+          /> */}
         </div>
         <h2 className="lg:text-xl text-sm md:w-1/2 px-[2rem] text-center text-zinc-900 tracking-wide mx-auto w-fit">
           Unlock your business&apos;s potential with our custom AI solutions.
@@ -71,12 +67,12 @@ const Home = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-5"
+              className="size-6"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
               />
             </svg>
             Request a demo
@@ -87,11 +83,11 @@ const Home = () => {
 
       <section className="bg-white md:py-32 py-20 text-black">
         <div className="px-[2rem] max-w-[1500px] mx-auto">
-          <h2 className="sm:text-5xl text-4xl px-[2rem]" id="services">
+          <h2 className="sm:text-5xl text-4xl " id="services">
             Our Services
           </h2>
-          <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16 px-[2rem]">
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black py-8 pr-8">
+          <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16 ">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-md rounded-lg">
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -115,7 +111,7 @@ const Home = () => {
                 Learn More
               </Link>
             </div>
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black py-8 pr-8">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-md rounded-lg">
               <svg
                 viewBox="0 0 1024 1024"
                 fill="currentColor"
@@ -140,7 +136,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black py-8 pr-8">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-md rounded-lg">
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -165,7 +161,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black py-8 pr-8">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-md rounded-lg">
               <svg
                 viewBox="0 0 64 64"
                 fill="currentColor"
@@ -207,11 +203,11 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-28 lg:px-[3rem] px-[1.5rem]">
+      <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-28">
         <h2 className="sm:text-5xl text-4xl mb-4 px-[2rem]">
           Why Implement AI?
         </h2>
-        <div className="flex md:grid sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 sm:overflow-x-clip overflow-x-scroll sm:px-[2rem] ">
+        <div className="flex md:grid sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 sm:overflow-x-clip overflow-x-scroll sm:px-[2rem] px-10">
           <div
             className={`min-w-[20rem] flex flex-col justify-between py-10 sm:pl-0 pl-10`}
           >
@@ -253,18 +249,11 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-black py-20 sm:py-52 text-white">
-        <div className="px-[2rem] max-w-[1500px] mx-auto">
-          <h2 className="w-[60%] xl:text-7xl lg:text-8xl md:text-7xl sm:text-6xl text-5xl mb-10">
+      <section className="bg-black text-white md:m-10 m-4 rounded-xl">
+        <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[60vh] md:h-[70vh]">
+          <h2 className="md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
             Learn More About Us With AI
           </h2>
-
-          <p className="mb-16 sm:w-1/2 sm:text-xl md:text-lg text-gray-500">
-            Explore the potential of AI and find the best solutions for your
-            business through the innovative Centonis website chatbot. Discover
-            how our technology can transform your operations and enhance
-            customer experiences.
-          </p>
           <Link
             href="/ai"
             className=" border-white border-[1px] text-white lg:px-10 lg:py-3 px-6 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300 "
@@ -272,6 +261,11 @@ const Home = () => {
             Try it out
           </Link>
         </div>
+        <p className="mb-16 md:w-3/4 lg:w-1/2   text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm md:text-lg ">
+          Discover the potential of AI and find the best solutions for your
+          business with the innovative Centonis website chatbot. Transform your
+          operations and enhance customer experiences with our technology.
+        </p>
       </section>
 
       <section
@@ -326,13 +320,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-zinc-100 py-32 sm:py-40 sm:mb-20 mb-10">
+      {/* <section className="bg-zinc-100 py-32 sm:py-40 sm:mb-20 mb-10 md:m-10 m-4 rounded-xl">
         <div className="px-[2rem] max-w-[1500px] mx-auto">
           <h2 className="w-[80%]">
-            <span className="xl:text-7xl lg:text-7xl md:text-7xl sm:text-6xl text-5xl text-zinc-600">
+            <span className="xl:text-7xl lg:text-7xl md:text-7xl sm:text-6xl text-5xl text-zinc-900">
               We are more than a business we are a{" "}
             </span>
-            <span className=" xl:text-7xl lg:text-7xl md:text-7xl sm:text-6xl text-5xl">
+            <span className=" xl:text-7xl lg:text-7xl md:text-7xl sm:text-6xl text-5xl text-zinc-900">
               partnership
             </span>
           </h2>
@@ -344,6 +338,20 @@ const Home = () => {
             sustainable growth. Together, we turn potential into performance.
           </p>
         </div>
+      </section> */}
+
+      <section className="bg-zinc-100 text-black md:m-10 m-4 rounded-xl">
+        <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[47vh] md:h-[60vh]">
+          <h2 className=" md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
+          We are more than a business; we're a partnership.
+          </h2>
+        </div>
+        <p className="mb-16 md:w-3/4 lg:w-1/2  md:text-lg  text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm">
+          At Centonis, we deliver AI software solutions while building strong,
+          personal connections with our clients. By understanding your unique
+          needs, we provide tailored solutions that drive success and
+          sustainable growth. Together, we turn potential into performance.
+        </p>
       </section>
 
       <Contactpanel />
