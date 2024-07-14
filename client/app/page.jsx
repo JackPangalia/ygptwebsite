@@ -56,7 +56,7 @@ const Home = () => {
           autoPlay
           loop
           muted
-          src="./fastdrone1.MOV"
+          src="/fastdrone1.mov"
           className="h-full w-full object-cover rounded-xl"
         />
 
