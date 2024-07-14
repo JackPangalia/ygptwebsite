@@ -45,7 +45,7 @@ const Home = () => {
      /> */}
         </div>
         <h2 className="lg:text-xl text-sm md:w-1/2 px-[2rem] text-center text-zinc-900 tracking-wide mx-auto w-fit">
-          Unlock your business's potential with our custom AI solutions.
+          Unlock your business&apos;s potential with our custom AI solutions.
           Tailored to meet your unique needs.
         </h2>
       </section>
@@ -56,7 +56,7 @@ const Home = () => {
           autoPlay
           loop
           muted
-          src="./fastdrone1.mp4"
+          src="./fastdrone1.MOV"
           className="h-full w-full object-cover rounded-xl"
         />
 
