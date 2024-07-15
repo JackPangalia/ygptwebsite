@@ -59,6 +59,9 @@ const Navbar = () => {
                 Benefits
               </Link>
             </li>
+            <li className="text-sm hover:text-black trasition-all duration-150 ml-4 ">
+              <Link href="/about">About</Link>
+            </li>
             <li className="mr-4 sm:ml-10 sm:mt-0 mt-4">
               <Link
                 href="/contact"
@@ -123,20 +126,38 @@ const Navbar = () => {
       >
         <ul className="ml-10 space-y-3 mt-4 text-2xl">
           <li>
-            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className = 'hover:font-[500] transition-all duration-150'>
+            <Link
+              href="/contact"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:font-[500] transition-all duration-150"
+            >
               Work with us
             </Link>
           </li>
           <li>
-            <Link href="/ai" onClick={() => setIsMobileMenuOpen(false)} className = 'hover:font-[500] transition-all duration-150'>
+            <Link
+              href="/ai"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hover:font-[500] transition-all duration-150"
+            >
               Chat
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/about"
+              className="hover:font-[500] transition-all duration-150"
+              onClick={() => setIsMobileMenuOpen(false)}
+
+            >
+              About
             </Link>
           </li>
           <li>
             <Link
               href={`${pathname === "/" ? "#benifits" : "/#benifits"}`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className = 'hover:font-[500] transition-all duration-150'
+              className="hover:font-[500] transition-all duration-150"
             >
               Benefits
             </Link>
@@ -145,7 +166,7 @@ const Navbar = () => {
             <Link
               href={`${pathname === "/" ? "#services" : "/#services"}`}
               onClick={() => setIsMobileMenuOpen(false)}
-              className = 'hover:font-[500] transition-all duration-150'
+              className="hover:font-[500] transition-all duration-150"
             >
               Services
             </Link>

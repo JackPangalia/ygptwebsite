@@ -6,8 +6,27 @@ import Contactpanel from "./components/contactpanel";
 import Footer from "./components/Footer";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll(".parallax");
+
+      parallaxElements.forEach((element) => {
+        const speed = parseFloat(element.getAttribute("data-speed"));
+        element.style.transform = `translateY(${scrollTop * speed}px)`;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <section className="sm:pt-[9rem] pt-[5rem] bg-cover bg-white">
@@ -87,7 +106,7 @@ const Home = () => {
             Our Services
           </h2>
           <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16 ">
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-md rounded-lg">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -106,12 +125,12 @@ const Home = () => {
                 href={{
                   pathname: "/enterpriseconsulting",
                 }}
-                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200 rounded"
+                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200"
               >
                 Learn More
               </Link>
             </div>
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-md rounded-lg">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <svg
                 viewBox="0 0 1024 1024"
                 fill="currentColor"
@@ -130,13 +149,13 @@ const Home = () => {
                 href={{
                   pathname: "/chatbotdevelopment",
                 }}
-                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200 rounded"
+                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200"
               >
                 Learn More
               </Link>
             </div>
 
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-md rounded-lg">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <svg
                 viewBox="0 0 24 24"
                 fill="currentColor"
@@ -155,13 +174,13 @@ const Home = () => {
                 href={{
                   pathname: "/autonomousagents",
                 }}
-                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200 rounded"
+                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200"
               >
                 Learn More
               </Link>
             </div>
 
-            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-md rounded-lg">
+            <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <svg
                 viewBox="0 0 64 64"
                 fill="currentColor"
@@ -194,7 +213,7 @@ const Home = () => {
                 href={{
                   pathname: "/dataanalysis",
                 }}
-                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200 rounded"
+                className="sm:text-lg sm:px-4 sm:py-2 px-2 py-1 bg-black w-fit text-white hover:bg-white hover:text-black hover:border-[1px] border-black transition-all duration-200"
               >
                 Learn More
               </Link>
@@ -249,10 +268,61 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-black text-white md:m-10 m-4 rounded-xl">
-        <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[60vh] md:h-[70vh]">
-          <h2 className="md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
-            Learn More About Us With AI
+      <section className="bg-white py-2 m-4 md:m-10 rounded-xl">
+        <div className=" md:px-8 lg:px-16 max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="bg-white p-6 rounded-lg shadow-lg border-zinc-200 border-[1px] flex flex-col">
+            <h2 className="text-2xl mb-2">Chat</h2>
+            <p className="w-full md:w-3/4 mb-10">
+              Gain an insight of how AI can enhance your business using the
+              innovative Centonis website chatbot
+            </p>
+            <Link
+              href="/ai"
+              className="border-black border-[1px] px-4 py-2 hover:bg-black hover:text-white transition-colors duration-200 w-fit mb-6"
+            >
+              Explore
+            </Link>
+
+            <div className="mt-auto">
+              <Image
+                className="rounded-xl w-full h-auto"
+                src="/orangemetalicgel.jpg"
+                alt="water motion image"
+                width={750}
+                height={750}
+              />
+            </div>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow-lg border-zinc-200 border-[1px] flex flex-col">
+            <h2 className="text-2xl mb-2">About</h2>
+            <p className="w-full md:w-3/4 mb-10">
+              Learn about Centonis and the many ways we can propel your business
+            </p>
+            <Link
+              href="/about"
+              className="border-black border-[1px] px-4 py-2 hover:bg-black hover:text-white transition-colors duration-200 w-fit mb-6"
+            >
+              Explore
+            </Link>
+
+            <div className="mt-auto">
+              <Image
+                className="rounded-xl w-full h-auto"
+                src="/metalicraindrops.jpg"
+                alt="water motion image"
+                width={750}
+                height={750}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="bg-black text-white md:m-10 m-4 rounded-xl">
+        <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[47vh] md:h-[70vh]">
+          <h2 className=" md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
+            Learn More About Us With AI.
           </h2>
           <Link
             href="/ai"
@@ -261,15 +331,16 @@ const Home = () => {
             Try it out
           </Link>
         </div>
-        <p className="mb-16 md:w-3/4 lg:w-1/2   text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm md:text-lg ">
-          Discover the potential of AI and find the best solutions for your
-          business with the innovative Centonis website chatbot. Transform your
-          operations and enhance customer experiences with our technology.
+        <p className="mb-16 md:w-3/4 lg:w-1/2  md:text-lg  text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm">
+          Explore the potential of AI and find the best solutions for your
+          business through the innovative Centonis website chatbot. Discover how
+          our technology can transform your operations and enhance customer
+          experiences.
         </p>
-      </section>
+      </section> */}
 
       <section
-        className="w-full sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto"
+        className="w-full sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto "
         id="benifits"
       >
         <h2 className="sm:text-5xl text-4xl sm:w-1/2 mb-16">
@@ -320,30 +391,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section className="bg-zinc-100 py-32 sm:py-40 sm:mb-20 mb-10 md:m-10 m-4 rounded-xl">
-        <div className="px-[2rem] max-w-[1500px] mx-auto">
-          <h2 className="w-[80%]">
-            <span className="xl:text-7xl lg:text-7xl md:text-7xl sm:text-6xl text-5xl text-zinc-900">
-              We are more than a business we are a{" "}
-            </span>
-            <span className=" xl:text-7xl lg:text-7xl md:text-7xl sm:text-6xl text-5xl text-zinc-900">
-              partnership
-            </span>
-          </h2>
-
-          <p className="sm:w-[60%] sm:text-xl md:text-lg text-gray-500 mt-10">
-            At Centonis, we deliver AI software solutions while building strong,
-            personal connections with our clients. By understanding your unique
-            needs, we provide tailored solutions that drive success and
-            sustainable growth. Together, we turn potential into performance.
-          </p>
-        </div>
-      </section> */}
-
-      <section className="bg-zinc-100 text-black md:m-10 m-4 rounded-xl">
+      {/* <section className="bg-zinc-100 text-black md:m-10 m-4 rounded-xl">
         <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[47vh] md:h-[60vh]">
           <h2 className=" md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
-          We are more than a business; we&#39;re a partnership.
+            We are more than a business; we&#39;re a partnership.
           </h2>
         </div>
         <p className="mb-16 md:w-3/4 lg:w-1/2  md:text-lg  text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm">
@@ -352,7 +403,7 @@ const Home = () => {
           needs, we provide tailored solutions that drive success and
           sustainable growth. Together, we turn potential into performance.
         </p>
-      </section>
+      </section> */}
 
       <Contactpanel />
 
