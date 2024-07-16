@@ -1,11 +1,15 @@
 "use client";
 
+//* COMPONENT IMPORTS *//
+import sendEmailClient from "../utils/sendEmailClient";
+
+//* PACKAGE COMPONENT IMPORTS *//
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 
 const ContactForm = () => {
-  // User input varibles
+  // Varibles
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,7 +17,6 @@ const ContactForm = () => {
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
   const [isValidInformation, setValidInformation] = useState(true);
-  const [missingInfo, setMissingInfo] = useState('');
   const [isSent, setSent] = useState(false);
 
   function isValidEmail(email) {
@@ -43,7 +46,15 @@ const ContactForm = () => {
         isValidEmail(email) &&
         isValidPhoneNumber(phoneNumber)
       ) {
-        const docRef = await addDoc(collection(db, `inquirys/`), {
+        console.log("adding info");
+
+        sendEmailClient(
+          email,
+          "New Website Contact Submission",
+          `Email`,
+          `<h1>New Website Contact Submission</h1><br><p><b>${email}</b></p><br><p><b>${phoneNumber}</b></p><br><p>${firstName}</p><br><p>${lastName}</p><br><p>${company}</p><br><p>${message}</p>`
+        );
+        await addDoc(collection(db, `inquirys/`), {
           firstName: firstName,
           lastName: lastName,
           email: email,
@@ -58,25 +69,22 @@ const ContactForm = () => {
         setValidInformation(false);
       }
     } catch (error) {
-      alert('There was an error sending the message')
+      alert("There was an error sending the message");
       setSent(false);
       console.log(error);
     }
   };
 
-  // addInfo()
+  // JSX markup and Tailwind markup
   return (
     <>
       <div
-        className={`bg-black flex-col gap-2 h-screen justify-center items-center ${
+        className={`bg-white flex-col gap-2 h-screen justify-center items-center ${
           isSent ? "flex" : "hidden"
         }`}
       >
-        <h2 className="text-white text-2xl">Your Message Has Been Sent</h2>
+        <h2 className="text-black text-4xl">Your Message Has Been Sent</h2>
         <p className="text-gray-500">We will get back to you shortly</p>
-        <div className="firework"></div>
-        <div className="firework"></div>
-
       </div>
       <div
         className={`sm:py-[8rem] py-[5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem] ${
@@ -126,6 +134,7 @@ const ContactForm = () => {
               <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
             </div>
             <input
+              placeholder="Double check your email is correct"
               className="border-black border-b-[1px] outline-none"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -138,6 +147,7 @@ const ContactForm = () => {
               <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
             </div>
             <input
+              placeholder="xxxyyyzzzz"
               className="border-black border-b-[1px] outline-none"
               value={phoneNumber}
               onChange={(event) => setPhoneNumber(event.target.value)}
@@ -158,8 +168,8 @@ const ContactForm = () => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3">
               <label className="text-sm">
-                TELL US ABOUT YOUR PROJECT, A BIT OF CONTEXT WILL ALLOW US TO
-                CONNECT YOU TO THE RIGHT TEAM FASTER:
+                Tell us about your project, a bit of context will allow us to
+                connect you to the right team faster.
               </label>
               <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
             </div>

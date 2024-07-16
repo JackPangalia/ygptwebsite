@@ -1,34 +1,30 @@
+// THIS IS THE LANDER PAGE OF THE YGPTWEBSITE (CENTONIS TECHNOLOGIES) WEBSITE.
+
 "use client";
 
-import Link from "next/link";
+//* ICON COMPONENTS IMPORT * //
+import IconArrowUpRight from "@/app/components/icons/IconArrowUpRight";
+import IconBrain from "./components/icons/IconBrain";
+import IconBorderBottom from "./components/icons/IconBorderBotton";
+import IconCurvedConnector from "./components/icons/IconCurvedConnector";
+import IconPieChart from "./components/icons/IconPieChart";
+
+//* OTHER COMPONENT IMPORTS *//
 import Keypoint from "./components/Keypoint";
 import Contactpanel from "./components/contactpanel";
 import Footer from "./components/Footer";
-import Image from "next/image";
+import ExploreCard from "./components/ExploreCard";
+import SliderKeyPoint from "./components/SliderKeyPoint";
+
+// * PACKAGE IMPORTS * //
+import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import { useEffect } from "react";
 
+// JSX FUNCTION
 const Home = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll(".parallax");
-
-      parallaxElements.forEach((element) => {
-        const speed = parseFloat(element.getAttribute("data-speed"));
-        element.style.transform = `translateY(${scrollTop * speed}px)`;
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
+      {/* LANDER SCREEN */}
       <section className="sm:pt-[9rem] pt-[5rem] bg-cover bg-white">
         <div className="md:mt-24 sm:mt-19 mt-4 max-w-[1500px] px-[2rem] mx-auto md:pb-56 sm:pb-40 pb-24 h-[60vh] flex justify-center items-center flex-col">
           <TypeAnimation
@@ -45,19 +41,10 @@ const Home = () => {
             ]}
             wrapper="span"
             speed={50}
-            // style={{ fontSize: "2em", display: "inline-block" }}
-            className="lg:text-8xl md:text-7xl text-6xl text-black "
+            className="lg:text-8xl md:text-7xl text-6xl text-black text-center"
             repeat={Infinity}
             cursor={false}
           />
-
-          {/* <Image
-            src="/skybg.jpg"
-            alt="chat bot img"
-            height={1700}
-            width={1700}
-            className=" mt-32 max-h-[1000px] object-cover w-full "
-          /> */}
         </div>
         <h2 className="lg:text-xl text-sm md:w-1/2 px-[2rem] text-center text-zinc-900 tracking-wide mx-auto w-fit">
           Unlock your business&apos;s potential with our custom AI solutions.
@@ -65,6 +52,7 @@ const Home = () => {
         </h2>
       </section>
 
+      {/* VIDEO SECTION */}
       <section className="bg-cover h-screen md:m-10 m-4 rounded-xl flex justify-center items-center ">
         <video
           playsInline
@@ -80,26 +68,13 @@ const Home = () => {
             href="/contact"
             className="lg:text-xl text-md w-fit text-center text-zinc-100 tracking-wide rounded absolute flex justify-center items-center gap-2 bg-zinc-900 p-2 bg-opacity-20 hover:bg-opacity-60 transition-all duration-200"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"
-              />
-            </svg>
+            <IconArrowUpRight />
             Request a demo
           </Link>
-          {/* <button className = 'absolute mt-20'>Request a demo</button> */}
         </>
       </section>
 
+      {/* SERVICES SECTION */}
       <section className="bg-white md:py-32 py-20 text-black">
         <div className="px-[2rem] max-w-[1500px] mx-auto">
           <h2 className="sm:text-5xl text-4xl " id="services">
@@ -107,15 +82,7 @@ const Home = () => {
           </h2>
           <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16 ">
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="1.7em"
-                width="1.7em"
-                className="mb-5"
-              >
-                <path d="M3.299 17.596c.432 1.332 1.745 2.182 3.146 2.182H6.5A2.78 2.78 0 009.223 22c.457 0 .884-.115 1.262-.313a.992.992 0 00.515-.882V3.027a.997.997 0 00-.785-.983 2.324 2.324 0 00-1.479.201c-.744.356-1.18 1.151-1.18 1.978v.055a2.778 2.778 0 00-2.744 4.433A3.327 3.327 0 002 12c0 1.178.611 2.211 1.533 2.812-.43.771-.571 1.746-.234 2.784zm15.889-8.885a2.778 2.778 0 00-2.744-4.433v-.055c0-.826-.437-1.622-1.181-1.978a2.32 2.32 0 00-1.478-.201.998.998 0 00-.785.983v17.777c0 .365.192.712.516.882.378.199.804.314 1.261.314a2.78 2.78 0 002.723-2.223h.056c1.4 0 2.714-.85 3.146-2.182.337-1.038.196-2.013-.234-2.784A3.35 3.35 0 0022 12a3.327 3.327 0 00-2.812-3.289z" />
-              </svg>
+              <IconBrain className="h-[1.5rem] w-[1.5rem] mb-5 " />
               <h4 className="text-2xl mb-4 ">Enterprise Consulting</h4>
               <p className="sm:text-lg text-sm mb-8 ">
                 Expert strategies to help you implement and benefit from new
@@ -131,15 +98,7 @@ const Home = () => {
               </Link>
             </div>
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
-              <svg
-                viewBox="0 0 1024 1024"
-                fill="currentColor"
-                height="1.7em"
-                width="1.7em"
-                className="mb-5 text-red-400"
-              >
-                <path d="M872 808H152c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-720-94h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0-498h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0 332h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0-166h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm166 166h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0-332h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm332 0h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm0 332h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm222-72h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm388-404h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm388 426h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm388-404h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm-388 72h56c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8z" />
-              </svg>
+              <IconBorderBottom className="mb-5 text-red-400 size-[1.7rem]" />
               <h4 className=" text-2xl mb-4 ">Chatbot Development</h4>
               <p className="sm:text-lg text-sm mb-8 ">
                 Intelligent and personalized chat bots to automate tasked to
@@ -156,15 +115,8 @@ const Home = () => {
             </div>
 
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                height="1.7em"
-                width="1.7em"
-                className="mb-5 text-blue-400"
-              >
-                <path d="M7.05 3.5a3.519 3.519 0 000 4.97l8.49 8.48c.58.59.58 1.55 0 2.12-.59.59-1.54.59-2.13 0l-4.24-4.24 1.06-1.06-3.53-3.54-.36.36-1.41-1.42a1.02 1.02 0 00-1.43 0l-1.4 1.42c-.39.41-.39 1.02 0 1.41l1.4 1.41-.34.36L6.7 17.3l1.06-1.06L12 20.5a3.531 3.531 0 004.95 0c1.37-1.38 1.37-3.6 0-4.96L8.46 7.05c-.58-.59-.58-1.55 0-2.12.59-.59 1.54-.59 2.13 0l4.24 4.24-1.06 1.06 3.53 3.54.36-.36 1.41 1.42c.39.39 1.03.39 1.43 0l1.4-1.42c.39-.41.39-1.02 0-1.41l-1.4-1.41.34-.36L17.3 6.7l-1.06 1.06L12 3.5a3.531 3.531 0 00-4.95 0m-4.24 7.79l1.41-1.41 1.42 1.41-1.42 1.42m14.14 0l1.42-1.42 1.41 1.42-1.41 1.41z" />
-              </svg>
+              <IconCurvedConnector className="mb-5 text-blue-400 size-[1.5rem]" />
+
               <h4 className="text-2xl mb-4 ">Autonomous Agents</h4>
               <p className="sm:text-lg text-sm mb-8 ">
                 Programs that integrate with your system, streamlining your
@@ -181,29 +133,7 @@ const Home = () => {
             </div>
 
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
-              <svg
-                viewBox="0 0 64 64"
-                fill="currentColor"
-                height="1.7em"
-                width="1.7em"
-                className="mb-5 text-purple-400"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit={10}
-                  strokeWidth={2}
-                  d="M54.999 36.001C55 50.913 42.912 63 28 62.999 13.087 63 1 50.912 1.001 36 1 21.088 13.088 9 28 9.001V36l26.999.001z"
-                />
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeMiterlimit={10}
-                  strokeWidth={2}
-                  d="M63 28C63.001 13.087 50.914.998 36.001 1v27H63z"
-                />
-              </svg>
-
+              <IconPieChart className="mb-5 text-purple-400 size-[1.7rem]" />
               <h4 className="text-2xl mb-4">Data Analysis</h4>
               <p className="sm:text-lg text-sm mb-8">
                 Systems to analyze and visualize data, providing new useful
@@ -221,126 +151,58 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-28">
+      
+      {/* WHY AI SLIDER */}
+      <section className="w-full max-w-[1500px] mx-auto py-20 sm:py-10">
         <h2 className="sm:text-5xl text-4xl mb-4 px-[2rem]">
           Why Implement AI?
         </h2>
         <div className="flex md:grid sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 sm:overflow-x-clip overflow-x-scroll sm:px-[2rem] px-10">
-          <div
-            className={`min-w-[20rem] flex flex-col justify-between py-10 sm:pl-0 pl-10`}
-          >
-            <h4 className="text-2xl">Increase Efficiency</h4>
-            <p className="py-4">
-              Streamline your operations and boost productivity with AI-driven
-              automation.
-            </p>
-          </div>
+          <SliderKeyPoint
+            title="Increase Efficiency"
+            paragraph="Streamline your operations and boost productivity with AI-driven automation."
+          />
 
-          <div
-            className={`min-w-[22rem] flex flex-col justify-between py-10 sm:pl-0 pl-10`}
-          >
-            <h4 className="text-2xl">Automation</h4>
-            <p className="py-4">
-              Boost your company&apos;s output with efficient and reliable
-              automation solutions.
-            </p>
-          </div>
+          <SliderKeyPoint
+            title="Automation"
+            paragraph="Boost your company's output with efficient and reliable automation solutions."
+          />
 
-          <div
-            className={`min-w-[22rem] flex flex-col justify-between py-10 sm:pl-0 pl-10`}
-          >
-            <h4 className="text-2xl">Enhance Decision-Making</h4>
-            <p className="py-4">
-              Leverage data-driven insights and real-time analytics for better
-              strategic decisions.
-            </p>
-          </div>
+          <SliderKeyPoint
+            title="Enhance Decision-Making"
+            paragraph="Leverage data-driven insights and real-time analytics for better strategic decisions."
+          />
 
-          <div
-            className={`min-w-[22rem] flex flex-col justify-between py-10 sm:pl-0 pl-10 pr-5`}
-          >
-            <h4 className="text-2xl">Foster Innovation</h4>
-            <p className="py-4">
-              Gain a competitive edge by always staying on the forefront of AI.
-            </p>
-          </div>
+          <SliderKeyPoint
+            title="Foster Innovation"
+            paragraph="Gain a competitive edge by always staying on the forefront of AI."
+          />
         </div>
       </section>
 
-      <section className="bg-white py-2 m-4 md:m-10 rounded-xl">
+      {/* EXPLORE CHAT / AI SECTION */}
+      <section className="bg-white py-2 m-4 md:m-10 rounded-xl pt-6">
         <div className=" md:px-8 lg:px-16 max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="bg-white p-6 rounded-lg shadow-lg border-zinc-200 border-[1px] flex flex-col">
-            <h2 className="text-2xl mb-2">Chat</h2>
-            <p className="w-full md:w-3/4 mb-10">
-              Gain an insight of how AI can enhance your business using the
-              innovative Centonis website chatbot
-            </p>
-            <Link
-              href="/ai"
-              className="border-black border-[1px] px-4 py-2 hover:bg-black hover:text-white transition-colors duration-200 w-fit mb-6"
-            >
-              Explore
-            </Link>
-
-            <div className="mt-auto">
-              <Image
-                className="rounded-xl w-full h-auto"
-                src="/orangemetalicgel.jpg"
-                alt="water motion image"
-                width={750}
-                height={750}
-              />
-            </div>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-lg border-zinc-200 border-[1px] flex flex-col">
-            <h2 className="text-2xl mb-2">About</h2>
-            <p className="w-full md:w-3/4 mb-10">
-              Learn about Centonis and the many ways we can propel your business
-            </p>
-            <Link
-              href="/about"
-              className="border-black border-[1px] px-4 py-2 hover:bg-black hover:text-white transition-colors duration-200 w-fit mb-6"
-            >
-              Explore
-            </Link>
-
-            <div className="mt-auto">
-              <Image
-                className="rounded-xl w-full h-auto"
-                src="/metalicraindrops.jpg"
-                alt="water motion image"
-                width={750}
-                height={750}
-              />
-            </div>
-          </div>
+          <ExploreCard
+            title="Chat"
+            paragraph="Gain an insight of how AI can enhance your business using theinnovative Centonis website chatbot"
+            link="/ai"
+            imagePath="/orangemetalicgel.jpg"
+            imageHeight="auto"
+          />
+          <ExploreCard
+            title="About"
+            paragraph="Learn about Centonis and the many ways we can propel your business"
+            link="/about"
+            imagePath="/metalicraindrops.jpg"
+            imageHeight="auto"
+          />
         </div>
       </section>
 
-      {/* <section className="bg-black text-white md:m-10 m-4 rounded-xl">
-        <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[47vh] md:h-[70vh]">
-          <h2 className=" md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
-            Learn More About Us With AI.
-          </h2>
-          <Link
-            href="/ai"
-            className=" border-white border-[1px] text-white lg:px-10 lg:py-3 px-6 py-2 text-sm hover:bg-white hover:text-black transition-all duration-300 "
-          >
-            Try it out
-          </Link>
-        </div>
-        <p className="mb-16 md:w-3/4 lg:w-1/2  md:text-lg  text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm">
-          Explore the potential of AI and find the best solutions for your
-          business through the innovative Centonis website chatbot. Discover how
-          our technology can transform your operations and enhance customer
-          experiences.
-        </p>
-      </section> */}
-
+      {/* CENTONIS BENIFITS SECTION */}
       <section
-        className="w-full sm:py-40 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto "
+        className="w-full sm:py-32 py-20 lg:px-[3rem] px-[1.5rem] max-w-[1500px] mx-auto "
         id="benifits"
       >
         <h2 className="sm:text-5xl text-4xl sm:w-1/2 mb-16">
@@ -391,22 +253,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section className="bg-zinc-100 text-black md:m-10 m-4 rounded-xl">
-        <div className="px-[2rem] max-w-[1500px] mx-auto justify-center flex flex-col items-center h-[47vh] md:h-[60vh]">
-          <h2 className=" md:text-7xl sm:text-6xl text-5xl mb-10 text-center">
-            We are more than a business; we&#39;re a partnership.
-          </h2>
-        </div>
-        <p className="mb-16 md:w-3/4 lg:w-1/2  md:text-lg  text-gray-500 mt-4 mx-auto text-center pb-10 px-10 text-sm">
-          At Centonis, we deliver AI software solutions while building strong,
-          personal connections with our clients. By understanding your unique
-          needs, we provide tailored solutions that drive success and
-          sustainable growth. Together, we turn potential into performance.
-        </p>
-      </section> */}
-
+      {/* FOOTER & CONTACT PANEL AREA */}
       <Contactpanel />
-
       <Footer />
     </>
   );

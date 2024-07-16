@@ -1,3 +1,5 @@
+// THIS IS THE PAGE OF THE AICHAT FEATURE OF THE YGPTWEBSITE (CENTONIS TECHNOLOGIES) WEBSITE
+
 import Chatbot from "../components/Chatbot"
 
 export const metadata = {

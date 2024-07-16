@@ -1,28 +1,19 @@
 "use client";
+
+//* ICON COMPONENT IMPORTS *//
+import IconHamburgerMenu from "./icons/IconHamburgerMenu";
+import IconClose from "./icons/IconClose";
+
+//* PACKAGE COMPONENT IMPORTS *//
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
       <header
@@ -42,9 +33,9 @@ const Navbar = () => {
             alt="company logo"
             className="h-5 w-5 inline ml-2 mb-1"
           />
-          <span className="sm:block hidden text-[11px]">
+          {/* <span className="sm:block hidden text-[11px]">
             Led by you, powered by us
-          </span>
+          </span> */}
         </Link>
 
         <nav className="flex">
@@ -85,35 +76,11 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {!isMobileMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
+              <IconHamburgerMenu className = 'size-[1.4rem]'/>
+
+
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18 18 6M6 6l12 12"
-                />
-              </svg>
+              <IconClose className = 'size-[1.4rem]' />
             )}
           </button>
         </nav>
