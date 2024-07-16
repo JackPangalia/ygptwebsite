@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER_ADRESS,
+        user: process.env.EMAIL_USER_ADDRESS,
         pass: process.env.GOOGLE_APP_PASSWORD,
       },
     });

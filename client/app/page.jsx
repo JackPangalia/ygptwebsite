@@ -1,5 +1,4 @@
 // THIS IS THE LANDER PAGE OF THE YGPTWEBSITE (CENTONIS TECHNOLOGIES) WEBSITE.
-
 "use client";
 
 //* ICON COMPONENTS IMPORT * //
@@ -32,7 +31,7 @@ const Home = () => {
               // Same substring at the start will only be typed out once, initially
               "AI to elevate your business",
               1000, // wait 1s before replacing "Mice" with "Hamsters"
-              "AI to gets things done",
+              "AI to get things done",
               1000,
               "AI designed for you",
               1000,
