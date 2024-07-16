@@ -24,16 +24,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-NB4J2WX8DB"></Script>
-      <Script id = 'google-analytics'>
-        {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <meta name="google-site-verification" content="YCaSyT7OuzrtAQJR48b9K9fw4LbgwpKAsGIckwE_qVU" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-NB4J2WX8DB"></Script>
+        <Script id = 'google-analytics'>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-        gtag('config', 'G-NB4J2WX8DB');
-        `}
-      </Script>
+          gtag('config', 'G-NB4J2WX8DB');
+          `}
+        </Script>
       </head>
       <body className={roboto_mono.className}>
         <Navbar />
