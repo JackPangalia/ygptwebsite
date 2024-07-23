@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header
+      <headers
         className={`z-50 fixed top-0 w-full px-[2rem] md:px-[4rem] lg:px-[8rem] py-[1.6rem] flex  justify-between transition-colors duration-300 bg-white`}
       >
         <Link
@@ -84,7 +84,7 @@ const Navbar = () => {
             )}
           </button>
         </nav>
-      </header>
+      </headers>
 
       <div
         className={`bg-white w-screen h-screen left-0 fixed top-[4.5rem] transition-all duration-400 transform ${

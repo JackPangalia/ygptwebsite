@@ -45,29 +45,29 @@ const Home = () => {
             cursor={false}
           />
         </div>
-        <h2 className="lg:text-xl text-sm md:w-1/2 px-[2rem] text-center text-zinc-900 tracking-wide mx-auto w-fit">
+        <p className="lg:text-xl text-sm md:w-1/2 px-[2rem] text-center text-zinc-900 tracking-wide mx-auto w-fit">
           Unlock your business&apos;s potential with our custom AI solutions.
           Tailored to meet your unique needs.
-        </h2>
+        </p>
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="bg-cover h-screen md:m-10 m-4 rounded-xl flex justify-center items-center ">
+      <section className="bg-cover h-screen md:m-10 m-4 rounded-xl flex justify-center items-center bg-black">
         <video
           playsInline
           autoPlay
           loop
           muted
           src="/fastdrone1.mp4"
-          className="h-full w-full object-cover rounded-xl"
+          className="h-full w-full object-cover rounded-xl opacity-70"
         />
 
         <>
           <Link
             href="/contact"
-            className="lg:text-xl text-md w-fit text-center text-zinc-100 tracking-wide rounded absolute flex justify-center items-center gap-2 bg-zinc-900 p-2 bg-opacity-20 hover:bg-opacity-60 transition-all duration-200"
+            className="lg:text-lg text-md w-fit text-center text-zinc-100 tracking-wide rounded  absolute flex justify-center items-center gap-2 bg-zinc-900 p-2 hover:bg-opacity-60 transition-all duration-200"
           >
-            <IconArrowUpRight />
+            <IconArrowUpRight className = 'bg-white text-black p-1 size-6  rounded pt-[6px]'/>
             Request a demo
           </Link>
         </>
@@ -82,7 +82,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 mt-16 ">
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <IconBrain className="h-[1.5rem] w-[1.5rem] mb-5 " />
-              <h4 className="text-2xl mb-4 ">Enterprise Consulting</h4>
+              <h3 className="text-2xl mb-4 ">Enterprise Consulting</h3>
               <p className="sm:text-lg text-sm mb-8 ">
                 Expert strategies to help you implement and benefit from new
                 technologies.
@@ -98,7 +98,7 @@ const Home = () => {
             </div>
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <IconBorderBottom className="mb-5 text-red-400 size-[1.7rem]" />
-              <h4 className=" text-2xl mb-4 ">Chatbot Development</h4>
+              <h3 className=" text-2xl mb-4 ">Chatbot Development</h3>
               <p className="sm:text-lg text-sm mb-8 ">
                 Intelligent and personalized chat bots to automate tasked to
                 boost productivity.
@@ -116,7 +116,7 @@ const Home = () => {
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <IconCurvedConnector className="mb-5 text-blue-400 size-[1.5rem]" />
 
-              <h4 className="text-2xl mb-4 ">Autonomous Agents</h4>
+              <h3 className="text-2xl mb-4 ">Autonomous Agents</h3>
               <p className="sm:text-lg text-sm mb-8 ">
                 Programs that integrate with your system, streamlining your
                 business.
@@ -133,7 +133,7 @@ const Home = () => {
 
             <div className="bg-white lg:min-h-[22rem] min-h-[14rem] text-black  p-8 shadow-lg rounded-lg border-zinc-200 border-[1px]">
               <IconPieChart className="mb-5 text-purple-400 size-[1.7rem]" />
-              <h4 className="text-2xl mb-4">Data Analysis</h4>
+              <h3 className="text-2xl mb-4">Data Analysis</h3>
               <p className="sm:text-lg text-sm mb-8">
                 Systems to analyze and visualize data, providing new useful
                 insights.

@@ -11,7 +11,7 @@ export const metadata = {
 const Chatbotdevlopment = () => {
   return (
     <div className="pt-[8rem]">
-      <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
+      <div className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
         <div className="w-full flex lg:flex-row flex-col gap-10">
           <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">
             Data Analysis
@@ -29,10 +29,10 @@ const Chatbotdevlopment = () => {
         </div>
 
         <Image
-          src="/analysis.jpg"
-          alt="chat bot img"
-          height={1700}
-          width={1700}
+          src="/analysis.webp"
+          alt="Data analysis illustration"
+          height={1600}
+          width={1600}
           className="w-full mt-20 max-h-[800px] object-cover"
         />
 
@@ -55,7 +55,7 @@ const Chatbotdevlopment = () => {
             paragraph="AI algorithms can identify and correct errors in data, ensuring higher data quality and reliability. This improves the accuracy of business insights and decisions derived from the analysed data."
           />
         </div>
-      </section>
+      </div>
 
       <Contactpanel />
       <Footer />
