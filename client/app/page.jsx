@@ -58,7 +58,7 @@ const Home = () => {
           autoPlay
           loop
           muted
-          src="/motherboard.mp4"
+          src="/vancouverharbour.mp4"
           className="h-full w-full object-cover rounded-xl opacity-70"
         />
 

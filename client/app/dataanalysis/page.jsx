@@ -29,7 +29,7 @@ const Chatbotdevlopment = () => {
         </div>
 
         <Image
-          src="/analysis.webp"
+          src="/analysis.jpg"
           alt="Data analysis illustration"
           height={1600}
           width={1600}

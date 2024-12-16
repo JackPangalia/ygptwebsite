@@ -29,7 +29,7 @@ const Chatbotdevlopment = () => {
         </div>
 
         <Image
-          src="/cooldesign.jpg"
+          src="/Vancouver_Cruise_Terminal.jpg"
           alt="chat bot img"
           height={1700}
           width={1700}
