@@ -46,27 +46,19 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="text-sm hover:text-black trasition-all duration-150 ml-4 ">
-              <Link href={`${pathname === "/" ? "#benifits" : "/#benifits"}`}>
+              <Link href={`${pathname === "/" ? "#benefits" : "/#benefits"}`}>
                 Benefits
               </Link>
             </li>
             <li className="text-sm hover:text-black trasition-all duration-150 ml-4 ">
-              <Link href="/about">About</Link>
+              <Link href={`${pathname === "/" ? "#about" : "/#about"}`}>About</Link>
             </li>
             <li className="mr-4 sm:ml-10 sm:mt-0 mt-4">
               <Link
                 href="/contact"
-                className="border-black border-[1px] text-black px-6 py-2 text-sm  hover:bg-black hover:text-white transition-all duration-300"
+                className="bg-black text-white px-4 py-3 rounded-full hover:bg-black/80 transition-colors text-sm"
               >
                 Work With Us
-              </Link>
-            </li>
-            <li className="sm:mt-0 mt-4">
-              <Link
-                href="/ai"
-                className="border-black border-[1px] text-black px-6 py-2 text-sm  hover:bg-black hover:text-white transition-all duration-300"
-              >
-                Chat
               </Link>
             </li>
           </ul>
@@ -76,11 +68,9 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {!isMobileMenuOpen ? (
-              <IconHamburgerMenu className = 'size-[1.4rem]'/>
-
-
+              <IconHamburgerMenu className="size-[1.4rem]" />
             ) : (
-              <IconClose className = 'size-[1.4rem]' />
+              <IconClose className="size-[1.4rem]" />
             )}
           </button>
         </nav>
@@ -103,26 +93,16 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              href="/ai"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="hover:font-[500] transition-all duration-150"
-            >
-              Chat
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
+              href={`${pathname === "/" ? "#benefits" : "/#benefits"}`}
               className="hover:font-[500] transition-all duration-150"
               onClick={() => setIsMobileMenuOpen(false)}
-
             >
               About
             </Link>
           </li>
           <li>
             <Link
-              href={`${pathname === "/" ? "#benifits" : "/#benifits"}`}
+              href={`${pathname === "/" ? "#benefits" : "/#benefits"}`}
               onClick={() => setIsMobileMenuOpen(false)}
               className="hover:font-[500] transition-all duration-150"
             >

@@ -4,6 +4,7 @@
 
 
 
+
 /* 
 html {
   padding-block: 2.4rem;
@@ -39,6 +40,8 @@ html {
   --container-width: 767px;
   --side-padding: calc(50vw - var(--container-width) / 2);
 }
+
+
 
 * {
   scroll-behavior: smooth;

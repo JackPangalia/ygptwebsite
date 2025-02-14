@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={`flex sm:flex-row flex-col sm:mt-44 mt-20 sm:gap-24 gap-10 sm:px-[3rem] px-[2rem] max-w-[1500px] mx-auto pb-[6rem]`}>
+    <footer className={`flex sm:flex-row flex-col sm:mt-44 mt-20 sm:gap-24 gap-10 sm:px-[3rem] px-[2rem] max-w-[1500px] mx-auto pb-[6rem] `}>
       <div>
         <div className="flex flex-col">
           {/* <span className="">© 2024 Centonis technologies Inc</span> */}
@@ -19,7 +19,7 @@ const Footer = () => {
             </svg>
             Vancouver, BC
           </p>
-          <p>@ centonisai@gmail.com</p>
+          <p>centonisai@gmail.com</p>
         </div>
       </div>
 
@@ -30,16 +30,13 @@ const Footer = () => {
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/ai">AI</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
+            <Link href="#about">About</Link>
           </li>
           <li>
             <Link href="#services">Services</Link>
           </li>
           <li>
-            <Link href="#benifits">Benefits</Link>
+            <Link href="#benefits">Benefits</Link>
           </li>
         </ul>
       </div>
