@@ -93,7 +93,7 @@ const Home = () => {
 
       {/* SERVICES SECTION */}
       <section className="py-32 px-4" id = 'services'>
-        <div className="max-w-[1500px] mx-auto" >
+        <div className="max-w-[1500px] mx-auto flex  flex-col items-center" >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ const Home = () => {
           >
             Our Services
           </motion.h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
             {[
               {
                 title: "Consulting",
