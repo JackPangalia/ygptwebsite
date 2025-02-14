@@ -41,7 +41,7 @@ const Home = () => {
               1000,
               "AI designed your clients",
               1000,
-              "AI designed you",
+              "AI designed for you",
               1000,
             ]}
             wrapper="h1"
