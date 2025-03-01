@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 bg-gradient-to-b from-white to-gray-50">
+      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 bg-gray-50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const Home = () => {
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="relative h-[90vh] mx-4 md:mx-10 rounded-3xl overflow-hidden">
+      <section className="relative h-[90vh] mx-4 md:mx-10 rounded-3xl overflow-hidden bg-gray-50">
         <video
           autoPlay
           loop
@@ -93,7 +93,7 @@ const Home = () => {
 
       {/* SERVICES SECTION */}
       <section className="py-32 px-4" id = 'services'>
-        <div className="max-w-[1500px] mx-auto flex  flex-col items-center" >
+        <div className="max-w-[1500px] mx-auto flex flex-col items-center" >
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
