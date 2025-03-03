@@ -7,6 +7,7 @@ import IconBrain from "./components/icons/IconBrain";
 import IconBorderBottom from "./components/icons/IconBorderBotton";
 import IconCurvedConnector from "./components/icons/IconCurvedConnector";
 import IconPieChart from "./components/icons/IconPieChart";
+import ChatbotIframe from "./components/ChatbotIframe";
 
 //* OTHER COMPONENT IMPORTS *//
 import Keypoint from "./components/Keypoint";
@@ -66,10 +67,12 @@ const Home = () => {
             >
               Get Started
             </Link>
-          
           </motion.div>
         </motion.div>
       </section>
+
+
+      
 
       {/* VIDEO SECTION */}
       <section className="relative h-[90vh] mx-4 md:mx-10 rounded-3xl overflow-hidden bg-gray-50">
@@ -92,8 +95,8 @@ const Home = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="py-32 px-4" id = 'services'>
-        <div className="max-w-[1500px] mx-auto flex flex-col items-center" >
+      <section className="py-32 px-4" id="services">
+        <div className="max-w-[1500px] mx-auto flex flex-col items-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -109,23 +112,37 @@ const Home = () => {
                 description:
                   "Expert strategies to help you implement and benefit from new technologies.",
                 link: "/enterpriseconsulting",
-                keyPoints: ["Custom AI strategies", "Tailored automation plans", "Unlock AI potential", "Future-proof your business"],
+                keyPoints: [
+                  "Custom AI strategies",
+                  "Tailored automation plans",
+                  "Unlock AI potential",
+                  "Future-proof your business",
+                ],
               },
               {
                 title: "Chatbots",
                 description:
                   "Intelligent and personalized chat bots to automate tasks to boost productivity.",
                 link: "/chatbotdevelopment",
-                keyPoints: ["Easy Information", "Smart, real-time responses", "Seamless platform integration", "Convert visitors into leads"],
+                keyPoints: [
+                  "Easy Information",
+                  "Smart, real-time responses",
+                  "Seamless platform integration",
+                  "Convert visitors into leads",
+                ],
               },
               {
                 title: "Automations",
                 description:
                   "Programs that integrate with your system, streamlining your business.",
                 link: "/autonomousagents",
-                keyPoints: ["Automate workflows fast", "AI-powered decision-making", "Scale with efficiency", "Lower costs, higher output"],
+                keyPoints: [
+                  "Automate workflows fast",
+                  "AI-powered decision-making",
+                  "Scale with efficiency",
+                  "Lower costs, higher output",
+                ],
               },
-
             ].map((service, i) => (
               <motion.div
                 key={i}
@@ -137,12 +154,16 @@ const Home = () => {
               >
                 <h3 className="text-2xl  mb-4">{service.title}</h3>
                 <p className="text-gray-600 mb-8">{service.description}</p>
-                <div className = 'space-y-1 mb-8'>
-                {service.keyPoints.map((keyPoint, i) => (
-                  <p key = {i} className = 'px-2 py-1 shadow-sm border border-black/5 hover:shadow-xl transition-all duration-300 rounded-lg w-fit text-sm'>{keyPoint}</p>
-                ))}
+                <div className="space-y-1 mb-8">
+                  {service.keyPoints.map((keyPoint, i) => (
+                    <p
+                      key={i}
+                      className="px-2 py-1 shadow-sm border border-black/5 hover:shadow-xl transition-all duration-300 rounded-lg w-fit text-sm"
+                    >
+                      {keyPoint}
+                    </p>
+                  ))}
                 </div>
-                
 
                 <Link
                   href={service.link}
@@ -207,7 +228,7 @@ const Home = () => {
       </section>
 
       {/* EXPLORE CHAT / AI SECTION */}
-      <section className="py-32 px-4 bg-white" id = 'about'>
+      <section className="py-32 px-4 bg-white" id="about">
         <div className="max-w-[800px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -227,7 +248,7 @@ const Home = () => {
         </div>
       </section>
       {/* CENTONIS BENIFITS SECTION */}
-      <section className="py-32 px-4" id = 'benefits'>
+      <section className="py-32 px-4" id="benefits">
         <div className="max-w-[1500px] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

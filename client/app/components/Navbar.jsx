@@ -28,8 +28,9 @@ const Navbar = () => {
         } sm:top-6 sm:left-1/2 sm:-translate-x-1/2 sm:w-[87%] sm:max-w-[1500px] sm:rounded-full`}
       >
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/centonislogov2.png" width={24} height={24} alt="company logo" className="h-5 w-5 ml-3" />
-          <h1 className="text-lg hidden sm:inline">Centonis AI</h1>
+          <h1 className="text-xl hidden sm:inline ml-4 text-zinc-900">Centonis AI</h1>
+          <Image src="/centonislogov2.png" width={24} height={24} alt="company logo" className="h-4 w-4" />
+
         </Link>
 
         <nav className="flex items-center">
