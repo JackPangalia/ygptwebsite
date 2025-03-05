@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={work_sans.className}>
         <Navbar />
-        {/* <ChatbotToggle /> */}
+        <ChatbotToggle />
         {children}
         <SpeedInsights />
         {/* <Analytics /> */}
