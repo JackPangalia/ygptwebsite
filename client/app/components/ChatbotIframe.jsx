@@ -119,7 +119,7 @@ const ChatbotIframe = () => {
       <iframe
         ref={iframeRef}
         id="ai-chatbot"
-        src="http://localhost:5173/Centonis_ai_web_chatbot_frontend" // replace with your actual embed URL
+        src="https://jackpangalia.github.io/Centonis_ai_web_chatbot_frontend/" // replace with your actual embed URL
         style={{
           border: "none",
           width: isMobile ? "100vw" : "90vw",
