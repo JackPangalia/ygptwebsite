@@ -40,7 +40,7 @@ const Home = () => {
               1000,
               "AI to get things done",
               1000,
-              "AI designed your clients",
+              "AI designed for your clients",
               1000,
               "AI designed for you",
               1000,
