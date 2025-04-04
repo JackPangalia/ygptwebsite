@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 mb-10 mx-10 rounded-bl-3xl rounded-br-3xl">
+      <section className="min-h-[85vh] flex flex-col items-center justify-center px-4 mb-10 mx-10 rounded-bl-3xl rounded-br-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

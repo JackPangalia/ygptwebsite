@@ -16,7 +16,7 @@ const Navbar = () => {
       {/* --------------------- Desktop Navbar --------------------- */}
       <header className="z-50 hidden sm:flex fixed top-6 left-1/2 -translate-x-1/2 w-[87%] max-w-[1500px] px-4 py-4 justify-between items-center bg-white shadow-md rounded-full">
         <Link href="/" className="flex items-center gap-2">
-          <h1 className="text-xl text-zinc-900">Centonis AI</h1>
+          <h1 className="text-xl text-zinc-900 ml-4">Centonis AI</h1>
           <Image
             src="/centonislogov2.png"
             width={24}
