@@ -1,65 +1,48 @@
 // THIS IS THE LANDER PAGE OF THE YGPTWEBSITE (CENTONIS TECHNOLOGIES) WEBSITE.
-"use client";
-
+'use client'
 //* ICON COMPONENTS IMPORT * //
-import IconArrowUpRight from "@/app/components/icons/IconArrowUpRight";
-import IconBrain from "./components/icons/IconBrain";
-import IconBorderBottom from "./components/icons/IconBorderBotton";
-import IconCurvedConnector from "./components/icons/IconCurvedConnector";
-import IconPieChart from "./components/icons/IconPieChart";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 //* OTHER COMPONENT IMPORTS *//
-import Keypoint from "./components/Keypoint";
-const Contactpanel = dynamic(() => import('./components/contactpanel'));
-const Footer = dynamic(() => import('./components/Footer'));
-
-import Image from "next/image";
+const Contactpanel = dynamic(() => import("./components/contactpanel"));
+const Footer = dynamic(() => import("./components/Footer"));
 
 // * PACKAGE IMPORTS * //
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import { useState, useEffect } from 'react';
 
 // JSX FUNCTION
 const Home = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 bg-gray-50">
+      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 mb-10 mx-10 rounded-bl-3xl rounded-br-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-5xl mx-auto"
+          className="text-center max-w-5xl mx-auto "
         >
-          {isClient && (
-            <TypeAnimation
-              sequence={[
-                "AI to boost your business",
-                1000,
-                "AI to get things done",
-                1000,
-                "AI designed for your clients",
-                1000,
-                "AI designed for you",
-                1000,
-              ]}
-              wrapper="h1"
-              speed={50}
-              preRenderFirstString={true}
-              className="text-6xl md:text-7xl lg:text-7xl tracking-tight"
-              repeat={Number.POSITIVE_INFINITY}
-              cursor={false}
-            />
-          )}
+          <TypeAnimation
+            sequence={[
+              "AI to boost your business",
+              1000,
+              "AI to get things done",
+              1000,
+              "AI designed for your clients",
+              1000,
+              "AI designed for you",
+              1000,
+            ]}
+            wrapper="h1"
+            speed={50}
+            preRenderFirstString={true}
+            className="text-6xl md:text-7xl lg:text-7xl tracking-tight"
+            repeat={Number.POSITIVE_INFINITY}
+            cursor={false}
+          />
+
           <p className="mt-8 text-xl text-gray-600 max-w-2xl mx-auto">
             Unlock your business&apos;s potential with our custom AI solutions.
             Tailored to meet your unique needs.
@@ -82,29 +65,17 @@ const Home = () => {
 
       {/* VIDEO SECTION */}
       <section className="relative h-[90vh] mx-4 md:mx-10 rounded-3xl overflow-hidden bg-gray-50">
-        {isClient && (
-          <>
-            <Image
-              src="/vancouver-5449688_1280.jpg"
-              alt="Vancouver Harbor"
-              fill
-              priority
-              className="absolute inset-0 object-cover"
-              sizes="(max-width: 768px) 100vw, 100vw"
-              quality={75}
-            />
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              loading="lazy"
-              preload="none"
-              className="absolute inset-0 w-full h-full object-cover"
-              src="/vancouverharbour.mp4"
-            />
-          </>
-        )}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          loading="lazy"
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/vancouverharbour.mp4"
+        />
+
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <Link
             href="/contact"
