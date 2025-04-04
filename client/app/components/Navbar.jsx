@@ -60,7 +60,7 @@ const Navbar = () => {
         {/* Floating Nav Bar */}
         <header className="w-full py-1 px-1 flex items-center bg-white rounded-full shadow">
           {/* Logo / Title (change to your liking) */}
-          <div className="flex items-center gap-2">
+          <Link href = '/' className="flex items-center gap-2">
    
             <Image
               src="/centonislogov2.png"
@@ -69,7 +69,7 @@ const Navbar = () => {
               alt="company logo"
               className="h-6 w-6 ml-4"
             />
-          </div>
+          </Link>
 
           {/* Menu Toggle Button */}
           <button
