@@ -35,8 +35,8 @@ const ContactForm = () => {
     return phonePattern.test(phoneNumber);
   }
 
-  // Function to add the data into the database
-  const addInfo = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       if (
         firstName.length > 0 &&
@@ -46,21 +46,19 @@ const ContactForm = () => {
         isValidEmail(email) &&
         isValidPhoneNumber(phoneNumber)
       ) {
-        console.log("adding info");
-
-        sendEmailClient(
+        await sendEmailClient(
           email,
           "New Website Contact Submission",
           `Email`,
           `<h1>New Website Contact Submission</h1><br><p><b>${email}</b></p><br><p><b>${phoneNumber}</b></p><br><p>${firstName}</p><br><p>${lastName}</p><br><p>${company}</p><br><p>${message}</p>`
         );
         await addDoc(collection(db, `inquirys/`), {
-          firstName: firstName,
-          lastName: lastName,
-          email: email,
-          phoneNumber: phoneNumber,
-          company: company,
-          message: message,
+          firstName,
+          lastName,
+          email,
+          phoneNumber,
+          company,
+          message,
         });
 
         setValidInformation(true);
@@ -71,124 +69,137 @@ const ContactForm = () => {
     } catch (error) {
       alert("There was an error sending the message");
       setSent(false);
-      console.log(error);
+      console.error(error);
     }
   };
 
-  // JSX markup and Tailwind markup
-  return (
-    <>
-      <div
-        className={`bg-white flex-col gap-2 h-screen justify-center items-center ${
-          isSent ? "flex" : "hidden"
-        }`}
-      >
+  if (isSent) {
+    return (
+      <div className="flex flex-col gap-2 h-screen justify-center items-center bg-white" role="alert">
         <h2 className="text-black text-4xl">Your Message Has Been Sent</h2>
         <p className="text-gray-500">We will get back to you shortly</p>
       </div>
-      <div
-        className={`sm:py-[8rem] py-[5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem] ${
-          isSent ? "hidden" : "flex"
-        }`}
-      >
-        {/* <div className = 'flex '>hello</div> */}
-        <div className="w-1/2 my-auto">
-          <h1 className="text-7xl mb-4">Get Started</h1>
-          <p>Interested in solving your problems with us</p>
-        </div>
-        <div className="flex flex-col mt-20 w-full gap-6">
-          <span
-            className={`text-red-500 ${
-              isValidInformation ? "hidden" : "block"
-            }`}
-          >
-            missing information
-          </span>
-          <div className="flex flex-col">
-            <div className="flex items-center gap-3">
-              <label>First Name</label>
-              <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
-            </div>
-            <input
-              className="border-black border-b-[1px] outline-none"
-              value={firstName}
-              onChange={(event) => setFirstName(event.target.value)}
-            />
-          </div>
+    );
+  }
 
-          <div className="flex flex-col">
-            <div className="flex items-center gap-3">
-              <label>Last Name</label>
-              <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
-            </div>
-            <input
-              className="border-black border-b-[1px] outline-none"
-              value={lastName}
-              onChange={(event) => setLastName(event.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex items-center gap-3">
-              <label>Preferred Email Address</label>
-              <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
-            </div>
-            <input
-              placeholder="Double check your email is correct"
-              className="border-black border-b-[1px] outline-none"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex items-center gap-3">
-              <label>Phone Number</label>
-              <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
-            </div>
-            <input
-              placeholder="xxxyyyzzzz"
-              className="border-black border-b-[1px] outline-none"
-              value={phoneNumber}
-              onChange={(event) => setPhoneNumber(event.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col">
-            <div className="flex items-center gap-3">
-              <label>Company</label>
-            </div>
-            <input
-              className="border-black border-b-[1px] outline-none"
-              value={company}
-              onChange={(event) => setCompany(event.target.value)}
-            />
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-3">
-              <label className="text-sm">
-                Tell us about your project, a bit of context will allow us to
-                connect you to the right team faster.
-              </label>
-              <div className="bg-red-500 p-[1.5px] rounded-full w-fit"></div>
-            </div>
-            <textarea
-              className="w-full border-black border-[1px] h-24 outline-none p-1 resize-none"
-              value={message}
-              onChange={(event) => setMessage(event.target.value)}
-            />
-          </div>
-
-          <button
-            className="border-black border-[1px] text-black px-14 py-3 w-fit hover:text-white hover:bg-black tranistion-all duration-150"
-            onClick={addInfo}
-          >
-            Submit
-          </button>
-        </div>
+  return (
+    <div className="sm:py-[8rem] py-[5rem] flex xl:flex-row flex-col max-w-[1500px] mx-auto px-[3rem]">
+      <div className="xl:w-1/2 w-full my-auto">
+        <h1 className="text-7xl mb-4">Get Started</h1>
+        <p>Interested in solving your problems with us</p>
       </div>
-    </>
+      <form onSubmit={handleSubmit} className="flex flex-col mt-20 w-full gap-6" noValidate>
+        {!isValidInformation && (
+          <div className="text-red-500" role="alert" aria-live="polite">
+            Please fill in all required fields correctly
+          </div>
+        )}
+        
+        <div className="flex flex-col">
+          <label htmlFor="firstName" className="flex items-center gap-3">
+            First Name <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="firstName"
+            type="text"
+            className="border-black border-b-[1px] outline-none p-2"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="lastName" className="flex items-center gap-3">
+            Last Name <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="lastName"
+            type="text"
+            className="border-black border-b-[1px] outline-none p-2"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="email" className="flex items-center gap-3">
+            Email Address <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="email"
+            type="email"
+            className="border-black border-b-[1px] outline-none p-2"
+            placeholder="Double check your email is correct"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="phone" className="flex items-center gap-3">
+            Phone Number <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            pattern="[0-9]{10}"
+            className="border-black border-b-[1px] outline-none p-2"
+            placeholder="xxxyyyzzzz"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="company" className="flex items-center gap-3">
+            Company <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
+          <input
+            id="company"
+            type="text"
+            className="border-black border-b-[1px] outline-none p-2"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="message" className="flex items-center gap-3">
+            <span className="text-sm">
+              Tell us about your project, a bit of context will allow us to
+              connect you to the right team faster.
+            </span>
+            <span className="text-red-500" aria-hidden="true">*</span>
+          </label>
+          <textarea
+            id="message"
+            className="w-full border-black border-[1px] h-24 outline-none p-2 resize-none"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="border-black border-[1px] text-black px-14 py-3 w-fit hover:text-white hover:bg-black transition-all duration-150"
+          aria-label="Submit contact form"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

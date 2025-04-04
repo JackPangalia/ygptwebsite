@@ -4,16 +4,27 @@ import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title:
-    "Data Analysis Services | Centonis: Unlock Insights with Advanced AI Solutions",
-  description:
-    "Discover Centonis's data analysis services. We leverage advanced AI technology to transform your data into actionable insights, driving informed decision-making and business growth. Partner with us to harness the power of your data.",
+  title: "Autonomous Agent Development | Centonis: AI-Powered Task Automation",
+  description: "Transform your business operations with Centonis's autonomous agent development services. Our AI agents automate complex tasks, enhance efficiency, and drive productivity. Discover intelligent automation solutions.",
+  keywords: ["Autonomous Agents", "AI Automation", "Task Automation", "Workflow Automation", "AI Agents", "Business Process Automation"],
+  openGraph: {
+    title: "Autonomous Agent Development Services | Centonis",
+    description: "Intelligent AI agents that automate your business processes and enhance productivity.",
+    images: [
+      {
+        url: "/nightskyline.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Centonis Autonomous Agent Development - Modern Business Solutions"
+      }
+    ]
+  }
 };
 
-const Chatbotdevlopment = () => {
+const AutonomousAgents = () => {
   return (
-    <div className="pt-[8rem]">
-      <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
+    <main className="pt-[8rem]">
+      <article className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
         <div className="w-full flex lg:flex-row flex-col gap-10">
           <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">
             Autonomous Agent Development
@@ -53,12 +64,12 @@ const Chatbotdevlopment = () => {
             paragraph="Our autonomous agents can effortlessly scale to manage increased workloads without the need for proportional increases in human resources. They are also adaptable, capable of being reprogrammed to perform a variety of tasks, offering the flexibility to meet evolving business needs."
           />
         </div>
-      </section>
+      </article>
 
       <Contactpanel />
       <Footer />
-    </div>
+    </main>
   );
 };
 
-export default Chatbotdevlopment;
+export default AutonomousAgents;

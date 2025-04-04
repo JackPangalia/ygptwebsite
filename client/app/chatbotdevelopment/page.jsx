@@ -4,16 +4,27 @@ import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title:
-    "Chatbot Development Services | Centonis: Custom AI Chatbots for Your Business",
-  description:
-    "Discover Centonis's chatbot development services. We create custom AI chatbots tailored to your business needs, enhancing customer engagement and operational efficiency. Learn how our proprietary technology can transform your customer interactions.",
+  title: "Chatbot Development Services | Centonis: Custom AI Chatbots for Your Business",
+  description: "Discover Centonis's chatbot development services. We create custom AI chatbots tailored to your business needs, enhancing customer engagement and operational efficiency.",
+  keywords: ["Chatbot Development", "AI Chatbots", "Custom Chatbots", "Business Automation", "Customer Service AI", "Conversational AI"],
+  openGraph: {
+    title: "Custom AI Chatbot Development Services | Centonis",
+    description: "Transform your customer interactions with our custom AI chatbots.",
+    images: [
+      {
+        url: "/aichatbotanimated.png",
+        width: 1200,
+        height: 630,
+        alt: "Centonis AI Chatbot Development Services Illustration"
+      }
+    ]
+  }
 };
 
 const Chatbotdevlopment = () => {
   return (
-    <div className="pt-[8rem]">
-      <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
+    <main className="pt-[8rem]">
+      <article className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
         <div className="w-full flex lg:flex-row flex-col gap-10">
           <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">
             Chatbot Development
@@ -55,11 +66,11 @@ const Chatbotdevlopment = () => {
             paragraph="We refine our chatbots for peak speed performance, ensuring swift and efficient output. Our dedication to speed excellence guarantees unmatched responsiveness and seamless interactions."
           />
         </div>
-      </section>
+      </article>
 
       <Contactpanel />
       <Footer />
-    </div>
+    </main>
   );
 };
 

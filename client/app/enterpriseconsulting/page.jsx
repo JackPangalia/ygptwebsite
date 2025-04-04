@@ -4,16 +4,27 @@ import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title:
-    "Enterprise Consulting Services | Centonis: Elevate Your Business with AI Solution",
-  description:
-    "Explore Centonis's enterprise consulting services. We provide expert guidance and custom AI solutions to optimize your business processes and drive growth. Partner with us for innovative strategies and tailored solutions that deliver results.",
+  title: "Enterprise Consulting Services | Centonis: Elevate Your Business with AI Solution",
+  description: "Explore Centonis's enterprise consulting services. We provide expert guidance and custom AI solutions to optimize your business processes and drive growth. Partner with us for innovative strategies and tailored solutions that deliver results.",
+  keywords: ["Enterprise Consulting", "AI Consulting", "Business Optimization", "Digital Transformation", "AI Strategy", "Business Efficiency"],
+  openGraph: {
+    title: "Enterprise Consulting Services | Centonis",
+    description: "Expert AI consulting services to transform your business operations and drive growth.",
+    images: [
+      {
+        url: "/Vancouver_Cruise_Terminal.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Centonis AI Chatbot Development Services Illustration"
+      }
+    ]
+  }
 };
 
-const Chatbotdevlopment = () => {
+const EnterpriseConsulting = () => {
   return (
-    <div className="pt-[8rem]">
-      <section className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
+    <main className="pt-[8rem]">
+      <article className="sm:mt-20 mt-14 max-w-[1500px] px-[2rem] mx-auto">
         <div className="w-full flex lg:flex-row flex-col gap-10">
           <h1 className="lg:text-6xl text-5xl lg:w-1/2 w-full">
             Enterprise Consulting
@@ -55,12 +66,12 @@ const Chatbotdevlopment = () => {
             paragraph="AI enhances risk management by identifying threats and ensuring compliance. Predictive analytics and automated monitoring systems mitigate risks, maintaining a secure environment for Your Business."
           />
         </div>
-      </section>
+      </article>
 
       <Contactpanel />
       <Footer />
-    </div>
+    </main>
   );
 };
 
-export default Chatbotdevlopment;
+export default EnterpriseConsulting;

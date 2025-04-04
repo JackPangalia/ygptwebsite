@@ -1,0 +1,28 @@
+{
+  "short_name": "Centonis",
+  "name": "Centonis AI Solutions",
+  "icons": [
+    {
+      "src": "/centonislogov2.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/centonislogov2.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/centonislogov2.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "description": "Custom AI software solutions for business enhancement",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false
+} 
