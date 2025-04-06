@@ -12,7 +12,7 @@ export const metadata = {
     description: "Intelligent AI agents that automate your business processes and enhance productivity.",
     images: [
       {
-        url: "/nightskyline.jpg",
+        url: "/canadaplace.webp",
         width: 1200,
         height: 630,
         alt: "Centonis Autonomous Agent Development - Modern Business Solutions"
@@ -38,11 +38,13 @@ const AutonomousAgents = () => {
         </div>
 
         <Image
-          src="/nightskyline.jpg"
+          src="/canadaplace.webp"
           alt="chat bot img"
           height={1700}
           width={1700}
           className="w-full mt-20 max-h-[800px] object-cover"
+          layout="responsive"
+
         />
 
         <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 lg:mt-24 mt-14">

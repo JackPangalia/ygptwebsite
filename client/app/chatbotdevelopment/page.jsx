@@ -12,7 +12,7 @@ export const metadata = {
     description: "Transform your customer interactions with our custom AI chatbots.",
     images: [
       {
-        url: "/aichatbotanimated.png",
+        url: "/aichatbotanimated.webp",
         width: 1200,
         height: 630,
         alt: "Centonis AI Chatbot Development Services Illustration"
@@ -40,11 +40,13 @@ const Chatbotdevlopment = () => {
         </div>
 
         <Image
-          src="/aichatbotanimated.png"
+          src="/aichatbotanimated.webp"
           alt="chat bot img"
           height={1700}
           width={1700}
           className="w-full mt-20 max-h-[800px] object-cover"
+          layout="responsive"
+
         />
 
         <div className="sm:grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-14 lg:mt-24 mt-14">

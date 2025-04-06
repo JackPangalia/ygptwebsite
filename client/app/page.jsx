@@ -1,5 +1,5 @@
 // THIS IS THE LANDER PAGE OF THE YGPTWEBSITE (CENTONIS TECHNOLOGIES) WEBSITE.
-'use client'
+"use client";
 //* ICON COMPONENTS IMPORT * //
 import dynamic from "next/dynamic";
 
@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="min-h-[85vh] flex flex-col items-center justify-center px-4 mb-10 mx-10 rounded-bl-3xl rounded-br-3xl">
+      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 mb-10 mx-10 rounded-bl-3xl rounded-br-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,8 +73,11 @@ const Home = () => {
           loading="lazy"
           preload="none"
           className="absolute inset-0 w-full h-full object-cover"
-          src="/vancouverharbour.mp4"
-        />
+        >
+          <source src="/vancouverharbour.webm" type="video/webm" />
+          <source src="/vancouverharbour.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
           <Link
@@ -147,7 +150,7 @@ const Home = () => {
                 transition={{ delay: i * 0.1 }}
                 className="group relative bg-white rounded-2xl p-8 shadow-sm border border-black/5 hover:shadow-xl transition-all duration-300"
               >
-                <h3 className="text-2xl  mb-4">{service.title}</h3>
+                <h3 className="text-2xl mb-4e">{service.title}</h3>
                 <p className="text-gray-600 mb-8">{service.description}</p>
                 <div className="space-y-1 mb-8">
                   {service.keyPoints.map((keyPoint, i) => (

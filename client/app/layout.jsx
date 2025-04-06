@@ -22,7 +22,8 @@ export default function RootLayout({ children }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <link rel="apple-touch-icon" href="/centonislogov2.png" />
+        <link rel="apple-touch-icon" href="/Centonis_Logo_v5.webp" />
+        <link rel="icon" href="/Centonis_Logo_v5.webp" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="google-site-verification" content="YCaSyT7OuzrtAQJR48b9K9fw4LbgwpKAsGIckwE_qVU" />
         
@@ -35,7 +36,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               "name": "Centonis",
               "url": "https://www.centonis.com",
-              "logo": "https://www.centonis.com/centonislogov2.png",
+              "logo": "https://www.centonis.com/Centonis_Logo_v5.webp",
               "description": "Custom AI software solutions for business enhancement",
               "sameAs": [
                 "https://twitter.com/centonis",

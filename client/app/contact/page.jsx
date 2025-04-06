@@ -10,7 +10,7 @@ export const metadata = {
     description: "Ready to elevate your business with custom AI solutions? Contact Centonis today for a consultation and discover how we can help you achieve your goals.",
     images: [
       {
-        url: "/centonislogov2.png",
+        url: "/Centonis_Logo_v5.webp",
         width: 1200,
         height: 630,
         alt: "Contact Centonis - AI Solutions Consultation"
