@@ -17,12 +17,30 @@ const Home = () => {
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="min-h-[90vh] flex flex-col items-center justify-center px-4 mb-10 mx-10 rounded-bl-3xl rounded-br-3xl">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          loading="lazy"
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/vancouverharbour.webm" type="video/webm" />
+          <source src="/vancouverharbour.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-5xl mx-auto "
+          className="relative z-20 text-center max-w-5xl mx-auto"
         >
           <TypeAnimation
             sequence={[
@@ -38,12 +56,12 @@ const Home = () => {
             wrapper="h1"
             speed={50}
             preRenderFirstString={true}
-            className="text-6xl md:text-7xl lg:text-7xl tracking-tight"
+            className="text-6xl md:text-7xl lg:text-7xl tracking-tight text-white"
             repeat={Number.POSITIVE_INFINITY}
             cursor={false}
           />
 
-          <p className="mt-8 text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-8 text-xl text-white/90 max-w-2xl mx-auto">
             Unlock your business&apos;s potential with our custom AI solutions.
             Tailored to meet your unique needs.
           </p>
@@ -53,40 +71,20 @@ const Home = () => {
             transition={{ delay: 0.5 }}
             className="mt-12 flex flex-wrap justify-center gap-4"
           >
-            <Link
+            {/* <Link
               href="/contact"
-              className="bg-black text-white px-8 py-4 rounded-full text-lg hover:bg-black/80 transition-colors"
+              className="bg-white text-black px-8 py-4 rounded-full text-lg hover:bg-white/90 transition-colors font-medium"
             >
               Get Started
+            </Link> */}
+            <Link
+              href="/contact"
+              className="bg-white/10 backdrop-blur-xl text-white px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-all duration-300 border border-white/20"
+            >
+              Get In Contact
             </Link>
           </motion.div>
         </motion.div>
-      </section>
-
-      {/* VIDEO SECTION */}
-      <section className="relative h-[90vh] mx-4 md:mx-10 rounded-3xl overflow-hidden bg-gray-50">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          loading="lazy"
-          preload="none"
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/vancouverharbour.webm" type="video/webm" />
-          <source src="/vancouverharbour.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <Link
-            href="/contact"
-            className="bg-white/10 backdrop-blur-xl text-white px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-all duration-300"
-          >
-            Get In Contact
-          </Link>
-        </div>
       </section>
 
       {/* SERVICES SECTION */}
