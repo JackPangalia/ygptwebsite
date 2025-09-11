@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-start justify-center overflow-hidden">
         {/* Background Video */}
         <video
           autoPlay
@@ -36,12 +36,13 @@ const Home = () => {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/30 z-10"></div>
         
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 text-center max-w-5xl mx-auto"
-        >
+        <div className="w-[87%] max-w-[1500px] mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-20 text-left"
+          >
           <TypeAnimation
             sequence={[
               "AI to boost your business",
@@ -61,7 +62,7 @@ const Home = () => {
             cursor={false}
           />
 
-          <p className="mt-8 text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="mt-8 text-xl text-white/90 max-w-2xl">
             Unlock your business&apos;s potential with our custom AI solutions.
             Tailored to meet your unique needs.
           </p>
@@ -69,7 +70,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="mt-12 flex flex-wrap justify-center gap-4"
+            className="mt-12 flex flex-wrap justify-start gap-4"
           >
             {/* <Link
               href="/contact"
@@ -84,7 +85,8 @@ const Home = () => {
               Get In Contact
             </Link>
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* SERVICES SECTION */}
