@@ -25,6 +25,8 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/Centonis_Logo_v5.webp" />
         <link rel="icon" href="/Centonis_Logo_v5.webp" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="preload" href="/vancouverharbour.webm" as="video" type="video/webm" />
+        <link rel="preload" href="/fast.jpg" as="image" type="image/jpeg" />
         <meta
           name="google-site-verification"
           content="YCaSyT7OuzrtAQJR48b9K9fw4LbgwpKAsGIckwE_qVU"

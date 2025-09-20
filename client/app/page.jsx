@@ -4,330 +4,478 @@
 import dynamic from "next/dynamic";
 
 //* OTHER COMPONENT IMPORTS *//
-const Contactpanel = dynamic(() => import("./components/contactpanel"));
-const Footer = dynamic(() => import("./components/Footer"));
+const Contactpanel = dynamic(() => import("./components/contactpanel"), {
+  loading: () => <div className="h-32 bg-gray-100 animate-pulse rounded" />
+});
+const Footer = dynamic(() => import("./components/Footer"), {
+  loading: () => <div className="h-96 bg-gray-50 animate-pulse" />
+});
 
 // * PACKAGE IMPORTS * //
 import Link from "next/link";
+import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+import { useScroll } from "./hooks/useScroll";
 
 // JSX FUNCTION
 const Home = () => {
+  const scrollY = useScroll();
+
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="relative min-h-screen flex flex-col items-start justify-center overflow-hidden">
-        {/* Background Video */}
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Background Video with Parallax Effect */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          loading="lazy"
-          preload="none"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{
+            transform: `translateY(${scrollY * 0.5}px)`,
+            height: '120%', // Make video taller to accommodate parallax movement
+            top: '-10%' // Center the extra height
+          }}
         >
           <source src="/vancouverharbour.webm" type="video/webm" />
           <source src="/vancouverharbour.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
-        
-        <div className="w-[87%] max-w-[1500px] mx-auto px-4">
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/20 z-5" />
+
+
+        {/* OPTION 2: Angled Top Bar (commented out - uncomment to try) */}
+        {/* <div className="absolute top-0 left-0 w-full h-1/3 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute top-0 left-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)",
+              }}
+            />
+          </div>
+        </div> */}
+
+        {/* OPTION 3: Multiple Overlapping Shapes (commented out - uncomment to try) */}
+        {/* <div className="absolute top-0 right-0 w-2/3 h-1/2 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute top-0 right-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 30% 100%)",
+              }}
+            />
+          </div>
+        </div>
+        <div className="absolute top-0 left-0 w-1/2 h-1/3 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute top-0 left-0 w-full h-full bg-white/80"
+              style={{
+                clipPath: "polygon(0 0, 80% 0, 60% 100%, 0% 100%)",
+              }}
+            />
+          </div>
+        </div> */}
+
+        {/* OPTION 4: Large Hexagonal Pattern (commented out - uncomment to try) */}
+        {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1/2 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute top-0 left-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+              }}
+            />
+          </div>
+        </div> */}
+
+        {/* OPTION 5: Curved Top Section (commented out - uncomment to try) */}
+        {/* <div className="absolute top-0 left-0 w-full h-2/5 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute top-0 left-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 70%, 80% 100%, 20% 100%, 0% 70%)",
+              }}
+            />
+          </div>
+        </div> */}
+
+        {/* Bottom Wave Shape - A Little More Jagged */}
+        <div className="absolute bottom-0 left-0 w-full h-1/5 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute bottom-0 left-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(0% 50%, 12% 25%, 25% 55%, 37% 20%, 50% 65%, 62% 35%, 75% 45%, 87% 30%, 100% 50%, 100% 100%, 0% 100%)",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-20 flex flex-col items-center justify-center h-full w-full">
+          <div className="w-full max-w-[1600px] mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              {/* Main Heading */}
+              <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 sm:mb-8 font-semibold leading-tight flex flex-col gap-8 sm:gap-16 md:gap-24">
+                <div className="mb-2 sm:mb-6 flex justify-center sm:justify-start">AI Solutions</div>
+                <div className="flex justify-center sm:justify-end">That Empower You</div>
+              </h1>
+              
+              {/* Subheading */}
+              {/* <motion.p 
+                className="text-white/80 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                We help businesses automate processes, enhance decision-making, 
+                and unlock new opportunities through cutting-edge AI technology.
+              </motion.p> */}
+              
+              {/* CTA Buttons */}
+              {/* <motion.div 
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
+                <a 
+                  href="#services"
+                  className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg"
+                >
+                  Get Started
+                </a>
+                <a 
+                  href="#about"
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+                >
+                  Learn More
+                </a>
+              </motion.div> */}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-16 sm:bottom-24 left-1/2 transform -translate-x-1/2 z-30">
+          <div className="text-white text-xs sm:text-sm font-medium mb-3 sm:mb-4 drop-shadow-lg">Scroll down</div>
+          <div className="w-px h-8 sm:h-12 bg-white/80 mx-auto animate-pulse drop-shadow-lg" />
+        </div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section className="py-32 bg-white" id="about">
+        <div className="max-w-[1600px] mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="relative z-20 text-left"
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative"
           >
-          <TypeAnimation
-            sequence={[
-              "AI to boost your business",
-              1000,
-              "AI to get things done",
-              1000,
-              "AI designed for your clients",
-              1000,
-              "AI designed for you",
-              1000,
-            ]}
-            wrapper="h1"
-            speed={50}
-            preRenderFirstString={true}
-            className="text-6xl md:text-7xl lg:text-7xl tracking-tight text-white"
-            repeat={Number.POSITIVE_INFINITY}
-            cursor={false}
-          />
+            {/* INTRO SECTION */}
+            <div className="flex items-center mb-16">
+              <div className="w-6 h-6 mr-3">
+                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                  <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wider">INTRO</span>
+            </div>
 
-          <p className="mt-8 text-xl text-white/90 max-w-2xl">
-            Unlock your business&apos;s potential with our custom AI solutions.
-            Tailored to meet your unique needs.
-          </p>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-12 flex flex-wrap justify-start gap-4"
-          >
-            {/* <Link
-              href="/contact"
-              className="bg-white text-black px-8 py-4 rounded-full text-lg hover:bg-white/90 transition-colors font-medium"
-            >
-              Get Started
-            </Link> */}
-            <Link
-              href="/contact"
-              className="bg-white/10 backdrop-blur-xl text-white px-8 py-4 rounded-full text-lg hover:bg-white/20 transition-all duration-300 border border-white/20"
-            >
-              Get In Contact
-            </Link>
+            {/* MAIN CONTENT */}
+            <div className="space-y-16">
+              {/* MAIN HEADING */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+                We help businesses
+                transform through
+                intelligent automation
+                and AI solutions.
+              </h2>
+
+              {/* DESCRIPTIONS - POSITIONED BELOW */}
+              <div className="flex justify-end">
+                <div className="max-w-lg space-y-8">
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    No complex implementations or empty promises,
+                    but practical support in making strategic decisions
+                    in an era of rapid technological change.
+                  </p>
+                  <p className="text-lg leading-relaxed text-gray-700">
+                    We are a solution-focused team. We help you map out
+                    what needs to change, why, and when. And we ensure
+                    that change is not only strategic, but also
+                    implementable and sustainable.
+                  </p>
+                </div>
+              </div>
+            </div>
           </motion.div>
-          </motion.div>
+        </div>
+      </section>
+
+      <section className="relative h-screen flex justify-center items-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/fast.jpg')"
+          }}
+        />
+        {/* Dark Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/30" />
+        
+        {/* White Geometric Shape - Top Right */}
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute top-0 right-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 40% 100%)",
+              }}
+            />
+          </div>
+        </div>
+
+        {/* White Geometric Shape - Bottom Left */}
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 z-10">
+          <div className="relative h-full">
+            <div
+              className="absolute bottom-0 left-0 w-full h-full bg-white"
+              style={{
+                clipPath: "polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%)",
+              }}
+            />
+          </div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-20">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-white text-center">
+            Accelerating Businesses With AI
+          </h2>
         </div>
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="py-32 px-4" id="services">
-        <div className="max-w-[1500px] mx-auto flex flex-col items-center">
-          <motion.h2
+      <section className="py-32 bg-white" id="services">
+        <div className="max-w-[1600px] mx-auto px-4">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl mb-16"
+            className="relative"
           >
-            Our Services
-          </motion.h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
-            {[
-              {
-                title: "Consulting",
-                description:
-                  "Expert strategies to help you implement and benefit from new technologies.",
-                link: "/enterpriseconsulting",
-                keyPoints: [
-                  "Custom AI strategies",
-                  "Tailored automation plans",
-                  "Unlock AI potential",
-                  "Future-proof your business",
-                ],
-                LinkText: "Learn more about Consulting",
-              },
-              {
-                title: "Chatbots",
-                description:
-                  "Intelligent and personalized chat bots to automate tasks to boost productivity.",
-                link: "/chatbotdevelopment",
-                keyPoints: [
-                  "Easy Information",
-                  "Smart, real-time responses",
-                  "Seamless platform integration",
-                  "Convert visitors into leads",
-                ],
-                LinkText: "Learn more about Chatbots",
-              },
-              {
-                title: "Automations",
-                description:
-                  "Programs that integrate with your system, streamlining your business.",
-                link: "/autonomousagents",
-                keyPoints: [
-                  "Automate workflows fast",
-                  "AI-powered decision-making",
-                  "Scale with efficiency",
-                  "Lower costs, higher output",
-                ],
-                LinkText: "Learn more about Automations",
-              },
-            ].map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group relative bg-white rounded-2xl p-8 shadow-sm border border-black/5 hover:shadow-xl transition-all duration-300"
-              >
-                <h3 className="text-2xl mb-4e">{service.title}</h3>
-                <p className="text-gray-600 mb-8">{service.description}</p>
-                <div className="space-y-1 mb-8">
-                  {service.keyPoints.map((keyPoint, i) => (
-                    <p
-                      key={i}
-                      className="px-2 py-1 shadow-sm border border-black/5 hover:shadow-xl transition-all duration-300 rounded-lg w-fit text-sm"
+            {/* INTRO SECTION */}
+            <div className="flex items-center mb-16">
+              <div className="w-6 h-6 mr-3">
+                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                  <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wider">SERVICES</span>
+            </div>
+
+            {/* MAIN CONTENT */}
+            <div className="space-y-20">
+              {/* MAIN HEADING */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+                Three core services
+                that transform your
+                business through
+                intelligent automation.
+              </h2>
+
+              {/* SERVICES GRID */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[
+                  {
+                    title: "AI Consulting",
+                    description: "Expert strategies to help you implement and benefit from new technologies. We work closely with you to identify the most effective ways to enhance your business using AI.",
+                    link: "/enterpriseconsulting",
+                    linkText: "Explore Consulting"
+                  },
+                  {
+                    title: "Intelligent Chatbots", 
+                    description: "Smart, personalized chatbots that automate tasks and boost productivity. Seamless platform integration that converts visitors into leads.",
+                    link: "/chatbotdevelopment",
+                    linkText: "Learn about Chatbots"
+                  },
+                  {
+                    title: "Process Automation",
+                    description: "Advanced automation programs that integrate with your systems, streamlining workflows and scaling efficiency across your organization.",
+                    link: "/autonomousagents", 
+                    linkText: "Discover Automation"
+                  }
+                ].map((service, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.2 }}
+                    className="group"
+                  >
+                    <Link
+                      href={service.link}
+                      className="block h-full"
                     >
-                      {keyPoint}
-                    </p>
+                      <div className="bg-white border border-gray-100 rounded-2xl p-8 h-full hover:border-gray-200 hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
+                        <div className="space-y-6">
+                          <h3 className="text-2xl font-bold text-black group-hover:text-gray-700 transition-colors">
+                            {service.title}
+                          </h3>
+                          <p className="text-lg leading-relaxed text-gray-700">
+                            {service.description}
+                          </p>
+                          <div className="inline-flex items-center text-black font-medium group-hover:translate-x-2 transition-transform duration-300">
+                            {service.linkText}
+                            <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+     
+
+      {/* CENTONIS BENEFITS SECTION */}
+      <section className="py-32 bg-white" id="benefits">
+        <div className="max-w-[1600px] mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            {/* INTRO SECTION */}
+            <div className="flex items-center mb-16">
+              <div className="w-6 h-6 mr-3">
+                <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
+                  <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <span className="text-sm font-medium text-gray-600 uppercase tracking-wider">BENEFITS</span>
+            </div>
+
+            {/* MAIN CONTENT */}
+            <div className="space-y-20">
+              {/* MAIN HEADING */}
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+                What makes our
+                platforms so powerful
+                and uniquely effective
+                for your business.
+              </h2>
+
+              {/* BENEFITS TIMELINE */}
+              <div className="relative">
+                {/* CONNECTING LINE */}
+                <div className="absolute left-10 top-0 bottom-0 w-0.5 bg-gray-200 hidden md:block"></div>
+                
+                <div className="space-y-12">
+                  {[
+                    {
+                      title: "Bespoke Consulting",
+                      description: "Our expert consultants work closely with you to identify the most effective ways to enhance your business using AI.",
+                      number: "01"
+                    },
+                    {
+                      title: "Comprehensive Knowledge",
+                      description: "We combine an extensive network of AI with your own company data to create perfect responses for your use case.",
+                      number: "02"
+                    },
+                    {
+                      title: "Fine Tuning",
+                      description: "Our Model Tuning service optimizes your AI for precise and accurate responses.",
+                      number: "03"
+                    },
+                    {
+                      title: "Day One Value",
+                      description: "Our platforms are designed to deliver immediate results, hitting the ground running from day one.",
+                      number: "04"
+                    },
+                    {
+                      title: "Industry Leading AI",
+                      description: "Get access to the latest and greatest AI models and technology within your platform.",
+                      number: "05"
+                    },
+                    {
+                      title: "Tailored Solutions",
+                      description: "We build your solution from the ground up to address and handle your specific business needs.",
+                      number: "06"
+                    },
+                    {
+                      title: "Continuous Improvement",
+                      description: "We're always looking for ways to enhance your custom AI experience with regular updates.",
+                      number: "07"
+                    },
+                    {
+                      title: "Expert Development",
+                      description: "Our software is crafted by a team of skilled developers and consultants, dedicated to delivering bespoke solutions.",
+                      number: "08"
+                    },
+                    {
+                      title: "Seamless Integration",
+                      description: "Our AI solutions are designed to integrate smoothly with your existing systems and workflows.",
+                      number: "09"
+                    }
+                  ].map((benefit, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="relative flex items-start gap-8"
+                    >
+                      {/* NUMBER CIRCLE */}
+                      <div className="flex-shrink-0 relative z-10">
+                        <div className="w-20 h-20 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold">
+                          {benefit.number}
+                        </div>
+                      </div>
+                      
+                      {/* CONTENT */}
+                      <div className="flex-1 pt-2">
+                        <h3 className="text-2xl font-bold text-black mb-4">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                          {benefit.description}
+                        </p>
+                      </div>
+                    </motion.div>
                   ))}
                 </div>
-
-                <Link
-                  href={service.link}
-                  className="inline-flex items-center text-black  group-hover:translate-x-1 transition-transform"
-                >
-                  {service.LinkText}
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY AI SLIDER */}
-      <section className="py-32 px-4 bg-black text-white">
-        <div className="max-w-[1500px] mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-6xl  mb-16"
-          >
-            Why Implement AI?
-          </motion.h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Increase Efficiency",
-                description:
-                  "Streamline your operations and boost productivity with AI-driven automation.",
-              },
-              {
-                title: "Automation",
-                description:
-                  "Boost your company's output with efficient and reliable automation solutions.",
-              },
-              {
-                title: "Enhance Decision-Making",
-                description:
-                  "Leverage data-driven insights and real-time analytics for better strategic decisions.",
-              },
-              {
-                title: "Foster Innovation",
-                description:
-                  "Gain a competitive edge by always staying on the forefront of AI.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/10 transition-colors"
-              >
-                <h3 className="text-2xl mb-4">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* EXPLORE CHAT / AI SECTION */}
-      <section className="py-32 px-4 bg-white" id="about">
-        <div className="max-w-[800px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <h2 className="text-5xl md:text-6xl mb-8">About Centonis</h2>
-            <p className="text-xl leading-relaxed text-gray-600">
-              At Centonis, we are dedicated to empowering businesses of all
-              sizes through the transformative power of artificial intelligence.
-              Our mission is to revolutionise businesses by delivering
-              innovative AI solutions that enhance efficiency, drive growth, and
-              unlock new opportunities.
-            </p>
+              </div>
+            </div>
           </motion.div>
-        </div>
-      </section>
-      {/* CENTONIS BENIFITS SECTION */}
-      <section className="py-32 px-4" id="benefits">
-        <div className="max-w-[1500px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl md:text-6xl  mb-6">
-              What Makes Centonis Platforms So Powerful?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our unique approach combines cutting-edge technology with deep
-              industry expertise to deliver unparalleled results.
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Bespoke Consulting",
-                description:
-                  "Our expert consultants work closely with you to identify the most effective ways to enhance your business using AI.",
-              },
-              {
-                title: "Comprehensive Knowledge",
-                description:
-                  "We combine an extensive network of AI with your own company data to create perfect responses for your use case.",
-              },
-              {
-                title: "Fine Tuning",
-                description:
-                  "Our Model Tuning service optimizes your AI for precise and accurate responses.",
-              },
-              {
-                title: "Day One Value",
-                description:
-                  "Our platforms are designed to deliver immediate results, hitting the ground running from day one.",
-              },
-              {
-                title: "Industry Leading AI",
-                description:
-                  "Get access to the latest and greatest AI models and technology within your platform.",
-              },
-              {
-                title: "Tailored Solutions",
-                description:
-                  "We build your solution from the ground up to address and handle your specific business needs.",
-              },
-              {
-                title: "Continuous Improvement",
-                description:
-                  "We're always looking for ways to enhance your custom AI experience with regular updates.",
-              },
-              {
-                title: "Expert Development",
-                description:
-                  "Our software is crafted by a team of skilled developers and consultants, dedicated to delivering bespoke solutions.",
-              },
-              {
-                title: "Seamless Integration",
-                description:
-                  "Our AI solutions are designed to integrate smoothly with your existing systems and workflows.",
-              },
-            ].map((benefit, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <h3 className="text-2xl mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* FOOTER & CONTACT PANEL AREA */}
-      <Contactpanel />
+      {/* <Contactpanel /> */}
       <Footer />
     </>
   );

@@ -1,4 +1,4 @@
-import ContactForm from "../components/Contactform"
+import ContactClient from "./ContactClient"
 import Script from 'next/script'
 
 export const metadata = {
@@ -47,7 +47,7 @@ const Contact = () => {
             })
           }}
         />
-        <ContactForm />
+        <ContactClient />
       </main>
     </>
   )

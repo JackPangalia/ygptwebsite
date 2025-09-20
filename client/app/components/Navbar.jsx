@@ -7,203 +7,168 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import IconBars2 from "./icons/IconBars2";
+import { useScroll } from "../hooks/useScroll";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      // Change navbar style when scrolled past the hero section (approximately 100vh)
-      setIsScrolled(scrollPosition > window.innerHeight * 0.8);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrollY = useScroll();
+  const isScrolled = scrollY > 50;
 
   return (
     <>
       {/* --------------------- Desktop Navbar --------------------- */}
-      <header className={`z-50 hidden sm:flex fixed top-6 left-1/2 -translate-x-1/2 w-[87%] max-w-[1500px] px-1 py-1 justify-between items-center rounded-full transition-all duration-300 ${
+      <header className={`z-50 hidden sm:flex fixed top-0 left-0 w-full py-6 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white shadow-md' 
+          ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
           : 'bg-transparent'
       }`}>
-        <Link href="/" className="flex items-center gap-2">
+        <div className="w-full max-w-[1600px] mx-auto px-4 flex justify-between items-center">
+        <Link href="/" className="flex items-center group">
           <Image
-            src="/Centonis_Logo_v5.webp"
-            width={75}
-            height={75}
+            src="/centonislogo.png"
+            width={150}
+            height={150}
             alt="company logo"
-            className="h-7 w-7 ml-4 rounded"
+            className="w-12 rounded transition-transform duration-300 group-hover:scale-105"
           />
-          <h1 className={`text-lg font-medium ml-1 ${isScrolled ? 'text-zinc-900' : 'text-white'}`}>Centonis AI</h1>
+          <h1 className="font-semibold text-lg text-black group-hover:text-gray-700 transition-colors">
+            Centonis
+          </h1>
         </Link>
 
-        <nav>
-          <ul className={`flex items-center text-lg ${isScrolled ? 'text-black' : 'text-white'}`}>
-            <li className="text-sm relative group">
+        {/* Full Nav - Hidden when at top, visible when scrolled */}
+        <nav className={`transition-all duration-500 ${
+          isScrolled 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 -translate-y-2 pointer-events-none'
+        }`}>
+          <ul className="flex items-center space-x-8">
+            <li className="relative group">
               <Link 
                 href={`${pathname === "/" ? "#services" : "/#services"}`}
-                className={`flex items-center px-4 py-4 group-hover:rounded-full transition-all duration-150 ${
-                  isScrolled 
-                    ? 'group-hover:bg-black group-hover:text-white' 
-                    : 'group-hover:bg-white group-hover:text-black'
-                }`}
+                className="flex items-center text-black hover:text-gray-700 font-medium transition-colors duration-300 py-2"
               >
                 Services
-                <IconTwotoneKeyboardArrowDown className="ml-1 w-4 h-4" />
+                <IconTwotoneKeyboardArrowDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
               </Link>
               
-              <div className={`absolute top-full left-0 mt-2 rounded-lg py-2 px-2 w-48 invisible group-hover:visible transition-all duration-150 opacity-0 group-hover:opacity-100 ${
-                isScrolled 
-                  ? 'bg-white shadow-md' 
-                  : 'bg-transparent'
-              }`}>
+              <div className="absolute top-full left-0 mt-4 bg-white border border-gray-200 rounded-2xl py-3 px-2 w-56 invisible group-hover:visible transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-xl">
                 <Link 
                   href="/enterpriseconsulting" 
-                  className={`block px-4 py-2 transition-all duration-150 rounded-3xl ${
-                    isScrolled 
-                      ? 'hover:bg-black hover:text-white' 
-                      : 'hover:bg-white hover:text-black'
-                  }`}
+                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-xl font-medium"
                 >
                   Consulting
                 </Link>
                 <Link 
                   href="/chatbotdevelopment" 
-                  className={`block px-4 py-2 transition-all duration-150 rounded-3xl ${
-                    isScrolled 
-                      ? 'hover:bg-black hover:text-white' 
-                      : 'hover:bg-white hover:text-black'
-                  }`}
+                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-xl font-medium"
                 >
                   Chatbots
                 </Link>
                 <Link 
                   href="/autonomousagents" 
-                  className={`block px-4 py-2 transition-all duration-150 rounded-3xl ${
-                    isScrolled 
-                      ? 'hover:bg-black hover:text-white' 
-                      : 'hover:bg-white hover:text-black'
-                  }`}
+                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-xl font-medium"
                 >
                   Automations
                 </Link>
               </div>
             </li>
-            <li className="text-sm ml-4">
+            <li>
               <Link 
                 href={`${pathname === "/" ? "#benefits" : "/#benefits"}`}
-                className={`px-4 py-4 hover:rounded-full transition-all duration-150 ${
-                  isScrolled 
-                    ? 'hover:bg-black hover:text-white' 
-                    : 'hover:bg-white hover:text-black'
-                }`}
+                className="text-black hover:text-gray-700 font-medium transition-colors duration-300 py-2"
               >
                 Benefits
               </Link>
             </li>
-            <li className="text-sm ml-4">
+            <li>
               <Link 
                 href={`${pathname === "/" ? "#about" : "/#about"}`}
-                className={`px-4 py-4 hover:rounded-full transition-all duration-150 ${
-                  isScrolled 
-                    ? 'hover:bg-black hover:text-white' 
-                    : 'hover:bg-white hover:text-black'
-                }`}
+                className="text-black hover:text-gray-700 font-medium transition-colors duration-300 py-2"
               >
                 About
               </Link>
             </li>
-            <li className="ml-6">
-              <Link
-                href="/contact"
-                className={`px-4 py-4 rounded-full transition-colors text-sm ${
-                  isScrolled 
-                    ? 'bg-black text-white hover:bg-black/80' 
-                    : 'bg-white text-black hover:bg-white/80'
-                }`}
-              >
-                Work With Us
-              </Link>
-            </li>
           </ul>
         </nav>
+
+        {/* Contact Button - Always Visible */}
+        <div className="flex items-center">
+          <Link
+            href="/contact"
+            className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
+          >
+            Contact
+          </Link>
+        </div>
+        </div>
       </header>
 
       {/* --------------------- Mobile Navbar --------------------- */}
-      <div className="z-50 sm:hidden fixed top-4 left-1/2 -translate-x-1/2 w-[90%] flex flex-col items-center">
-        {/* Floating Nav Bar */}
-        <header className={`w-full py-1 px-1 flex items-center rounded-lg transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white shadow-md' 
-            : 'bg-transparent'
-        }`}>
-          {/* Logo / Title (change to your liking) */}
-          <Link href="/" className="flex items-center gap-2">
+      <div className="z-50 sm:hidden fixed top-0 left-0 w-full flex flex-col">
+        {/* Mobile Nav Bar */}
+        <header className="w-full py-4 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+          <div className="w-full max-w-[1600px] mx-auto px-4 flex items-center justify-between">
+          {/* Logo / Title */}
+          <Link href="/" className="flex items-center group">
             <Image
-              src="/Centonis_Logo_v5.webp"
+              src="/centonislogo.png"
               width={100}
               height={100}  
               alt="company logo"
-              className="h-6 w-6 rounded ml-1"
+              className="w-10 rounded transition-transform duration-300 group-hover:scale-105"
             />
-            <h1 className={`text-LG font-medium ml-1 ${isScrolled ? 'text-zinc-900' : 'text-white'}`}>Centonis AI</h1>
+            <h1 className="ml-1 text-md text-black group-hover:text-gray-700 transition-colors font-semibold">
+              Centonis
+            </h1>
           </Link>
 
-          {/* Menu Toggle Button */}
-          <button
-            className={`ml-auto w-8 h-8 rounded flex items-center justify-center transition-colors ${
-              isScrolled 
-                ? 'text-black hover:bg-black/10' 
-                : 'text-white hover:bg-white/20'
-            }`}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ? (
-              <IconClose className="w-6 h-6" />
-            ) : (
-              <IconBars2 className="w-6 h-6" />
-            )}
-          </button>
+          {/* Right Side - Contact Button + Menu */}
+          <div className="flex items-center gap-3">
+            {/* Contact Button - Always Visible */}
+            <Link
+              href="/contact"
+              className="bg-black text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 text-sm"
+            >
+              Contact
+            </Link>
+
+            {/* Menu Toggle Button - Always Visible on Mobile */}
+            <button
+              className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 text-gray-700 hover:text-black hover:bg-gray-100"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? (
+                <IconClose className="w-6 h-6" />
+              ) : (
+                <IconBars2 className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+          </div>
         </header>
 
         {/* Conditionally Render the Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className={`mt-2 w-full rounded-lg p-5 transition-all duration-300 ${
-            isScrolled 
-              ? 'bg-white shadow-md' 
-              : 'bg-transparent'
-          }`}>
-            <ul className="flex flex-col space-y-4 text-lg">
+          <div className="w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 p-6">
+            <ul className="flex flex-col space-y-6">
               <li>
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`transition-all duration-150 ${
-                    isScrolled 
-                      ? 'text-black hover:text-black/80' 
-                      : 'text-white hover:text-white/80'
-                  }`}
+                  className="block text-gray-700 hover:text-black font-medium transition-colors duration-300 py-2"
                 >
-                  Work with us
+                  Work With Us
                 </Link>
               </li>
               <li>
                 <Link
                   href={`${pathname === "/" ? "#about" : "/#about"}`}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`transition-all duration-150 ${
-                    isScrolled 
-                      ? 'text-black hover:text-black/80' 
-                      : 'text-white hover:text-white/80'
-                  }`}
+                  className="block text-gray-700 hover:text-black font-medium transition-colors duration-300 py-2"
                 >
                   About
                 </Link>
@@ -212,11 +177,7 @@ const Navbar = () => {
                 <Link
                   href={`${pathname === "/" ? "#benefits" : "/#benefits"}`}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`transition-all duration-150 ${
-                    isScrolled 
-                      ? 'text-black hover:text-black/80' 
-                      : 'text-white hover:text-white/80'
-                  }`}
+                  className="block text-gray-700 hover:text-black font-medium transition-colors duration-300 py-2"
                 >
                   Benefits
                 </Link>
@@ -224,23 +185,19 @@ const Navbar = () => {
               <li>
                 <div className="relative">
                   <button
-                    className="text-white hover:text-white/80 transition-all duration-150 flex items-center w-full text-left"
+                    className="flex items-center w-full text-left text-gray-700 hover:text-black font-medium transition-colors duration-300 py-2"
                     onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                   >
                     Services
-                    <IconTwotoneKeyboardArrowDown className={`ml-1 w-4 h-4 transform transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                    <IconTwotoneKeyboardArrowDown className={`ml-2 w-4 h-4 transform transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
                   </button>
                   {isServicesDropdownOpen && (
-                    <ul className="pl-4 mt-2 space-y-2">
+                    <ul className="pl-4 mt-3 space-y-3">
                       <li>
                         <Link
                           href="/enterpriseconsulting"
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`transition-all duration-150 ${
-                    isScrolled 
-                      ? 'text-black hover:text-black/80' 
-                      : 'text-white hover:text-white/80'
-                  }`}
+                          className="block text-gray-600 hover:text-black transition-colors duration-300 py-1"
                         >
                           Consulting
                         </Link>
@@ -249,11 +206,7 @@ const Navbar = () => {
                         <Link
                           href="/chatbotdevelopment"
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`transition-all duration-150 ${
-                    isScrolled 
-                      ? 'text-black hover:text-black/80' 
-                      : 'text-white hover:text-white/80'
-                  }`}
+                          className="block text-gray-600 hover:text-black transition-colors duration-300 py-1"
                         >
                           Chatbots
                         </Link>
@@ -262,11 +215,7 @@ const Navbar = () => {
                         <Link
                           href="/autonomousagents"
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className={`transition-all duration-150 ${
-                    isScrolled 
-                      ? 'text-black hover:text-black/80' 
-                      : 'text-white hover:text-white/80'
-                  }`}
+                          className="block text-gray-600 hover:text-black transition-colors duration-300 py-1"
                         >
                           Automations
                         </Link>
