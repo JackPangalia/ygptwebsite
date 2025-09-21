@@ -3,53 +3,31 @@ import Keypoint from "../components/Keypoint";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 
 const ChatbotClient = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    // Throttle scroll events for better performance
-    let ticking = false;
-    const throttledHandleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', throttledHandleScroll);
-    return () => window.removeEventListener('scroll', throttledHandleScroll);
-  }, []);
 
   return (
     <>
       {/* HERO SECTION */}
       <section className="relative h-screen w-full overflow-hidden">
-        {/* Background Image with Parallax Effect */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/aichatbotanimated.webp')",
-            transform: `translateY(${scrollY * 0.5}px)`,
-            height: '120%',
-            top: '-10%'
-          }}
-        />
+        {/* Background Image - Static */}
+        <div className="absolute inset-0">
+          <Image
+            src="/aichatbotanimated.webp"
+            alt="AI Chatbot background"
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          />
+        </div>
         
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60" />
         
         {/* Geometric Overlays - Chatbot Theme */}
-        {/* Top Right Hexagonal Pattern */}
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 z-10">
+        {/* Top Right Hexagonal Pattern - Smaller on desktop */}
+        <div className="absolute top-0 right-0 w-1/5 sm:w-1/4 lg:w-1/5 h-1/5 sm:h-1/4 lg:h-1/5 z-10">
           <div className="relative h-full">
             <div
               className="absolute top-0 right-0 w-full h-full bg-white"
@@ -60,8 +38,8 @@ const ChatbotClient = () => {
           </div>
         </div>
 
-        {/* Bottom Left Curved Shape */}
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/4 z-10">
+        {/* Bottom Left Curved Shape - Smaller on desktop */}
+        <div className="absolute bottom-0 left-0 w-1/4 sm:w-1/3 lg:w-1/4 h-1/6 sm:h-1/5 lg:h-1/6 z-10">
           <div className="relative h-full">
             <div
               className="absolute bottom-0 left-0 w-full h-full bg-white"
@@ -74,15 +52,15 @@ const ChatbotClient = () => {
 
         {/* Main Content */}
         <div className="relative z-20 flex flex-col items-center justify-center h-full w-full">
-          <div className="w-full max-w-[1600px] mx-auto px-4">
+          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
+              className="text-center max-w-4xl mx-auto"
             >
               {/* Main Heading */}
-              <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 sm:mb-8 font-bold leading-tight drop-shadow-2xl">
+              <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 font-bold leading-tight drop-shadow-2xl">
                 Intelligent
                 <br />
                 <span className="text-white">Chatbot Development</span>

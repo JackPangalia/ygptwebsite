@@ -3,6 +3,7 @@ import Image from "next/image";
 import Contactpanel from "../components/contactpanel";
 import Footer from "../components/Footer";
 import ChatbotClient from "./ChatbotClient";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 export const metadata = {
   title: "Chatbot Development Services | Centonis: Custom AI Chatbots for Your Business",
@@ -23,7 +24,11 @@ export const metadata = {
 };
 
 const Chatbotdevlopment = () => {
-  return <ChatbotClient />;
+  return (
+    <ErrorBoundary>
+      <ChatbotClient />
+    </ErrorBoundary>
+  );
 };
 
 export default Chatbotdevlopment;

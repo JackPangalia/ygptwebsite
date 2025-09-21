@@ -2,7 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile Performance Optimizations */
+@media (max-width: 768px) {
+  * {
+    /* Reduce animations on mobile for better performance */
+    animation-duration: 0.3s !important;
+    transition-duration: 0.3s !important;
+  }
+  
+  /* Optimize scrolling on mobile */
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
 
+/* Hero Section Mobile Optimizations */
+@media (max-width: 640px) {
+  /* Ensure text doesn't get too close to geometric shapes on mobile */
+  .hero-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Reduce geometric overlay sizes on very small screens */
+  .geometric-overlay {
+    max-width: 40%;
+    max-height: 40%;
+  }
+}
 
 
 /* 

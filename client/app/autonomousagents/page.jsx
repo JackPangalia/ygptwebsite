@@ -2,6 +2,7 @@ import Keypoint from "../components/Keypoint";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import AutonomousClient from "./AutonomousClient";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 export const metadata = {
   title: "Autonomous Agent Development | Centonis: AI-Powered Task Automation",
@@ -22,7 +23,11 @@ export const metadata = {
 };
 
 const AutonomousAgents = () => {
-  return <AutonomousClient />;
+  return (
+    <ErrorBoundary>
+      <AutonomousClient />
+    </ErrorBoundary>
+  );
 };
 
 export default AutonomousAgents;

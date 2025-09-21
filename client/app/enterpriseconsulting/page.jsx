@@ -2,6 +2,7 @@ import Keypoint from "../components/Keypoint";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import ConsultingClient from "./ConsultingClient";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 export const metadata = {
   title: "Enterprise Consulting Services | Centonis: Elevate Your Business with AI Solution",
@@ -22,7 +23,11 @@ export const metadata = {
 };
 
 const EnterpriseConsulting = () => {
-  return <ConsultingClient />;
+  return (
+    <ErrorBoundary>
+      <ConsultingClient />
+    </ErrorBoundary>
+  );
 };
 
 export default EnterpriseConsulting;

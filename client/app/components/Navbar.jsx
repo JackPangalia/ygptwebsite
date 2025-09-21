@@ -22,28 +22,24 @@ const Navbar = () => {
       <header className={`z-50 hidden sm:flex fixed top-0 left-0 w-full py-6 transition-all duration-500 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
-          : 'bg-transparent'
+          : 'bg-white/95 backdrop-blur-sm'
       }`}>
         <div className="w-full max-w-[1600px] mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group ">
           <Image
             src="/centonislogo.png"
             width={150}
             height={150}
             alt="company logo"
-            className="w-12 rounded transition-transform duration-300 group-hover:scale-105"
+            className="w-12 rounded transition-transform duration-300 group-hover:scale-105 "
           />
           <h1 className="font-semibold text-lg text-black group-hover:text-gray-700 transition-colors">
             Centonis
           </h1>
         </Link>
 
-        {/* Full Nav - Hidden when at top, visible when scrolled */}
-        <nav className={`transition-all duration-500 ${
-          isScrolled 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 -translate-y-2 pointer-events-none'
-        }`}>
+        {/* Full Nav - Always visible */}
+        <nav className="opacity-100 translate-y-0">
           <ul className="flex items-center space-x-8">
             <li className="relative group">
               <Link 
@@ -109,7 +105,11 @@ const Navbar = () => {
       {/* --------------------- Mobile Navbar --------------------- */}
       <div className="z-50 sm:hidden fixed top-0 left-0 w-full flex flex-col">
         {/* Mobile Nav Bar */}
-        <header className="w-full py-4 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <header className={`w-full py-4 transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
+            : 'bg-white/95 backdrop-blur-sm'
+        }`}>
           <div className="w-full max-w-[1600px] mx-auto px-4 flex items-center justify-between">
           {/* Logo / Title */}
           <Link href="/" className="flex items-center group">
@@ -120,9 +120,6 @@ const Navbar = () => {
               alt="company logo"
               className="w-10 rounded transition-transform duration-300 group-hover:scale-105"
             />
-            <h1 className="ml-1 text-md text-black group-hover:text-gray-700 transition-colors font-semibold">
-              Centonis
-            </h1>
           </Link>
 
           {/* Right Side - Contact Button + Menu */}

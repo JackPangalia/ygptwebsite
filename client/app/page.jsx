@@ -47,7 +47,9 @@ const Home = () => {
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/20 z-5" />
-
+        
+        {/* Text Background Overlay for Better Contrast */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/10 via-transparent to-black/30" />
 
         {/* OPTION 2: Angled Top Bar (commented out - uncomment to try) */}
         {/* <div className="absolute top-0 left-0 w-full h-1/3 z-10">
@@ -107,17 +109,6 @@ const Home = () => {
           </div>
         </div> */}
 
-        {/* Bottom Wave Shape - A Little More Jagged */}
-        <div className="absolute bottom-0 left-0 w-full h-1/5 z-10">
-          <div className="relative h-full">
-            <div
-              className="absolute bottom-0 left-0 w-full h-full bg-white"
-              style={{
-                clipPath: "polygon(0% 50%, 12% 25%, 25% 55%, 37% 20%, 50% 65%, 62% 35%, 75% 45%, 87% 30%, 100% 50%, 100% 100%, 0% 100%)",
-              }}
-            />
-          </div>
-        </div>
 
         {/* Main Content */}
         <div className="relative z-20 flex flex-col items-center justify-center h-full w-full">
@@ -129,10 +120,37 @@ const Home = () => {
               className="text-center"
             >
               {/* Main Heading */}
-              <h1 className="text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 sm:mb-8 font-semibold leading-tight flex flex-col gap-8 sm:gap-16 md:gap-24">
-                <div className="mb-2 sm:mb-6 flex justify-center sm:justify-start">AI Solutions</div>
-                <div className="flex justify-center sm:justify-end">That Empower You</div>
-              </h1>
+              <div className="text-center space-y-4 sm:space-y-6">
+                {/* Subtitle */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="text-white/90 text-lg sm:text-xl md:text-2xl font-medium tracking-wide"
+                >
+                  AI Solutions
+                </motion.div>
+                
+                {/* Main Headline */}
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="font-bold text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl leading-tight"
+                >
+                  That Actually Works
+                </motion.h1>
+                
+                {/* Supporting Text */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="text-white/80 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed"
+                >
+                  Real AI solutions that deliver measurable results, not just promises
+                </motion.div>
+              </div>
               
               {/* Subheading */}
               {/* <motion.p 
@@ -170,10 +188,32 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-16 sm:bottom-24 left-1/2 transform -translate-x-1/2 z-30">
-          <div className="text-white text-xs sm:text-sm font-medium mb-3 sm:mb-4 drop-shadow-lg">Scroll down</div>
-          <div className="w-px h-8 sm:h-12 bg-white/80 mx-auto animate-pulse drop-shadow-lg" />
-        </div>
+        <motion.div 
+          className="absolute bottom-16 sm:bottom-24 left-1/2 transform -translate-x-1/2 z-30"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-8 h-8 sm:w-10 sm:h-10 mx-auto cursor-pointer"
+          >
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              className="w-full h-full text-white drop-shadow-lg"
+            >
+              <path 
+                d="M7 10l5 5 5-5" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              />
+            </svg>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* ABOUT SECTION */}
