@@ -2,7 +2,7 @@
 const nextConfig = {
   // Enable experimental features for better performance
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Removed - causing deployment issues
   },
   
   // Image optimization
