@@ -136,7 +136,7 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="font-bold text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl leading-tight"
+                  className="font-bold text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl leading-tight"
                 >
                   That Actually Works
                 </motion.h1>
