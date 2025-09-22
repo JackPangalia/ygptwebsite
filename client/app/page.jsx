@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       {/* LANDER SCREEN */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[91vh] w-full overflow-hidden">
         {/* Background Video with Parallax Effect */}
         <video
           autoPlay
