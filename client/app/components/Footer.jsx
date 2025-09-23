@@ -29,9 +29,9 @@ const Footer = () => {
                 <Image 
                   src="/centonislogo.png" 
                   alt="Centonis Technologies Logo" 
-                  width={128}
-                  height={128}
-                  className="w-32 object-contain"
+                  width={80}
+                  height={80}
+                  className="w-20 object-contain"
                   priority
                 />
                 <div>

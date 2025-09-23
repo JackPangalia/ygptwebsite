@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       {/* --------------------- Desktop Navbar --------------------- */}
-      <header className={`z-50 hidden sm:flex fixed top-0 left-0 w-full py-6 transition-all duration-500 ${
+      <header className={`z-50 hidden sm:flex fixed top-0 left-0 w-full py-4 transition-all duration-500 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
           : 'bg-white/95 backdrop-blur-sm'
@@ -31,7 +31,7 @@ const Navbar = () => {
             width={150}
             height={150}
             alt="company logo"
-            className="w-12 rounded transition-transform duration-300 group-hover:scale-105 "
+            className="w-10 rounded transition-transform duration-300 group-hover:scale-105 "
           />
           <h1 className="font-semibold text-lg text-black group-hover:text-gray-700 transition-colors">
             Centonis
@@ -94,7 +94,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link
             href="/contact"
-            className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
+            className="bg-black text-white px-5 py-2.5 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Contact
           </Link>

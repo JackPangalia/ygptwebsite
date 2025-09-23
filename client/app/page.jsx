@@ -23,7 +23,7 @@ const Home = () => {
   const scrollY = useScroll();
 
   return (
-    <>
+    <>W
       {/* LANDER SCREEN */}
       <section className="relative h-[91vh] w-full overflow-hidden">
         {/* Background Video with Parallax Effect */}
@@ -34,11 +34,6 @@ const Home = () => {
           playsInline
           preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0"
-          style={{
-            transform: `translateY(${scrollY * 0.5}px)`,
-            height: '120%', // Make video taller to accommodate parallax movement
-            top: '-10%' // Center the extra height
-          }}
         >
           <source src="/vancouverharbour.webm" type="video/webm" />
           <source src="/vancouverharbour.mp4" type="video/mp4" />
@@ -121,14 +116,31 @@ const Home = () => {
             >
               {/* Main Heading */}
               <div className="text-center space-y-4 sm:space-y-6">
-                {/* Subtitle */}
+                {/* Subtitle with Typewriter Effect */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-white/90 text-lg sm:text-xl md:text-2xl font-medium tracking-wide"
+                  className="text-white/90 text-lg sm:text-xl md:text-2xl font-medium tracking-wide min-h-[2.5rem] flex items-center justify-center"
                 >
-                  AI Solutions
+                  <TypeAnimation
+                    sequence={[
+                      'AI Consulting',
+                      2000, // pause for 2 seconds
+                      'AI Agents', 
+                      2000, // pause for 2 seconds
+                      'AI Automations',
+                      2000, // pause for 2 seconds
+                    ]}
+                    wrapper="span"
+                    speed={50} // typing speed
+                    deletionSpeed={30} // deletion speed
+                    repeat={Infinity} // loop forever
+                    style={{ 
+                      display: 'inline-block',
+                      minHeight: '1.5em' // prevent layout shift
+                    }}
+                  />
                 </motion.div>
                 
                 {/* Main Headline */}
@@ -141,14 +153,25 @@ const Home = () => {
                   That Actually Works
                 </motion.h1>
                 
-                {/* Supporting Text */}
-                <motion.div
+                {/* CTA Buttons */}
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-6 sm:mt-8 px-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-white/80 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed"
                 >
-                  Real AI solutions that deliver measurable results, not just promises
+                  <a 
+                    href="#services"
+                    className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg text-sm w-full sm:w-auto text-center"
+                  >
+                    Get Started
+                  </a>
+                  <a 
+                    href="#about"
+                    className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm w-full sm:w-auto text-center"
+                  >
+                    Learn More
+                  </a>
                 </motion.div>
               </div>
               
@@ -187,33 +210,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-16 sm:bottom-24 left-1/2 transform -translate-x-1/2 z-30"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-8 h-8 sm:w-10 sm:h-10 mx-auto cursor-pointer"
-          >
-            <svg 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              className="w-full h-full text-white drop-shadow-lg"
-            >
-              <path 
-                d="M7 10l5 5 5-5" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* ABOUT SECTION */}
