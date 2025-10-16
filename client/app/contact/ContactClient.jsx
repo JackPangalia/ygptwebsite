@@ -106,12 +106,12 @@ const ContactClient = () => {
                 transition={{ duration: 0.8 }}
                 className="text-center"
               >
-                <div className="w-24 h-24 mx-auto mb-8 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="w-24 h-24 mx-auto mb-8 bg-green-100 rounded-none flex items-center justify-center">
                   <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-black mb-6 sm:mb-8">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-tight text-black mb-6 sm:mb-8">
                   Message
                   <br />
                   <span className="text-gray-600">Sent Successfully</span>
@@ -124,7 +124,7 @@ const ContactClient = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => window.location.href = '/'}
-                  className="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg"
+                  className="bg-black text-white px-8 py-4 rounded-none font-normal hover:bg-gray-800 transition-all duration-300 shadow-lg"
                 >
                   Return Home
                 </motion.button>
@@ -177,7 +177,7 @@ const ContactClient = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-black mb-6 sm:mb-8">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium leading-tight text-black mb-6 sm:mb-8">
                   Let&apos;s Build
                   <br />
                   <span className="text-gray-600">Something Amazing</span>
@@ -227,7 +227,7 @@ const ContactClient = () => {
                 className="space-y-8"
               >
                 <div>
-                  <h2 className="text-5xl md:text-6xl font-bold leading-tight text-black mb-6">
+                  <h2 className="text-5xl md:text-6xl font-medium leading-tight text-black mb-6">
                     Ready to get
                     started?
                   </h2>
@@ -240,7 +240,7 @@ const ContactClient = () => {
                 {/* Contact Info */}
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-black/10 rounded-none flex items-center justify-center">
                       <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
@@ -252,7 +252,7 @@ const ContactClient = () => {
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-black/10 rounded-none flex items-center justify-center">
                       <svg
                         viewBox="0 0 500 1000"
                         fill="currentColor"
@@ -281,7 +281,7 @@ const ContactClient = () => {
               >
                 <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                   {!isValidInformation && (
-                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg" role="alert" aria-live="polite">
+                    <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-none" role="alert" aria-live="polite">
                       Please fill in all required fields correctly
                     </div>
                   )}
@@ -294,7 +294,7 @@ const ContactClient = () => {
                       <input
                         id="firstName"
                         type="text"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                         required
@@ -309,7 +309,7 @@ const ContactClient = () => {
                       <input
                         id="lastName"
                         type="text"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
                         required
@@ -325,7 +325,7 @@ const ContactClient = () => {
                     <input
                       id="email"
                       type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
                       placeholder="your.email@company.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
@@ -341,7 +341,7 @@ const ContactClient = () => {
                     <input
                       id="phone"
                       type="tel"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
                       placeholder="(555) 123-4567"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
@@ -357,7 +357,7 @@ const ContactClient = () => {
                     <input
                       id="company"
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200"
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       required
@@ -376,7 +376,7 @@ const ContactClient = () => {
                     <textarea
                       id="message"
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200 resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-none focus:ring-2 focus:ring-black focus:border-transparent outline-none transition-all duration-200 resize-none"
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       required
@@ -388,7 +388,7 @@ const ContactClient = () => {
                     type="submit"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 shadow-lg"
+                    className="w-full bg-black text-white px-8 py-4 rounded-none font-normal hover:bg-gray-800 transition-all duration-300 shadow-lg"
                     aria-label="Submit contact form"
                   >
                     Send Message

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ExploreCard = ({title, paragraph, link, imagePath, imageHeight}) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg border-zinc-200 border-[1px] flex flex-col">
+    <div className="bg-white p-6 rounded-none shadow-lg border-zinc-200 border-[1px] flex flex-col">
       <h2 className="text-2xl mb-2">{title}</h2>
       <p className="w-full md:w-3/4 mb-10">
         {paragraph}
@@ -17,7 +17,7 @@ const ExploreCard = ({title, paragraph, link, imagePath, imageHeight}) => {
 
       <div className="mt-auto">
         <Image
-          className={`rounded-xl w-full h-[${imageHeight}] object-cover`}
+          className={`rounded-none w-full h-[${imageHeight}] object-cover`}
           src={imagePath}
           alt="water motion image"
           width={500}

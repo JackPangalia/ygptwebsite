@@ -35,7 +35,7 @@ const Footer = () => {
                   priority
                 />
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold">
+                  <h3 className="text-2xl md:text-3xl font-medium">
                     Centonis
                   </h3>
            
@@ -177,7 +177,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-6">
               <span className="text-gray-600 text-sm">Powered by AI</span>
-              <div className="w-2 h-2 bg-gray-600 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-gray-600 rounded-none animate-pulse"></div>
             </div>
           </div>
         </motion.div>

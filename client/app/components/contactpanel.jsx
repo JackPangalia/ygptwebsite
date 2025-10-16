@@ -10,7 +10,7 @@ const Contactpanel = () => {
           Bring Your Ideas To Light
         </p>
 
-        <Link href="/contact" className = 'bg-black text-white px-4 py-3 rounded-full hover:bg-black/80 transition-colors text-sm'>Work With Us</Link>
+        <Link href="/contact" className = 'bg-black text-white px-4 py-3 rounded-none hover:bg-black/80 transition-colors text-sm'>Work With Us</Link>
       </div>
     </section>
   );

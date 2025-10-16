@@ -11,7 +11,7 @@ const parseText = (text) => {
     const parts = line.split(/(\*\*.*?\*\*)/g).map((part, idx) => {
       if (part.startsWith('**') && part.endsWith('**')) {
         return (
-          <strong key={`${index}-${idx}`} className="font-bold">
+          <strong key={`${index}-${idx}`} className="font-medium">
             {part.slice(2, -2)}
           </strong>
         );

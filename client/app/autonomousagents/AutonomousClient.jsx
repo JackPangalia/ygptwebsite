@@ -61,7 +61,7 @@ const AutonomousClient = () => {
               className="text-center max-w-4xl mx-auto"
             >
               {/* Main Heading */}
-              <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 font-bold leading-tight drop-shadow-2xl">
+              <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-6 sm:mb-8 font-medium leading-tight drop-shadow-2xl">
                 Autonomous
                 <br />
                 <span className="text-white">Agent Development</span>
@@ -110,7 +110,7 @@ const AutonomousClient = () => {
             {/* MAIN CONTENT */}
             <div className="space-y-16">
               {/* MAIN HEADING */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight text-black max-w-4xl">
                 Automate complex tasks
                 with intelligent agents
                 that work around the
@@ -157,7 +157,7 @@ const AutonomousClient = () => {
             {/* MAIN CONTENT */}
             <div className="space-y-20">
               {/* MAIN HEADING */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight text-black max-w-4xl">
                 What makes our
                 autonomous agents
                 so powerful and
@@ -215,7 +215,7 @@ const AutonomousClient = () => {
                     <div className="bg-white border border-gray-100 rounded-2xl p-8 h-full hover:border-gray-200 hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                       <div className="space-y-6">
                         <div className="mb-4">{feature.icon}</div>
-                        <h3 className="text-2xl font-bold text-black group-hover:text-gray-700 transition-colors">
+                        <h3 className="text-2xl font-medium text-black group-hover:text-gray-700 transition-colors">
                           {feature.title}
                         </h3>
                         <p className="text-lg leading-relaxed text-gray-700">
@@ -240,7 +240,7 @@ const AutonomousClient = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white mb-8">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight text-white mb-8">
               Ready to automate
               your business
               processes?
@@ -252,7 +252,7 @@ const AutonomousClient = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all duration-300 shadow-lg"
+              className="bg-white text-black px-8 py-4 rounded-none font-normal hover:bg-white/90 transition-all duration-300 shadow-lg"
             >
               Automate Your Workflow
             </motion.button>

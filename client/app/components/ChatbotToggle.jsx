@@ -29,7 +29,7 @@ const ChatbotToggle = () => {
       {!isOpen && (
         <button
           onClick={toggleChatbot}
-          className="bg-black text-white fixed bottom-3 right-5 z-50 px-5 py-3 rounded-full shadow-md transition-all duration-300 flex gap-2 items-center"
+          className="bg-black text-white fixed bottom-3 right-5 z-50 px-5 py-3 rounded-none shadow-md transition-all duration-300 flex gap-2 items-center"
         >
           Chatbot{" "}
 

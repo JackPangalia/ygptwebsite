@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <>
       {/* --------------------- Desktop Navbar --------------------- */}
-      <header className={`z-50 hidden sm:flex fixed top-0 left-0 w-full py-4 transition-all duration-500 ${
+      <header className={`z-50 hidden sm:flex fixed top-0 left-0 w-full py-6 transition-all duration-500 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
           : 'bg-white/95 backdrop-blur-sm'
@@ -31,11 +31,16 @@ const Navbar = () => {
             width={150}
             height={150}
             alt="company logo"
-            className="w-10 rounded transition-transform duration-300 group-hover:scale-105 "
+            className="w-10 rounded-none transition-transform duration-300 group-hover:scale-105 "
           />
-          <h1 className="font-semibold text-lg text-black group-hover:text-gray-700 transition-colors">
-            Centonis
-          </h1>
+          <div className="ml-2">
+            <h1 className="font-[450] text-lg text-black group-hover:text-gray-700 transition-colors leading-tight">
+              Centonis
+            </h1>
+            <span className="text-xs text-gray-600 group-hover:text-gray-500 transition-colors -mt-1 block">
+              AI technologies
+            </span>
+          </div>
         </Link>
 
         {/* Full Nav - Always visible */}
@@ -50,22 +55,22 @@ const Navbar = () => {
                 <IconTwotoneKeyboardArrowDown className="ml-1 w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
               </Link>
               
-              <div className="absolute top-full left-0 mt-4 bg-white border border-gray-200 rounded-2xl py-3 px-2 w-56 invisible group-hover:visible transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-xl">
+              <div className="absolute top-full left-0 mt-4 bg-white border border-gray-200 rounded-none py-3 px-2 w-56 invisible group-hover:visible transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-xl">
                 <Link 
                   href="/enterpriseconsulting" 
-                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-xl font-medium"
+                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-none font-medium"
                 >
                   Consulting
                 </Link>
                 <Link 
                   href="/chatbotdevelopment" 
-                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-xl font-medium"
+                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-none font-medium"
                 >
                   Chatbots
                 </Link>
                 <Link 
                   href="/autonomousagents" 
-                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-xl font-medium"
+                  className="block px-4 py-3 text-gray-700 hover:text-black hover:bg-gray-50 transition-all duration-300 rounded-none font-medium"
                 >
                   Automations
                 </Link>
@@ -94,7 +99,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link
             href="/contact"
-            className="bg-black text-white px-5 py-2.5 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
+            className="bg-black text-white px-5 py-2.5 rounded-none font-normal hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
           >
             Contact
           </Link>
@@ -105,7 +110,7 @@ const Navbar = () => {
       {/* --------------------- Mobile Navbar --------------------- */}
       <div className="z-50 sm:hidden fixed top-0 left-0 w-full flex flex-col">
         {/* Mobile Nav Bar */}
-        <header className={`w-full py-4 transition-all duration-500 ${
+        <header className={`w-full py-6 transition-all duration-500 ${
           isScrolled 
             ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100' 
             : 'bg-white/95 backdrop-blur-sm'
@@ -118,8 +123,16 @@ const Navbar = () => {
               width={100}
               height={100}  
               alt="company logo"
-              className="w-10 rounded transition-transform duration-300 group-hover:scale-105"
+              className="w-10 rounded-none transition-transform duration-300 group-hover:scale-105"
             />
+            <div className="ml-2">
+              <h1 className="font-normal text-lg text-black group-hover:text-gray-700 transition-colors leading-tight">
+                Centonis
+              </h1>
+              <span className="text-xs text-gray-600 group-hover:text-gray-500 transition-colors -mt-1 block">
+                AI technologies
+              </span>
+            </div>
           </Link>
 
           {/* Right Side - Contact Button + Menu */}
@@ -127,14 +140,14 @@ const Navbar = () => {
             {/* Contact Button - Always Visible */}
             <Link
               href="/contact"
-              className="bg-black text-white px-4 py-2 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 text-sm"
+              className="bg-black text-white px-4 py-2 rounded-none font-normal hover:bg-gray-800 transition-all duration-300 text-sm"
             >
               Contact
             </Link>
 
             {/* Menu Toggle Button - Always Visible on Mobile */}
             <button
-              className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 text-gray-700 hover:text-black hover:bg-gray-100"
+              className="w-10 h-10 rounded-none flex items-center justify-center transition-all duration-300 text-gray-700 hover:text-black hover:bg-gray-100"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >

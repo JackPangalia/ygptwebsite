@@ -14,7 +14,6 @@ const Footer = dynamic(() => import("./components/Footer"), {
 // * PACKAGE IMPORTS * //
 import Link from "next/link";
 import Image from "next/image";
-import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { useScroll } from "./hooks/useScroll";
 
@@ -26,6 +25,9 @@ const Home = () => {
     <>W
       {/* LANDER SCREEN */}
       <section className="relative h-[91vh] w-full overflow-hidden">
+        {/* White Top Border - matches navbar height */}
+        <div className="absolute top-0 left-0 w-full h-10 bg-white z-30"></div>
+        
         {/* Background Video with Parallax Effect */}
         <video
           autoPlay
@@ -116,39 +118,12 @@ const Home = () => {
             >
               {/* Main Heading */}
               <div className="text-center space-y-4 sm:space-y-6">
-                {/* Subtitle with Typewriter Effect */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-white/90 text-lg sm:text-xl md:text-2xl font-medium tracking-wide min-h-[2.5rem] flex items-center justify-center"
-                >
-                  <TypeAnimation
-                    sequence={[
-                      'AI Consulting',
-                      2000, // pause for 2 seconds
-                      'AI Agents', 
-                      2000, // pause for 2 seconds
-                      'AI Automations',
-                      2000, // pause for 2 seconds
-                    ]}
-                    wrapper="span"
-                    speed={50} // typing speed
-                    deletionSpeed={30} // deletion speed
-                    repeat={Infinity} // loop forever
-                    style={{ 
-                      display: 'inline-block',
-                      minHeight: '1.5em' // prevent layout shift
-                    }}
-                  />
-                </motion.div>
-                
                 {/* Main Headline */}
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="font-bold text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl leading-tight"
+                  className="font-normal text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl leading-tight"
                 >
                   That Actually Works
                 </motion.h1>
@@ -162,13 +137,13 @@ const Home = () => {
                 >
                   <a 
                     href="#services"
-                    className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg text-sm w-full sm:w-auto text-center"
+                    className="bg-white text-black px-6 py-3 rounded-none font-normal hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg text-sm w-full sm:w-auto text-center"
                   >
                     Get Started
                   </a>
                   <a 
                     href="#about"
-                    className="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm w-full sm:w-auto text-center"
+                    className="border-2 border-white text-white px-6 py-3 rounded-none font-normal hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 text-sm w-full sm:w-auto text-center"
                   >
                     Learn More
                   </a>
@@ -195,13 +170,13 @@ const Home = () => {
               >
                 <a 
                   href="#services"
-                  className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg"
+                  className="bg-white text-black px-8 py-4 rounded-none font-normal hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg"
                 >
                   Get Started
                 </a>
                 <a 
                   href="#about"
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+                  className="border-2 border-white text-white px-8 py-4 rounded-none font-normal hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
                 >
                   Learn More
                 </a>
@@ -209,6 +184,9 @@ const Home = () => {
             </motion.div>
           </div>
         </div>
+
+        {/* White Bottom Border - matches navbar height */}
+        <div className="absolute bottom-0 left-0 w-full h-10 bg-white z-30"></div>
 
       </section>
 
@@ -234,7 +212,7 @@ const Home = () => {
             {/* MAIN CONTENT */}
             <div className="space-y-16">
               {/* MAIN HEADING */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight text-black max-w-4xl">
                 We help businesses
                 transform through
                 intelligent automation
@@ -299,7 +277,7 @@ const Home = () => {
         
         {/* Content */}
         <div className="relative z-20">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-white text-center">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-normal leading-tight text-white text-center">
             Accelerating Businesses With AI
           </h2>
         </div>
@@ -327,7 +305,7 @@ const Home = () => {
             {/* MAIN CONTENT */}
             <div className="space-y-20">
               {/* MAIN HEADING */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight text-black max-w-4xl">
                 Three core services
                 that transform your
                 business through
@@ -370,7 +348,7 @@ const Home = () => {
                     >
                       <div className="bg-white border border-gray-100 rounded-2xl p-8 h-full hover:border-gray-200 hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1">
                         <div className="space-y-6">
-                          <h3 className="text-2xl font-bold text-black group-hover:text-gray-700 transition-colors">
+                          <h3 className="text-2xl font-medium text-black group-hover:text-gray-700 transition-colors">
                             {service.title}
                           </h3>
                           <p className="text-lg leading-relaxed text-gray-700">
@@ -417,7 +395,7 @@ const Home = () => {
             {/* MAIN CONTENT */}
             <div className="space-y-20">
               {/* MAIN HEADING */}
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-black max-w-4xl">
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium leading-tight text-black max-w-4xl">
                 What makes our
                 platforms so powerful
                 and uniquely effective
@@ -487,14 +465,14 @@ const Home = () => {
                     >
                       {/* NUMBER CIRCLE */}
                       <div className="flex-shrink-0 relative z-10">
-                        <div className="w-20 h-20 bg-black text-white rounded-full flex items-center justify-center text-xl font-bold">
+                        <div className="w-20 h-20 bg-black text-white rounded-none flex items-center justify-center text-xl font-medium">
                           {benefit.number}
                         </div>
                       </div>
                       
                       {/* CONTENT */}
                       <div className="flex-1 pt-2">
-                        <h3 className="text-2xl font-bold text-black mb-4">
+                        <h3 className="text-2xl font-medium text-black mb-4">
                           {benefit.title}
                         </h3>
                         <p className="text-lg text-gray-700 leading-relaxed">
