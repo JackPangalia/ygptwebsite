@@ -125,7 +125,7 @@ const Home = () => {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="font-normal text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl leading-tight"
                 >
-                  That Actually Works
+                  AI That Actually Works
                 </motion.h1>
                 
                 {/* CTA Buttons */}
