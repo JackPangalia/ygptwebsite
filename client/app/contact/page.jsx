@@ -2,18 +2,18 @@ import ContactClient from "./ContactClient"
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Contact - Centonis: Get In Touch for Custom AI Solutions",
-  description: "Reach out to Centonis for custom AI software solutions designed to elevate your business. Contact us today to discuss your project needs and discover how our proprietary technology can drive your success. Let's innovate together.",
-  keywords: ["Contact Centonis", "AI Solutions Contact", "Custom Software Inquiry", "Business AI Consultation", "Technology Partnership", "AI Development Contact"],
+  title: "Contact - Get In Touch",
+  description: "Have a question, inquiry, or partnership opportunity? Reach out to Centonis AI Inc. We'd love to hear from you.",
+  keywords: ["Contact Centonis", "Venture Studio Contact", "Partnership Opportunities", "Inquiries", "Vancouver"],
   openGraph: {
-    title: "Contact Centonis - Let's Transform Your Business with AI",
-    description: "Ready to elevate your business with custom AI solutions? Contact Centonis today for a consultation and discover how we can help you achieve your goals.",
+    title: "Contact Centonis",
+    description: "Have a question, inquiry, or partnership opportunity? Reach out to Centonis AI Inc.",
     images: [
       {
         url: "/Centonis_Logo_v5.webp",
         width: 1200,
         height: 630,
-        alt: "Contact Centonis - AI Solutions Consultation"
+        alt: "Contact Centonis"
       }
     ]
   }
@@ -31,17 +31,19 @@ const Contact = () => {
               "@context": "https://schema.org",
               "@type": "ContactPage",
               "name": "Contact Centonis",
-              "description": "Contact page for Centonis AI solutions and consulting services",
+              "description": "Contact page for Centonis AI Inc. - Venture Studio and Holding Company based in Vancouver",
               "url": "https://centonis.com/contact",
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "",
-                "contactType": "customer service",
+                "email": "centonisai@gmail.com",
+                "contactType": "general inquiries",
                 "areaServed": "Worldwide",
                 "availableLanguage": ["English"]
               },
               "address": {
                 "@type": "PostalAddress",
+                "addressLocality": "Vancouver",
+                "addressLocality": "Vancouver",
                 "addressCountry": "Canada"
               }
             })
