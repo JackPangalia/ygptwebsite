@@ -1,11 +1,11 @@
 export const defaultMetadata = {
   metadataBase: new URL('https://www.centonis.com'),
   title: {
-    default: 'Centonis - Venture Studio | Vancouver',
+    default: 'Centonis - Digital Work | Vancouver',
     template: '%s | Centonis'
   },
-  description: 'Centonis AI Inc. is a venture studio and holding company based in Vancouver. We build high-performance software, scaling human potential through intelligent software.',
-  keywords: ['Venture Studio', 'Holding Company', 'Software Development', 'Software Solutions', 'Vancouver', 'Realtysnap', 'AI Solutions'],
+  description: 'Centonis AI Inc. is a Vancouver software studio building clean digital work, useful tools, and practical software for businesses.',
+  keywords: ['Digital Studio Vancouver', 'Software Development', 'Digital Work', 'Vancouver', 'Business Websites', 'AI Tools'],
   authors: [{ name: 'Centonis AI Inc.' }],
   creator: 'Centonis AI Inc.',
   publisher: 'Centonis AI Inc.',
@@ -25,21 +25,21 @@ export const defaultMetadata = {
     locale: 'en_US',
     url: 'https://www.centonis.com',
     siteName: 'Centonis',
-    title: 'Centonis - Venture Studio | Vancouver',
-    description: 'Centonis AI Inc. is a venture studio and holding company based in Vancouver. We build high-performance software, scaling human potential through intelligent software.',
+    title: 'Centonis - Digital Work | Vancouver',
+    description: 'Centonis AI Inc. is a Vancouver software studio building clean digital work, useful tools, and practical software for businesses.',
     images: [
       {
         url: '/Centonis_Logo_v5.webp',
         width: 1200,
         height: 630,
-        alt: 'Centonis - Venture Studio',
+        alt: 'Centonis - Digital Work',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Centonis - Venture Studio',
-    description: 'A venture studio and holding company building high-performance software to scale human potential through intelligent software.',
+    title: 'Centonis - Digital Work',
+    description: 'A Vancouver software studio building clean digital work, useful tools, and practical software for businesses.',
     images: ['/Centonis_Logo_v5.webp'],
     creator: '@centonis',
   },

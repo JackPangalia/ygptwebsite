@@ -31,7 +31,7 @@ const Footer = () => {
               </Link>
               
               <p className="text-lg sm:text-xl text-white/50 leading-relaxed max-w-md">
-                A venture studio building high-performance software to scale human potential through intelligent software.
+                A Vancouver software studio building clean digital work and practical software for businesses.
               </p>
 
               {/* CTA */}

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(cp \"/Users/moserun/.claude/projects/-Users-moserun-Desktop-Git-ygptwebsite-client/0286ab68-1efe-48f7-bc29-1a73cf30547f/tool-results/webfetch-1776804510910-xpg4dj.bin\" /tmp/centonis_design.gz)",
+      "Bash(gunzip -f /tmp/centonis_design.gz)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p /tmp/centonis_extracted)",
+      "Bash(tar -xf /tmp/centonis_design -C /tmp/centonis_extracted)",
+      "Bash(npm run *)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s http://localhost:3002)",
+      "Bash(sed -n '45,55p' /Users/moserun/Desktop/Git/ygptwebsite/client/app/page.jsx)",
+      "Bash(sed -n '80,110p' /Users/moserun/Desktop/Git/ygptwebsite/client/app/layout.jsx)"
+    ]
+  }
+}
