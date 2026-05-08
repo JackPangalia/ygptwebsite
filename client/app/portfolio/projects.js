@@ -1,5 +1,19 @@
 export const portfolioProjects = [
   {
+    slug: "heartwood-cabinetry",
+    client: "Heartwood",
+    title: "Cabinetry that quiets a room.",
+    year: "2026",
+    type: "Trades",
+    status: "Live",
+    summary: "A premium digital presence for custom cabinetry, showcasing craftsmanship through large imagery and refined typography.",
+    services: ["Web Design", "Development"],
+    outcome: "Built to reflect the precision and quality of their architectural woodwork.",
+    palette: "bone",
+    image: "/portfolio/heartwood.png",
+    link: "https://tradeswebdemo1.vercel.app/",
+  },
+  {
     slug: "holm-real-estate",
     client: "HOLM",
     title: "An editorial listing experience for luxury real estate.",
