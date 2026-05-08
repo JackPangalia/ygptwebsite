@@ -27,6 +27,7 @@ const SiteFooter = () => (
           <ul>
             <li><Link href="/#services">Services</Link></li>
             <li><Link href="/#process">Process</Link></li>
+            <li><Link href="/portfolio">Portfolio</Link></li>
             <li><Link href="/blog">Blog</Link></li>
             <li><Link href="/ventures">Ventures</Link></li>
           </ul>
@@ -93,15 +94,13 @@ const VenturesClient = () => {
     <main className="ventures-page">
       <SiteHeader contactHref="/contact" />
 
-      <section className="ventures-page-hero">
+      <section className="blog-index-hero">
         <div className="container">
-          <div
-            className="eyebrow reveal"
-            style={{ marginBottom: 28, display: "block" }}
-          >
-            [ Ventures / Internal ]
+          <div className="blog-index-hero__meta">
+            <span>[ Ventures ]</span>
+            <span>Internal products</span>
           </div>
-          <div className="ventures-page-hero__grid">
+          <div className="blog-index-hero__grid">
             <h1 className="reveal">We also build our own.</h1>
             <p className="reveal reveal-delay-1">
               Alongside client work, Centonis runs a small set of internal

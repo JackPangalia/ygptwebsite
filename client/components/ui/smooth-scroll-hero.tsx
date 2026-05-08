@@ -49,7 +49,7 @@ const SmoothScrollHeroInner: React.FC<SmoothScrollHeroInnerProps> = ({
   const videoScale = useTransform(scrollY, [0, scrollHeight], [1.08, 1]);
 
   return (
-    <div className="smooth-hero-sticky flex min-h-[min(100svh,720px)] h-[min(100svh,720px)] w-full flex-col overflow-hidden bg-[var(--ink)] md:min-h-[620px] md:h-[100svh] md:max-h-none">
+    <div className="smooth-hero-sticky flex w-full flex-col overflow-hidden bg-[var(--ink)]">
       <div aria-hidden={children ? true : undefined} className="absolute inset-0 z-0 bg-[var(--ink)]">
         <motion.div className="smooth-hero-video-wrap" style={{ scale: videoScale }}>
           <video
@@ -101,7 +101,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
   return (
     <div
       id={id}
-      style={{ height: `calc(${effectiveScroll}px + 100vh)` }}
+      style={{ height: `calc(${effectiveScroll}px + var(--hero-frame-h, 100vh))` }}
       className="relative w-full bg-[var(--ink)]"
     >
       <SmoothScrollHeroInner scrollHeight={effectiveScroll} videoSrc={videoSrc}>

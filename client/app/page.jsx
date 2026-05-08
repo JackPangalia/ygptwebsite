@@ -30,9 +30,17 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <SmoothScrollHero id="hero" scrollHeight={900}>
         <div className="hero-lockup">
-          <h1 className="display-l hero-lockup__title">
-            Scaling human potential through intelligent software.
+          <div className="hero-lockup__eyebrow">
+            <span>[ 00 / 04 ]</span>
+            <span className="dot" aria-hidden="true" />
+            <span>Studio — Centonis</span>
+          </div>
+          <h1 className="hero-lockup__title">
+            Websites and software that do the work.
           </h1>
+          <p className="hero-lockup__copy">
+            A design and engineering studio building high-performance websites, intelligent chatbots, and custom software for ambitious brands.
+          </p>
           <div className="hero-lockup__actions">
             <a href="#contact" className="hero-cta hero-cta--primary">
               Contact <span className="arrow">↗</span>
@@ -110,6 +118,7 @@ export default function HomePage() {
               <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="#ventures">Ventures</a></li>
               </ul>
