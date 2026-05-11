@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import { portfolioProjects } from "./projects";
 
@@ -47,47 +48,6 @@ const SiteFooter = () => (
   </footer>
 );
 
-const ProjectPlate = ({ project, index }) => (
-  <div className={`portfolio-plate portfolio-plate--${project.palette}`}>
-    <div className="portfolio-plate__chrome">
-      <span>{project.client}</span>
-      <span>{String(index + 1).padStart(2, "0")}</span>
-    </div>
-    <div className="portfolio-plate__canvas" style={project.image ? { padding: 0, overflow: 'hidden' } : {}}>
-      {project.image ? (
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'relative', zIndex: 10 }} 
-        />
-      ) : (
-        <>
-          <div className="portfolio-plate__orb" />
-          <div className="portfolio-plate__grid">
-            <span />
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="portfolio-plate__panel portfolio-plate__panel--main">
-            <span />
-            <span />
-            <span />
-          </div>
-          <div className="portfolio-plate__panel portfolio-plate__panel--side">
-            <span />
-            <span />
-          </div>
-        </>
-      )}
-    </div>
-    <div className="portfolio-plate__caption">
-      <span>{project.type}</span>
-      <span>{project.year}</span>
-    </div>
-  </div>
-);
-
 export default function PortfolioClient() {
   return (
     <main className="portfolio-page">
@@ -110,43 +70,46 @@ export default function PortfolioClient() {
 
       <section className="blog-index-list portfolio-work-section" id="selected-work">
         <div className="container">
-          <div className="blog-index-list__header">
-            <span>[ Cases ]</span>
-            <span>{String(portfolioProjects.length).padStart(2, "0")}</span>
-          </div>
-
-          <div className="portfolio-case-grid">
+          <div className="portfolio-grid" aria-label="Selected portfolio projects">
             {portfolioProjects.map((project, index) => (
-              <article
-                className="portfolio-case-card"
+              <a
+                aria-label={`View ${project.client}: ${project.title}`}
+                className="portfolio-grid-card"
+                href={project.link}
                 key={project.slug}
-                aria-label={`${project.client}: ${project.title}`}
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <ProjectPlate project={project} index={index} />
-                <div className="portfolio-case-card__body">
-                  <div className="portfolio-case-card__meta">
-                    <span>{project.client}</span>
+                <div className="portfolio-grid-card__media">
+                  {project.image ? (
+                    <Image
+                      alt={project.title}
+                      fill
+                      priority={index < 2}
+                      quality={100}
+                      sizes="(min-width: 1024px) 42vw, 100vw"
+                      src={project.image}
+                    />
+                  ) : null}
+                  <span className="portfolio-grid-card__shade" aria-hidden="true" />
+                  <span className="portfolio-grid-card__index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <div className="portfolio-grid-card__body">
+                  <div className="portfolio-grid-card__meta">
+                    <span>{project.type}</span>
                     <span>{project.year}</span>
                   </div>
-                  <h3>{project.title}</h3>
-                  <p style={{ marginTop: '0.75rem', fontSize: '15px', color: 'var(--muted-ink)' }}>
-                    {project.summary}
-                  </p>
-                  {project.link && (
-                    <div style={{ marginTop: '1.5rem' }}>
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="cta-pill"
-                        style={{ display: 'inline-flex', padding: '0.6rem 1.25rem', fontSize: '13px' }}
-                      >
-                        Visit Site <span className="arrow" style={{ marginLeft: '6px' }}>↗</span>
-                      </a>
-                    </div>
-                  )}
+                  <div className="portfolio-grid-card__heading">
+                    <h2>{project.client}</h2>
+                    <span>View project ↗</span>
+                  </div>
+                  <p className="portfolio-grid-card__title">{project.title}</p>
+                  <p className="portfolio-grid-card__summary">{project.summary}</p>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </div>

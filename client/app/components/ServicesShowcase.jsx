@@ -1,7 +1,7 @@
 "use client";
 
-import { ParallaxScrollFeatureSection } from "@/components/ui/parallax-scroll-feature-section";
+import { ServicesStickyRotator } from "@/components/ui/services-sticky-rotator";
 
 export default function ServicesShowcase() {
-  return <ParallaxScrollFeatureSection />;
+  return <ServicesStickyRotator />;
 }

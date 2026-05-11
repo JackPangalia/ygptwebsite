@@ -83,7 +83,7 @@ function ProcessShowcase() {
           pointerEvents: "none",
         }}
       >
-        <span>[ 02 / 04 ]</span>
+        <span>[ 03 / 05 ]</span>
         <span>Process — How we build</span>
       </div>
 

@@ -54,7 +54,7 @@ function BlogsShowcase() {
           pointerEvents: "none",
         }}
       >
-        <span>[ 03 / 04 ]</span>
+        <span>[ 04 / 05 ]</span>
         <span>Blogs — Notes and thinking</span>
       </div>
 

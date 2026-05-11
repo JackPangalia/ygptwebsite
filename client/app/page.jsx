@@ -1,10 +1,12 @@
 "use client";
 import { useEffect } from "react";
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero";
+import InteractivePortfolioSelector from "@/components/ui/interactive-portfolio-selector";
 import ServicesShowcase from "./components/ServicesShowcase";
 import ProcessShowcase from "./components/ProcessShowcase";
 import BlogsShowcase from "./components/BlogsShowcase";
 import SiteHeader from "./components/SiteHeader";
+import { portfolioProjects } from "./portfolio/projects";
 
 export default function HomePage() {
   useEffect(() => {
@@ -31,7 +33,7 @@ export default function HomePage() {
       <SmoothScrollHero id="hero" scrollHeight={900}>
         <div className="hero-lockup">
           <div className="hero-lockup__eyebrow">
-            <span>[ 00 / 04 ]</span>
+            <span>[ 00 / 05 ]</span>
             <span className="dot" aria-hidden="true" />
             <span>Studio — Centonis</span>
           </div>
@@ -54,6 +56,71 @@ export default function HomePage() {
 
       <ServicesShowcase />
 
+      <section
+        id="selected-work"
+        style={{
+          position: "relative",
+          width: "100%",
+          overflow: "hidden",
+          background: "var(--ink)",
+          color: "var(--text-on-ink)",
+          padding: `clamp(4rem, 10vh, 8rem) 0 clamp(6rem, 12vh, 9rem)`,
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            maxWidth: "var(--page-max)",
+            margin: "0 auto",
+            top: "clamp(1.75rem, 6vh, 3rem)",
+            left: 0,
+            right: 0,
+            padding: `0 var(--gutter)`,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+            fontFamily: "var(--mono)",
+            fontSize: "11px",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "var(--muted-ink)",
+            pointerEvents: "none",
+          }}
+        >
+          <span>[ 02 / 05 ]</span>
+          <span>Work — Selected launches</span>
+        </div>
+
+        <div
+          className="mx-auto max-w-[var(--page-max)]"
+          style={{ padding: `0 var(--gutter)` }}
+        >
+          <div
+            className="flex flex-col gap-8 reveal"
+            style={{ maxWidth: "36rem", marginBottom: "clamp(42px, 7vw, 78px)" }}
+          >
+            <div style={{ fontFamily: "var(--mono)", color: "var(--muted-ink)", fontSize: "0.75rem", letterSpacing: "0.2em" }}>[ Work ]</div>
+            <h2
+              className="text-balance text-3xl font-light tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+              style={{
+                margin: 0,
+                maxWidth: "14ch",
+                lineHeight: 0.98,
+              }}
+            >
+              A closer look at what the work becomes.
+            </h2>
+            <p style={{ color: "var(--muted-ink)", fontSize: "1.0625rem", lineHeight: 1.6, maxWidth: "28rem", margin: 0 }}>
+              Real screens from recent sites, presented as live surfaces instead
+              of flat thumbnails.
+            </p>
+          </div>
+          <div className="reveal reveal-delay-1">
+            <InteractivePortfolioSelector projects={portfolioProjects} />
+          </div>
+        </div>
+      </section>
+
       <ProcessShowcase />
 
       <BlogsShowcase />
@@ -62,7 +129,7 @@ export default function HomePage() {
       <section id="ventures">
         <div className="container">
           <div className="section-header">
-            <div className="num">[ 04 / 04 ]</div>
+            <div className="num">[ 05 / 05 ]</div>
             <div className="label">Ventures — What we build internally</div>
           </div>
           <div className="ventures-grid">

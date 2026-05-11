@@ -148,7 +148,7 @@ export function ParallaxScrollFeatureSection({
       <div className="container">
         <div className="flex min-h-[64vh] w-full flex-col items-start justify-center">
           <div className="mb-8 flex w-full items-center justify-between gap-6 font-mono text-[11px] uppercase tracking-[0.1em] text-[var(--muted-ink)]">
-            <span>[ 01 / 04 ]</span>
+            <span>[ 01 / 05 ]</span>
             <span>Services — What we do</span>
           </div>
           <h2 className="max-w-[10ch] text-balance text-5xl font-light leading-[0.94] tracking-[-0.05em] text-[var(--text-on-ink)] sm:text-6xl md:text-7xl">
